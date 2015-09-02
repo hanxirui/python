@@ -1,0 +1,1293 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>【原】十分钟搞定pandas - ChaoSimple - 博客园</title>
+<link type="text/css" rel="stylesheet" href="/bundles/blog-common.css?v=VDh8zSH1vx51MDqRT7hK220akQ58FjlaaeGuWBPhfOA1"/>
+<link id="MainCss" type="text/css" rel="stylesheet" href="/skins/coffee/bundle-coffee.css?v=H7P3zU3_M529NtLVh9kKULJaZLDGv9Qz_L_VdgyN1P41"/>
+<link type="text/css" rel="stylesheet" href="/blog/customcss/117243.css?v=62sWs%2fcw6QC0UZrkKUB6s3xPf0g%3d"/>
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/chaosimple/rss"/>
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/chaosimple/rsd.xml"/>
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/chaosimple/wlwmanifest.xml"/>
+<script src="http://common.cnblogs.com/script/jquery.js" type="text/javascript"></script>  
+<script type="text/javascript">var currentBlogApp = 'chaosimple', cb_enable_mathjax=true;</script>
+<script src="/bundles/blog-common.js?v=UAr5OjphxTuoBvtqUofwkvUBskwc8aObPK0g5G4MV8w1" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+	<a id="lnkBlogLogo" href="http://www.cnblogs.com/chaosimple/"><img id="blogLogo" src="/Skins/custom/images/logo.gif" alt="返回主页" /></a>			
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cnblogs.com/chaosimple/">ChaoSimple</a></h1>
+<h2></h2>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="navigator">
+			
+<!--done-->
+			<ul id="navList">
+				<li><a id="MyLinks1_HomeLink" class="menu" href="http://www.cnblogs.com/">博客园</a></li>
+				<li><a id="MyLinks1_IngLink" class="menu" href="http://home.cnblogs.com/ing/">闪存</a></li>
+				<li><a id="MyLinks1_MyHomeLink" class="menu" href="http://www.cnblogs.com/chaosimple/">首页</a></li>
+				<li><a id="MyLinks1_NewPostLink" class="menu" rel="nofollow" href="http://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+				<li><a id="MyLinks1_ContactLink" accesskey="9" class="menu" rel="nofollow" href="http://msg.cnblogs.com/send/ChaoSimple">联系</a></li>
+				<li><a id="MyLinks1_Admin" class="menu" rel="nofollow" href="http://i.cnblogs.com/">管理</a></li>
+				<li>
+				</li>
+			</ul>
+
+
+			<div class="blogStats">
+				
+				
+<!--done-->
+随笔- 124&nbsp;
+文章- 1&nbsp;
+评论- 15&nbsp;
+
+				
+			</div><!--end: blogStats -->
+		</div><!--end: navigator 博客导航栏 -->
+		
+<div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class = "post">
+		<h1 class = "postTitle">
+			<a id="cb_post_title_url" class="postTitle2" href="http://www.cnblogs.com/chaosimple/p/4153083.html">【原】十分钟搞定pandas</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body"><p class="MsoNormal">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p class="MsoNormal" style="text-indent:21.0pt"><a name="OLE_LINK18"></a><a name="OLE_LINK17"><span style="font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin">本文是对</span><span lang="EN-US">pandas</span></a><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">官方网站上《</span><span lang="EN-US">10
+Minutes to pandas</span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">》的一个简单的翻译，原文在</span><a href="http://pandas.pydata.org/pandas-docs/stable/10min.html"><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">这里</span></a><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">。这篇文章是对</span><span lang="EN-US">pandas</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">的一个简单的介绍，详细的介绍请参考：</span><a href="http://pandas.pydata.org/pandas-docs/stable/cookbook.html#cookbook"><em><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#005B81;background:white;text-decoration:none;text-underline:none">Cookbook</span></em></a><span lang="EN-US"> </span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">。习惯上，我们会按下面格式引入所需要的包：</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<!--more--><p class="MsoNormal"><span lang="EN-US"><img border="0" width="554" height="87" src="http://images.cnitblog.com/blog/407700/201412/091345070096306.jpg" v:shapes="图片_x0020_1"></span><span lang="EN-US"><o:p></o:p></span></p>
+
+<h1 style="margin-left:21.0pt;text-indent:-21.0pt;mso-list:l6 level1 lfo1"><span lang="EN-US">一、<span style="font-weight: normal; font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">创建对象</span><span lang="EN-US"><o:p></o:p></span></h2>
+
+<p class="MsoNormal"><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">可以通过</span>
+<a href="http://pandas.pydata.org/pandas-docs/stable/dsintro.html#dsintro"><span lang="EN-US">Data Structure Intro Setion</span></a><span lang="EN-US"> </span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">来查看有关该节内容的详细信息。</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoNormal"><span lang="EN-US">1</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">、可以通过传递一个</span><span lang="EN-US">list</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">对象来创建一个</span><span lang="EN-US">Series</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">，</span><span lang="EN-US">pandas</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">会默认创建整型索引：</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoNormal"><span lang="EN-US"><img border="0" width="554" height="168" src="http://images.cnitblog.com/blog/407700/201412/091345076034490.jpg" v:shapes="图片_x0020_2"></span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoNormal"><span lang="EN-US">2</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">、通过传递一个</span><span lang="EN-US">numpy
+array</span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">，时间索引以及列标签来创建一个</span><span lang="EN-US">DataFrame</span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">：</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoNormal"><span lang="EN-US"><img border="0" width="554" height="267" src="http://images.cnitblog.com/blog/407700/201412/091345082908347.jpg" v:shapes="图片_x0020_3"></span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoNormal"><span lang="EN-US">3</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">、通过传递一个能够被转换成类似序列结构的字典对象来创建一个</span><span lang="EN-US">DataFrame</span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">：</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoNormal"><span lang="EN-US"><img border="0" width="554" height="213" src="http://images.cnitblog.com/blog/407700/201412/091345087282047.jpg" v:shapes="图片_x0020_4"></span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoNormal"><span lang="EN-US">4</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">、查看不同列的数据类型：</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoNormal"><span lang="EN-US"><img border="0" width="554" height="139" src="http://images.cnitblog.com/blog/407700/201412/091345090718475.jpg" v:shapes="图片_x0020_5"></span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoNormal"><span lang="EN-US">5</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">、如果你使用的是</span><span lang="EN-US">IPython</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">，使用</span><span lang="EN-US">Tab</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">自动补全功能会自动识别所有的属性以及自定义的列，下图中是所有能够被自动识别的属性的一个子集：</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoNormal"><span lang="EN-US"><img border="0" width="554" height="332" src="http://images.cnitblog.com/blog/407700/201412/091345093844147.jpg" v:shapes="图片_x0020_6"></span><span lang="EN-US"><o:p></o:p></span></p>
+
+<h1 style="margin-left:21.0pt;text-indent:-21.0pt;mso-list:l6 level1 lfo1"><span lang="EN-US">二、<span style="font-weight: normal; font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">查看数据</span><span lang="EN-US"><o:p></o:p></span></h2>
+
+<p class="MsoNormal"><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">详情请参阅：</span><a href="http://pandas.pydata.org/pandas-docs/stable/basics.html#basics"><span lang="EN-US">Basics Section</span></a><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l2 level1 lfo2"><span lang="EN-US">1、<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; </span></span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">查看</span><span lang="EN-US">frame</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">中头部和尾部的行：</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="553" height="216" src="http://images.cnitblog.com/blog/407700/201412/091345098371076.jpg" v:shapes="图片_x0020_7"></span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l2 level1 lfo2"><span lang="EN-US">2、<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; </span></span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">显示索引、列和底层的</span><span lang="EN-US">numpy</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">数据：</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="245" src="http://images.cnitblog.com/blog/407700/201412/091345103061233.jpg" v:shapes="图片_x0020_8"></span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l2 level1 lfo2"><span lang="EN-US">3、<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; </span></span><span lang="EN-US">describe()</span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">函数对于数据的快速统计汇总：</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="165" src="http://images.cnitblog.com/blog/407700/201412/091345112901832.jpg" v:shapes="图片_x0020_10"></span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l2 level1 lfo2"><span lang="EN-US">4、<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; </span></span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">对数据的转置：</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="111" src="http://images.cnitblog.com/blog/407700/201412/091345117126002.jpg" v:shapes="图片_x0020_11"></span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l2 level1 lfo2"><span lang="EN-US">5、<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; </span></span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">按轴进行排序</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="142" src="http://images.cnitblog.com/blog/407700/201412/091345121033716.jpg" v:shapes="图片_x0020_12"></span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l2 level1 lfo2"><span lang="EN-US">6、<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; </span></span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">按值进行排序</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="140" src="http://images.cnitblog.com/blog/407700/201412/091345124782901.jpg" v:shapes="图片_x0020_13"></span><span lang="EN-US"><o:p></o:p></span></p>
+
+<h1 style="margin-left:21.0pt;text-indent:-21.0pt;mso-list:l6 level1 lfo1"><span lang="EN-US">三、<span style="font-weight: normal; font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">选择</span><span lang="EN-US"><o:p></o:p></span></h2>
+
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">虽然标准的</span><span lang="EN-US">Python/Numpy</span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">的选择和设置表达式都能够直接派上用场，但是作为工程使用的代码，我们推荐使用经过优化的</span><span lang="EN-US">pandas</span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">数据访问方式：</span> <span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222">.at</span></span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#3E4349">,<span class="apple-converted-space">&nbsp;</span></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222">.iat</span></span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#3E4349">,<span class="apple-converted-space">&nbsp;</span></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222">.loc</span></span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#3E4349">,<span class="apple-converted-space">&nbsp;</span></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222">.iloc</span></span><span class="apple-converted-space"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#3E4349">&nbsp;</span></span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:Arial;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Arial;mso-bidi-font-family:Arial;color:#3E4349">和</span><span class="apple-converted-space"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#3E4349">&nbsp;</span></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222">.ix</span></span><span class="pre"><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Courier New&quot;;color:#222222">详情请参阅</span></span><a href="http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;">Indexing
+and Selecing Data</span></a><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222"> </span></span><span class="pre"><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Courier New&quot;;color:#222222">和</span></span><span class="pre"><span style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222"> </span></span><a href="http://pandas.pydata.org/pandas-docs/stable/advanced.html#advanced"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;">MultiIndex
+/ Advanced Indexing</span></a><span class="pre"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;color:#222222">。</span></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222"><o:p></o:p></span></span></p>
+
+<p class="MsoListParagraph" style="margin-left:42.0pt;text-indent:-21.0pt;
+mso-char-indent-count:0;mso-list:l7 level1 lfo3"><span class="pre"><span lang="EN-US" style="font-size:13.0pt;font-family:Wingdings;
+mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings;color:#222222">l<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; </span></span></span><span class="pre"><span style="font-size:13.0pt;font-family:宋体;mso-ascii-font-family:
+&quot;Courier New&quot;;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;
+color:#222222">获取</span></span><span class="pre"><span lang="EN-US" style="font-size:13.0pt;font-family:&quot;Courier New&quot;;color:#222222"><o:p></o:p></span></span></p>
+
+<p class="MsoListParagraph" style="margin-left:60.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l8 level1 lfo4"><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:&quot;Courier New&quot;;color:#222222">1、<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';"> </span></span></span><span class="pre"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:
+&quot;Courier New&quot;;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;
+color:#222222">选择一个单独的列，这将会返回一个</span></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222">Series</span></span><span class="pre"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;color:#222222">，等同于</span></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222">df.A</span></span><span class="pre"><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Courier New&quot;;color:#222222">：</span></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222"><o:p></o:p></span></span></p>
+
+<p class="MsoListParagraph" style="margin-left:60.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="141" src="http://images.cnitblog.com/blog/407700/201412/091345128373559.jpg" v:shapes="图片_x0020_14"></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222"><o:p></o:p></span></span></p>
+
+<p class="MsoListParagraph" style="margin-left:60.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l8 level1 lfo4"><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:&quot;Courier New&quot;;color:#222222">2、<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';"> </span></span></span><span class="pre"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:
+&quot;Courier New&quot;;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;
+color:#222222">通过</span></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;color:#222222">[]</span></span><span class="pre"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:
+&quot;Courier New&quot;;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;
+color:#222222">进行选择，这将会对行进行切片</span></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222"><o:p></o:p></span></span></p>
+
+<p class="MsoListParagraph" style="margin-left:60.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="188" src="http://images.cnitblog.com/blog/407700/201412/091345133534000.jpg" v:shapes="图片_x0020_15"></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222"><o:p></o:p></span></span></p>
+
+<p class="MsoListParagraph" style="margin-left:42.0pt;text-indent:-21.0pt;
+mso-char-indent-count:0;mso-list:l7 level1 lfo3"><span class="pre"><span lang="EN-US" style="font-size:13.0pt;font-family:Wingdings;
+mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings;color:#222222">l<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; </span></span></span><span class="pre"><span style="font-size:13.0pt;font-family:宋体;mso-ascii-font-family:
+&quot;Courier New&quot;;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;
+color:#222222">通过标签选择</span></span><span class="pre"><span lang="EN-US" style="font-size:13.0pt;font-family:&quot;Courier New&quot;;color:#222222"><o:p></o:p></span></span></p>
+
+<p class="MsoListParagraph" style="margin-left:60.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l12 level1 lfo5"><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:&quot;Courier New&quot;;color:#222222">1、<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';"> </span></span></span><span class="pre"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:
+&quot;Courier New&quot;;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;
+color:#222222">使用标签来获取一个交叉的区域</span></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222"><o:p></o:p></span></span></p>
+
+<p class="MsoListParagraph" style="margin-left:60.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="114" src="http://images.cnitblog.com/blog/407700/201412/091345137124658.jpg" v:shapes="图片_x0020_16"></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222"><o:p></o:p></span></span></p>
+
+<p class="MsoListParagraph" style="margin-left:60.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l12 level1 lfo5"><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:&quot;Courier New&quot;;color:#222222">2、<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';"> </span></span></span><span class="pre"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:
+&quot;Courier New&quot;;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;
+color:#222222">通过标签来在多个轴上进行选择</span></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222"><o:p></o:p></span></span></p>
+
+<p class="MsoListParagraph" style="margin-left:60.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="139" src="http://images.cnitblog.com/blog/407700/201412/091345141185600.jpg" v:shapes="图片_x0020_17"></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222"><o:p></o:p></span></span></p>
+
+<p class="MsoListParagraph" style="margin-left:60.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l12 level1 lfo5"><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:&quot;Courier New&quot;;color:#222222">3、<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';"> </span></span></span><span class="pre"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:
+&quot;Courier New&quot;;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;
+color:#222222">标签切片</span></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;color:#222222"><o:p></o:p></span></span></p>
+
+<p class="MsoListParagraph" style="margin-left:60.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="102" src="http://images.cnitblog.com/blog/407700/201412/091345145409771.jpg" v:shapes="图片_x0020_18"></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222"><o:p></o:p></span></span></p>
+
+<p class="MsoListParagraph" style="margin-left:60.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l12 level1 lfo5"><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:&quot;Courier New&quot;;color:#222222">4、<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';"> </span></span></span><span class="pre"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:
+&quot;Courier New&quot;;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;
+color:#222222">对于返回的对象进行维度缩减</span></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222"><o:p></o:p></span></span></p>
+
+<p class="MsoListParagraph" style="margin-left:60.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="89" src="http://images.cnitblog.com/blog/407700/201412/091345148217985.jpg" v:shapes="图片_x0020_19"></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222"><o:p></o:p></span></span></p>
+
+<p class="MsoListParagraph" style="margin-left:60.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l12 level1 lfo5"><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:&quot;Courier New&quot;;color:#222222">5、<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';"> </span></span></span><span class="pre"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:
+&quot;Courier New&quot;;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;
+color:#222222">获取一个标量</span></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222"><o:p></o:p></span></span></p>
+
+<p class="MsoListParagraph" style="margin-left:60.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="49" src="http://images.cnitblog.com/blog/407700/201412/091345152121400.jpg" v:shapes="图片_x0020_20"></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222"><o:p></o:p></span></span></p>
+
+<p class="MsoListParagraph" style="margin-left:60.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l12 level1 lfo5"><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:&quot;Courier New&quot;;color:#222222">6、<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';"> </span></span></span><span class="pre"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:
+&quot;Courier New&quot;;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;
+color:#222222">快速访问一个标量（与上一个方法等价）</span></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222"><o:p></o:p></span></span></p>
+
+<p class="MsoListParagraph" style="margin-left:60.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="48" src="http://images.cnitblog.com/blog/407700/201412/091345156038112.jpg" v:shapes="图片_x0020_21"></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222"><o:p></o:p></span></span></p>
+
+<p class="MsoListParagraph" style="margin-left:42.0pt;text-indent:-21.0pt;
+mso-char-indent-count:0;mso-list:l7 level1 lfo3"><span class="pre"><span lang="EN-US" style="font-size:13.0pt;font-family:Wingdings;
+mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings;color:#222222">l<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; </span></span></span><span class="pre"><span style="font-size:13.0pt;font-family:宋体;mso-ascii-font-family:
+&quot;Courier New&quot;;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;
+color:#222222">通过位置选择</span></span><span class="pre"><span lang="EN-US" style="font-size:13.0pt;font-family:&quot;Courier New&quot;;color:#222222"><o:p></o:p></span></span></p>
+
+<p class="MsoListParagraph" style="margin-left:60.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l10 level1 lfo6"><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:&quot;Courier New&quot;;color:#222222">1、<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';"> </span></span></span><span class="pre"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:
+&quot;Courier New&quot;;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;
+color:#222222">通过传递数值进行位置选择（选择的是行）</span></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222"><o:p></o:p></span></span></p>
+
+<p class="MsoListParagraph" style="margin-left:60.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="111" src="http://images.cnitblog.com/blog/407700/201412/091345157901057.jpg" v:shapes="图片_x0020_22"></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222"><o:p></o:p></span></span></p>
+
+<p class="MsoListParagraph" style="margin-left:60.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l10 level1 lfo6"><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:&quot;Courier New&quot;;color:#222222">2、<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';"> </span></span></span><span class="pre"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:
+&quot;Courier New&quot;;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;
+color:#222222">通过数值进行切片，与</span></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222">numpy/python</span></span><span class="pre"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;color:#222222">中的情况类似</span></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222"><o:p></o:p></span></span></p>
+
+<p class="MsoListParagraph" style="margin-left:60.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="91" src="http://images.cnitblog.com/blog/407700/201412/091345161506012.jpg" v:shapes="图片_x0020_23"></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222"><o:p></o:p></span></span></p>
+
+<p class="MsoListParagraph" style="margin-left:60.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l10 level1 lfo6"><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:&quot;Courier New&quot;;color:#222222">3、<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';"> </span></span></span><span class="pre"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:
+&quot;Courier New&quot;;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;
+color:#222222">通过指定一个位置的列表，与</span></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222">numpy/python</span></span><span class="pre"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;color:#222222">中的情况类似</span></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222"><o:p></o:p></span></span></p>
+
+<p class="MsoListParagraph" style="margin-left:60.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="101" src="http://images.cnitblog.com/blog/407700/201412/091345165562657.jpg" v:shapes="图片_x0020_24"></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222"><o:p></o:p></span></span></p>
+
+<p class="MsoListParagraph" style="margin-left:60.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l10 level1 lfo6"><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:&quot;Courier New&quot;;color:#222222">4、<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';"> </span></span></span><span class="pre"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:
+&quot;Courier New&quot;;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;
+color:#222222">对行进行切片</span></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222"><o:p></o:p></span></span></p>
+
+<p class="MsoListParagraph" style="margin-left:60.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="87" src="http://images.cnitblog.com/blog/407700/201412/091345168379870.jpg" v:shapes="图片_x0020_25"></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222"><o:p></o:p></span></span></p>
+
+<p class="MsoListParagraph" style="margin-left:60.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l10 level1 lfo6"><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:&quot;Courier New&quot;;color:#222222">5、<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';"> </span></span></span><span class="pre"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:
+&quot;Courier New&quot;;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;
+color:#222222">对列进行切片</span></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222"><o:p></o:p></span></span></p>
+
+<p class="MsoListParagraph" style="margin-left:60.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="141" src="http://images.cnitblog.com/blog/407700/201412/091345172753569.jpg" v:shapes="图片_x0020_26"></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222"><o:p></o:p></span></span></p>
+
+<p class="MsoListParagraph" style="margin-left:60.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l10 level1 lfo6"><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:&quot;Courier New&quot;;color:#222222">6、<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';"> </span></span></span><span class="pre"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:
+&quot;Courier New&quot;;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;
+color:#222222">获取特定的值</span></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222"><o:p></o:p></span></span></p>
+
+<p class="MsoListParagraph" style="margin-left:60.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="145" src="http://images.cnitblog.com/blog/407700/201412/091345175566484.jpg" v:shapes="图片_x0020_27"></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222"><o:p></o:p></span></span></p>
+
+<p class="MsoListParagraph" style="margin-left:42.0pt;text-indent:-21.0pt;
+mso-char-indent-count:0;mso-list:l7 level1 lfo3"><span class="pre"><span lang="EN-US" style="font-size:13.0pt;font-family:Wingdings;
+mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings;color:#222222">l<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; </span></span></span><span class="pre"><span style="font-size:13.0pt;font-family:宋体;mso-ascii-font-family:
+&quot;Courier New&quot;;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;
+color:#222222">布尔索引</span></span><span class="pre"><span lang="EN-US" style="font-size:13.0pt;font-family:&quot;Courier New&quot;;color:#222222"><o:p></o:p></span></span></p>
+
+<p class="MsoListParagraph" style="margin-left:60.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l1 level1 lfo7"><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:&quot;Courier New&quot;;color:#222222">1、<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';"> </span></span></span><span class="pre"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:
+&quot;Courier New&quot;;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;
+color:#222222">使用一个单独列的值来选择数据：</span></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222"><o:p></o:p></span></span></p>
+
+<p class="MsoListParagraph" style="margin-left:60.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="100" src="http://images.cnitblog.com/blog/407700/201412/091345178211469.jpg" v:shapes="图片_x0020_28"></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222"><o:p></o:p></span></span></p>
+
+<p class="MsoListParagraph" style="margin-left:60.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l1 level1 lfo7"><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:&quot;Courier New&quot;;color:#222222">2、<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';"> </span></span></span><span class="pre"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:
+&quot;Courier New&quot;;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;
+color:#222222">使用</span></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;color:#222222">where</span></span><span class="pre"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:
+&quot;Courier New&quot;;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;
+color:#222222">操作来选择数据：</span></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222"><o:p></o:p></span></span></p>
+
+<p class="MsoListParagraph" style="margin-left:60.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="138" src="http://images.cnitblog.com/blog/407700/201412/091345186962568.jpg" v:shapes="图片_x0020_29"></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222"><o:p></o:p></span></span></p>
+
+<p class="MsoListParagraph" style="margin-left:60.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l1 level1 lfo7"><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:&quot;Courier New&quot;;color:#222222">3、<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';"> </span></span></span><span class="pre"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:
+&quot;Courier New&quot;;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;
+color:#222222">使用</span></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;color:#222222">isin()</span></span><span class="pre"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:
+&quot;Courier New&quot;;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;
+color:#222222">方法来过滤：</span></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222"><o:p></o:p></span></span></p>
+
+<p class="MsoListParagraph" style="margin-left:60.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="266" src="http://images.cnitblog.com/blog/407700/201412/091345193068683.jpg" v:shapes="图片_x0020_30"></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222">&nbsp; <o:p></o:p></span></span></p>
+
+<p class="MsoListParagraph" style="margin-left:42.0pt;text-indent:-21.0pt;
+mso-char-indent-count:0;mso-list:l7 level1 lfo3"><span class="pre"><span lang="EN-US" style="font-size:13.0pt;font-family:Wingdings;
+mso-fareast-font-family:Wingdings;mso-bidi-font-family:Wingdings;color:#222222">l<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; </span></span></span><span class="pre"><span style="font-size:13.0pt;font-family:宋体;mso-ascii-font-family:
+&quot;Courier New&quot;;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;
+color:#222222">设置</span></span><span class="pre"><span lang="EN-US" style="font-size:13.0pt;font-family:&quot;Courier New&quot;;color:#222222;background:
+#ECF0F3"><o:p></o:p></span></span></p>
+
+<p class="MsoListParagraph" style="margin-left:60.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l16 level1 lfo8"><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:&quot;Courier New&quot;;color:#222222">1、<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';"> </span></span></span><span class="pre"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:
+&quot;Courier New&quot;;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;
+color:#222222">设置一个新的列：</span></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222"><o:p></o:p></span></span></p>
+
+<p class="MsoListParagraph" style="margin-left:60.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="193" src="http://images.cnitblog.com/blog/407700/201412/091345201181568.jpg" v:shapes="图片_x0020_31"></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222"><o:p></o:p></span></span></p>
+
+<p class="MsoListParagraph" style="margin-left:60.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l16 level1 lfo8"><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:&quot;Courier New&quot;;color:#222222">2、<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';"> </span></span></span><span class="pre"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:
+&quot;Courier New&quot;;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;
+color:#222222">通过标签设置新的值：</span></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222;background:#ECF0F3"><o:p></o:p></span></span></p>
+
+<p class="MsoListParagraph" style="margin-left:60.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="39" src="http://images.cnitblog.com/blog/407700/201412/091345207902196.jpg" v:shapes="图片_x0020_32"></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222;background:#ECF0F3"><o:p></o:p></span></span></p>
+
+<p class="MsoListParagraph" style="margin-left:60.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l16 level1 lfo8"><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:&quot;Courier New&quot;;color:#222222">3、<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';"> </span></span></span><span class="pre"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:
+&quot;Courier New&quot;;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;
+color:#222222">通过位置设置新的值：</span></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222;background:#ECF0F3"><o:p></o:p></span></span></p>
+
+<p class="MsoListParagraph" style="margin-left:60.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="36" src="http://images.cnitblog.com/blog/407700/201412/091345215409566.jpg" v:shapes="图片_x0020_33"></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222;background:#ECF0F3"><o:p></o:p></span></span></p>
+
+<p class="MsoListParagraph" style="margin-left:60.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l16 level1 lfo8"><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:&quot;Courier New&quot;;color:#222222">4、<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';"> </span></span></span><span class="pre"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:
+&quot;Courier New&quot;;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;
+color:#222222">通过一个</span></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;color:#222222">numpy</span></span><span class="pre"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:
+&quot;Courier New&quot;;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;
+color:#222222">数组设置一组新值：</span></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222;background:#ECF0F3"><o:p></o:p></span></span></p>
+
+<p class="MsoListParagraph" style="margin-left:60.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="38" src="http://images.cnitblog.com/blog/407700/201412/091345224314895.jpg" v:shapes="图片_x0020_34"></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222;background:#ECF0F3"><o:p></o:p></span></span></p>
+
+<p class="MsoListParagraph" style="margin-left:60.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span class="pre"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:
+&quot;Courier New&quot;;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;
+color:#222222">上述操作结果如下：</span></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222"><o:p></o:p></span></span></p>
+
+<p class="MsoListParagraph" style="margin-left:60.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="139" src="http://images.cnitblog.com/blog/407700/201412/091345228375837.jpg" v:shapes="图片_x0020_35"></span><span class="pre"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222;background:#ECF0F3"><o:p></o:p></span></span></p>
+
+<p class="MsoListParagraph" style="margin-left:60.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l16 level1 lfo8"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:&quot;Courier New&quot;;color:#222222">5、<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';"> </span></span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+&quot;Courier New&quot;;mso-bidi-font-family:&quot;Courier New&quot;;color:#222222">通过</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222">where</span><span style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-font-family:&quot;Courier New&quot;;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Courier New&quot;;color:#222222">操作来设置新的值：</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;
+color:#222222"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:60.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="190" src="http://images.cnitblog.com/blog/407700/201412/091345233065994.jpg" v:shapes="图片_x0020_36"></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;;color:#222222"><o:p></o:p></span></p>
+
+<h1 style="margin-left:21.0pt;text-indent:-21.0pt;mso-list:l6 level1 lfo1"><span lang="EN-US">四、<span style="font-weight: normal; font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">缺失值处理</span><span lang="EN-US"><o:p></o:p></span></h2>
+
+<p class="MsoNormal"><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">在</span><span lang="EN-US">pandas</span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">中，使用</span><span lang="EN-US">np.nan</span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">来代替缺失值，这些值将默认不会包含在计算中，详情请参阅：</span><a href="http://pandas.pydata.org/pandas-docs/stable/missing_data.html#missing-data"><span lang="EN-US">Missing Data Section</span></a><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">。</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l19 level1 lfo9"><span lang="EN-US">1、<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; </span></span><span lang="EN-US">reindex()</span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">方法可以对指定轴上的索引进行改变</span><span lang="EN-US">/</span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">增加</span><span lang="EN-US">/</span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">删除操作，这将返回原始数据的一个拷贝：、</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="162" src="http://images.cnitblog.com/blog/407700/201412/091345237126936.jpg" v:shapes="图片_x0020_37"></span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l19 level1 lfo9"><span lang="EN-US">2、<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; </span></span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">去掉包含缺失值的行：</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="76" src="http://images.cnitblog.com/blog/407700/201412/091345239935150.jpg" v:shapes="图片_x0020_38"></span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l19 level1 lfo9"><span lang="EN-US">3、<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; </span></span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">对缺失值进行填充：</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="116" src="http://images.cnitblog.com/blog/407700/201412/091345246189792.jpg" v:shapes="图片_x0020_39"></span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l19 level1 lfo9"><span lang="EN-US">4、<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; </span></span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">对数据进行布尔填充：</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="114" src="http://images.cnitblog.com/blog/407700/201412/091345250568193.jpg" v:shapes="图片_x0020_40"></span><span lang="EN-US"><o:p></o:p></span></p>
+
+<h1 style="margin-left:21.0pt;text-indent:-21.0pt;mso-list:l6 level1 lfo1"><span lang="EN-US">五、<span style="font-weight: normal; font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">相关操作</span><span lang="EN-US"><o:p></o:p></span></h2>
+
+<p class="MsoNormal"><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">详情请参与</span>
+<a href="http://pandas.pydata.org/pandas-docs/stable/basics.html#basics-binop"><span lang="EN-US">Basic Section On Binary Ops</span></a><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:42.0pt;text-indent:-21.0pt;
+mso-char-indent-count:0;mso-list:l7 level1 lfo3"><span lang="EN-US" style="font-family:Wingdings;mso-fareast-font-family:Wingdings;
+mso-bidi-font-family:Wingdings">l<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; </span></span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">统计（相关操作通常情况下不包括缺失值）</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:39.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l4 level1 lfo13"><span lang="EN-US">1、<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; </span></span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">执行描述性统计：</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:39.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="126" src="http://images.cnitblog.com/blog/407700/201412/091345257125592.jpg" v:shapes="图片_x0020_41"></span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:39.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l4 level1 lfo13"><span lang="EN-US">2、<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; </span></span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">在其他轴上进行相同的操作：</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:39.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="140" src="http://images.cnitblog.com/blog/407700/201412/091345260408791.jpg" v:shapes="图片_x0020_43"></span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:39.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l4 level1 lfo13"><span lang="EN-US">3、<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; </span></span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">对于拥有不同维度，需要对齐的对象进行操作。</span><span lang="EN-US">Pandas</span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">会自动的沿着指定的维度进行广播：</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:39.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="292" src="http://images.cnitblog.com/blog/407700/201412/091345264623963.jpg" v:shapes="图片_x0020_44"></span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:42.0pt;text-indent:-21.0pt;
+mso-char-indent-count:0;mso-list:l7 level1 lfo3"><span lang="EN-US" style="font-family:Wingdings;mso-fareast-font-family:Wingdings;
+mso-bidi-font-family:Wingdings">l<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; </span></span><span lang="EN-US">Apply<o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:60.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l18 level1 lfo14"><span lang="EN-US">1、<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; </span></span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">对数据应用函数：</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:60.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="254" src="http://images.cnitblog.com/blog/407700/201412/091345269314120.jpg" v:shapes="图片_x0020_45"></span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:42.0pt;text-indent:-21.0pt;
+mso-char-indent-count:0;mso-list:l7 level1 lfo3"><span lang="EN-US" style="font-family:Wingdings;mso-fareast-font-family:Wingdings;
+mso-bidi-font-family:Wingdings">l<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; </span></span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">直方图</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:42.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">具体请参照：</span><a href="http://pandas.pydata.org/pandas-docs/stable/basics.html#basics-discretization"><em><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#005B81;background:white;text-decoration:none;text-underline:none">Histogramming
+and Discretization</span></em></a><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:42.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="317" src="http://images.cnitblog.com/blog/407700/201412/091345271968104.jpg" v:shapes="图片_x0020_46"></span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:42.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:42.0pt;text-indent:-21.0pt;
+mso-char-indent-count:0;mso-list:l7 level1 lfo3"><span lang="EN-US" style="font-family:Wingdings;mso-fareast-font-family:Wingdings;
+mso-bidi-font-family:Wingdings">l<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; </span></span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">字符串方法</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:42.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US">Series</span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">对象在其</span><span lang="EN-US">str</span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">属性中配备了一组字符串处理方法，可以很容易的应用到数组中的每个元素，如下段代码所示。更多详情请参考：</span><a href="http://pandas.pydata.org/pandas-docs/stable/text.html#text-string-methods"><em><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#E32E00;background:white">Vectorized String Methods</span></em></a><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#3E4349;background:white">.<o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:42.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="202" src="http://images.cnitblog.com/blog/407700/201412/091345275717290.jpg" v:shapes="图片_x0020_47"></span><span lang="EN-US"><o:p></o:p></span></p>
+
+<h1 style="margin-left:21.0pt;text-indent:-21.0pt;mso-list:l6 level1 lfo1"><span lang="EN-US">六、<span style="font-weight: normal; font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">合并</span><span lang="EN-US"><o:p></o:p></span></h2>
+
+<p class="MsoNormal"><span lang="EN-US">Pandas</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">提供了大量的方法能够轻松的对</span><span lang="EN-US">Series</span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">，</span><span lang="EN-US">DataFrame</span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">和</span><span lang="EN-US">Panel</span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">对象进行各种符合各种逻辑关系的合并操作。具体请参阅：</span><a href="http://pandas.pydata.org/pandas-docs/stable/merging.html#merging"><em><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#005B81;background:white;text-decoration:none;text-underline:none">Merging
+section</span></em></a><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:21.0pt;text-indent:-21.0pt;
+mso-char-indent-count:0;mso-list:l11 level1 lfo10"><span lang="EN-US" style="font-family:Wingdings;mso-fareast-font-family:Wingdings;
+mso-bidi-font-family:Wingdings">l<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; </span></span><span lang="EN-US">Concat<o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:21.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="430" src="http://images.cnitblog.com/blog/407700/201412/091345281348419.jpg" v:shapes="图片_x0020_48"></span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:21.0pt;text-indent:-21.0pt;
+mso-char-indent-count:0;mso-list:l11 level1 lfo10"><span lang="EN-US" style="font-family:Wingdings;mso-fareast-font-family:Wingdings;
+mso-bidi-font-family:Wingdings">l<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; </span></span><span lang="EN-US">Join </span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">类似于</span><span lang="EN-US">SQL</span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">类型的合并，具体请参阅：</span><a href="http://pandas.pydata.org/pandas-docs/stable/merging.html#merging-join"><em><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#005B81;background:white;text-decoration:none;text-underline:none">Database
+style joining</span></em></a><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:21.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="318" src="http://images.cnitblog.com/blog/407700/201412/091345286033875.jpg" v:shapes="图片_x0020_49"></span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:21.0pt;text-indent:-21.0pt;
+mso-char-indent-count:0;mso-list:l11 level1 lfo10"><span lang="EN-US" style="font-family:Wingdings;mso-fareast-font-family:Wingdings;
+mso-bidi-font-family:Wingdings">l<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; </span></span><span lang="EN-US">Append </span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">将一行连接到一个</span><span lang="EN-US">DataFrame</span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">上，具体请参阅</span><a href="http://pandas.pydata.org/pandas-docs/stable/merging.html#merging-concatenation"><em><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#005B81;background:white;text-decoration:none;text-underline:none">Appending</span></em></a><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">：</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:21.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="381" src="http://images.cnitblog.com/blog/407700/201412/091345291818232.jpg" v:shapes="图片_x0020_50"></span><span lang="EN-US"><o:p></o:p></span></p>
+
+<h1 style="margin-left:21.0pt;text-indent:-21.0pt;mso-list:l6 level1 lfo1"><span lang="EN-US">七、<span style="font-weight: normal; font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">分组</span><span lang="EN-US"><o:p></o:p></span></h2>
+
+<p class="MsoNormal"><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">对于</span><span lang="EN-US">”group by”</span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">操作，我们通常是指以下一个或多个操作步骤：</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:21.0pt;text-indent:-21.0pt;
+mso-char-indent-count:0;mso-list:l11 level1 lfo10"><span lang="EN-US" style="font-family:Wingdings;mso-fareast-font-family:Wingdings;
+mso-bidi-font-family:Wingdings">l<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; </span></span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">（</span><span lang="EN-US">Splitting</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">）按照一些规则将数据分为不同的组；</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:21.0pt;text-indent:-21.0pt;
+mso-char-indent-count:0;mso-list:l11 level1 lfo10"><span lang="EN-US" style="font-family:Wingdings;mso-fareast-font-family:Wingdings;
+mso-bidi-font-family:Wingdings">l<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; </span></span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">（</span><span lang="EN-US">Applying</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">）对于每组数据分别执行一个函数；</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:21.0pt;text-indent:-21.0pt;
+mso-char-indent-count:0;mso-list:l11 level1 lfo10"><span lang="EN-US" style="font-family:Wingdings;mso-fareast-font-family:Wingdings;
+mso-bidi-font-family:Wingdings">l<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; </span></span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">（</span><span lang="EN-US">Combining</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">）将结果组合到一个数据结构中；</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">详情请参阅：</span><a href="http://pandas.pydata.org/pandas-docs/stable/groupby.html#groupby"><em><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#005B81;background:white;text-decoration:none;text-underline:none">Grouping
+section</span></em></a><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoNormal"><span lang="EN-US"><img border="0" width="554" height="268" src="http://images.cnitblog.com/blog/407700/201412/091345297909645.jpg" v:shapes="图片_x0020_51"></span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l14 level1 lfo15"><span lang="EN-US">1、<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; </span></span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">分组并对每个分组执行</span><span lang="EN-US">sum</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">函数：</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="553" height="103" src="http://images.cnitblog.com/blog/407700/201412/091345300717859.jpg" v:shapes="图片_x0020_52"></span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l14 level1 lfo15"><span lang="EN-US">2、<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; </span></span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">通过多个列进行分组形成一个层次索引，然后执行函数：</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="151" src="http://images.cnitblog.com/blog/407700/201412/091345304788801.jpg" v:shapes="图片_x0020_53"></span><span lang="EN-US"><o:p></o:p></span></p>
+
+<h1 style="margin-left:21.0pt;text-indent:-21.0pt;mso-list:l6 level1 lfo1"><span lang="EN-US">八、<span style="font-weight: normal; font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang="EN-US">Reshaping<o:p></o:p></span></h2>
+
+<p class="MsoNormal"><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">详情请参阅</span>
+<a href="http://pandas.pydata.org/pandas-docs/stable/advanced.html#advanced-hierarchical"><em><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#005B81;background:white;text-decoration:none;text-underline:none">Hierarchical
+Indexing</span></em></a><span class="apple-converted-space"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#3E4349;background:white">&nbsp;</span></span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">和</span><span class="apple-converted-space"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#3E4349;background:white">&nbsp;</span></span><a href="http://pandas.pydata.org/pandas-docs/stable/reshaping.html#reshaping-stacking"><em><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:
+&quot;Arial&quot;,&quot;sans-serif&quot;;color:#005B81;background:white;text-decoration:none;
+text-underline:none">Reshaping</span></em></a><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">。</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:21.0pt;text-indent:-21.0pt;
+mso-char-indent-count:0;mso-list:l5 level1 lfo11"><span lang="EN-US" style="font-family:Wingdings;mso-fareast-font-family:Wingdings;
+mso-bidi-font-family:Wingdings">l<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; </span></span><span lang="EN-US">Stack<o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:21.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="279" src="http://images.cnitblog.com/blog/407700/201412/091345309003973.jpg" v:shapes="图片_x0020_54"></span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:21.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="204" src="http://images.cnitblog.com/blog/407700/201412/091345313069616.jpg" v:shapes="图片_x0020_55"></span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:21.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="357" src="http://images.cnitblog.com/blog/407700/201412/091345316502344.jpg" v:shapes="图片_x0020_56"></span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:21.0pt;text-indent:-21.0pt;
+mso-char-indent-count:0;mso-list:l5 level1 lfo11"><span lang="EN-US" style="font-family:Wingdings;mso-fareast-font-family:Wingdings;
+mso-bidi-font-family:Wingdings">l<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; </span></span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">数据透视表，详情请参阅：</span><a href="http://pandas.pydata.org/pandas-docs/stable/reshaping.html#reshaping-pivot"><em><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#005B81;background:white;text-decoration:none;text-underline:none">Pivot
+Tables</span></em></a><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#3E4349;
+background:white">.</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:21.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="304" src="http://images.cnitblog.com/blog/407700/201412/091345321038272.jpg" v:shapes="图片_x0020_57"></span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:21.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">可以从这个数据中轻松的生成数据透视表：</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:21.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="190" src="http://images.cnitblog.com/blog/407700/201412/091345324628929.jpg" v:shapes="图片_x0020_58"></span><span lang="EN-US"><o:p></o:p></span></p>
+
+<h1 style="margin-left:21.0pt;text-indent:-21.0pt;mso-list:l6 level1 lfo1"><span lang="EN-US">九、<span style="font-weight: normal; font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">时间序列</span><span lang="EN-US"><o:p></o:p></span></h2>
+
+<p class="MsoNormal"><span lang="EN-US">Pandas</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">在对频率转换进行重新采样时拥有简单、强大且高效的功能（如将按秒采样的数据转换为按</span><span lang="EN-US">5</span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">分钟为单位进行采样的数据）。这种操作在金融领域非常常见。具体参考：</span><a href="http://pandas.pydata.org/pandas-docs/stable/timeseries.html#timeseries"><em><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#005B81;background:white;text-decoration:none;text-underline:none">Time
+Series section</span></em></a><span style="font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin">。</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoNormal"><span lang="EN-US"><img border="0" width="554" height="126" src="http://images.cnitblog.com/blog/407700/201412/091345327591373.jpg" v:shapes="图片_x0020_59"></span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l0 level1 lfo16"><span lang="EN-US">1、<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; </span></span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">时区表示：</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="319" src="http://images.cnitblog.com/blog/407700/201412/091345330874572.jpg" v:shapes="图片_x0020_61"></span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l0 level1 lfo16"><span lang="EN-US">2、<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; </span></span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">时区转换：</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="125" src="http://images.cnitblog.com/blog/407700/201412/091345334623758.jpg" v:shapes="图片_x0020_62"></span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l0 level1 lfo16"><span lang="EN-US">3、<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; </span></span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">时间跨度转换：</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="433" src="http://images.cnitblog.com/blog/407700/201412/091345336817458.jpg" v:shapes="图片_x0020_60"></span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l0 level1 lfo16"><span lang="EN-US">4、<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; </span></span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">时期和时间戳之间的转换使得可以使用一些方便的算术函数。</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="201" src="http://images.cnitblog.com/blog/407700/201412/091345339625672.jpg" v:shapes="图片_x0020_63"></span><span lang="EN-US"><o:p></o:p></span></p>
+
+<h1 style="margin-left:21.0pt;text-indent:-21.0pt;mso-list:l6 level1 lfo1"><span lang="EN-US">十、<span style="font-weight: normal; font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang="EN-US">Categorical<o:p></o:p></span></h2>
+
+<p class="MsoNormal"><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">从</span><span lang="EN-US">0.15</span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">版本开始，</span><span lang="EN-US">pandas</span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">可以在</span><span lang="EN-US">DataFrame</span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">中支持</span><span lang="EN-US">Categorical</span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">类型的数据，详细</span>
+<span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">介绍参看：</span><a href="http://pandas.pydata.org/pandas-docs/stable/categorical.html#categorical"><em><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#005B81;background:white;text-decoration:none;text-underline:none">categorical
+introduction</span></em></a><span style="font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin">和</span><a href="http://pandas.pydata.org/pandas-docs/stable/api.html#api-categorical"><em><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#005B81;background:white;text-decoration:none;text-underline:none">API
+documentation</span></em></a><span style="font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin">。</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoNormal"><span lang="EN-US"><img border="0" width="554" height="51" src="http://images.cnitblog.com/blog/407700/201412/091345345093572.jpg" v:shapes="图片_x0020_64"></span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l17 level1 lfo17"><span lang="EN-US">1、<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; </span></span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">将原始的</span><span lang="EN-US">grade</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">转换为</span><span lang="EN-US">Categorical</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">数据类型：</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="177" src="http://images.cnitblog.com/blog/407700/201412/091345350718998.jpg" v:shapes="图片_x0020_65"></span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l17 level1 lfo17"><span lang="EN-US">2、<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; </span></span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">将</span><span lang="EN-US">Categorical</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">类型数据重命名为更有意义的名称：</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="37" src="http://images.cnitblog.com/blog/407700/201412/091345356033669.jpg" v:shapes="图片_x0020_66"></span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l17 level1 lfo17"><span lang="EN-US">3、<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; </span></span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">对类别进行重新排序，增加缺失的类别：</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="191" src="http://images.cnitblog.com/blog/407700/201412/091345360565299.jpg" v:shapes="图片_x0020_67"></span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l17 level1 lfo17"><span lang="EN-US">4、<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; </span></span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">排序是按照</span><span lang="EN-US">Categorical</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">的顺序进行的而不是按照字典顺序进行：</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="140" src="http://images.cnitblog.com/blog/407700/201412/091345365567213.jpg" v:shapes="图片_x0020_68"></span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l17 level1 lfo17"><span lang="EN-US">5、<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; </span></span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">对</span><span lang="EN-US">Categorical</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">列进行排序时存在空的类别：</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="140" src="http://images.cnitblog.com/blog/407700/201412/091345370871884.jpg" v:shapes="图片_x0020_69"></span><span lang="EN-US"><o:p></o:p></span></p>
+
+<h1 style="margin-left:21.0pt;text-indent:-21.0pt;mso-list:l6 level1 lfo1"><span lang="EN-US">十一、<span style="font-weight: normal; font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">画图</span><span lang="EN-US"><o:p></o:p></span></h2>
+
+<p class="MsoNormal"><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">具体文档参看：</span><a href="http://pandas.pydata.org/pandas-docs/stable/visualization.html#visualization"><em><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#005B81;background:white;text-decoration:none;text-underline:none">Plotting</span></em></a><span class="apple-converted-space"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#3E4349;background:white">&nbsp;</span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#3E4349;background:white">docs</span><o:p></o:p></p>
+
+<p class="MsoNormal"><span lang="EN-US"><img border="0" width="554" height="439" src="http://images.cnitblog.com/blog/407700/201412/091345377285053.jpg" v:shapes="图片_x0020_70"></span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">对于</span><span lang="EN-US">DataFrame</span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">来说，</span><span lang="EN-US">plot</span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">是一种将所有列及其标签进行绘制的简便方法：</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoNormal"><span lang="EN-US"><img border="0" width="554" height="461" src="http://images.cnitblog.com/blog/407700/201412/091345384624897.jpg" v:shapes="图片_x0020_72"></span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoNormal"><span lang="EN-US"><img border="0" width="554" height="458" src="http://images.cnitblog.com/blog/407700/201412/091345395406467.jpg" v:shapes="图片_x0020_71"></span><span lang="EN-US"><o:p></o:p></span></p>
+
+<h1 style="margin-left:21.0pt;text-indent:-21.0pt;mso-list:l6 level1 lfo1"><span lang="EN-US">十二、<span style="font-weight: normal; font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">导入和保存数据</span><span lang="EN-US"><o:p></o:p></span></h2>
+
+<p class="MsoListParagraph" style="margin-left:21.0pt;text-indent:-21.0pt;
+mso-char-indent-count:0;mso-list:l3 level1 lfo12"><span lang="EN-US" style="font-family:Wingdings;mso-fareast-font-family:Wingdings;
+mso-bidi-font-family:Wingdings">l<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; </span></span><span lang="EN-US">CSV</span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">，参考：</span><a href="http://pandas.pydata.org/pandas-docs/stable/io.html#io-store-in-csv"><em><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#005B81;background:white;text-decoration:none;text-underline:none">Writing
+to a csv file</span></em></a><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:39.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l9 level1 lfo18"><span lang="EN-US">1、<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; </span></span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">写入</span><span lang="EN-US">csv</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">文件：</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:39.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="37" src="http://images.cnitblog.com/blog/407700/201412/091345399933395.jpg" v:shapes="图片_x0020_73"></span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:39.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l9 level1 lfo18"><span lang="EN-US">2、<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; </span></span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">从</span><span lang="EN-US">csv</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">文件中读取：</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:39.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="280" src="http://images.cnitblog.com/blog/407700/201412/091345404469323.jpg" v:shapes="图片_x0020_74"></span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:21.0pt;text-indent:-21.0pt;
+mso-char-indent-count:0;mso-list:l3 level1 lfo12"><span lang="EN-US" style="font-family:Wingdings;mso-fareast-font-family:Wingdings;
+mso-bidi-font-family:Wingdings">l<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; </span></span><span lang="EN-US">HDF5</span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">，参考：</span><a href="http://pandas.pydata.org/pandas-docs/stable/io.html#io-hdf5"><em><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#005B81;background:white;text-decoration:none;text-underline:none">HDFStores</span></em></a><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:39.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l13 level1 lfo19"><span lang="EN-US">1、<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; </span></span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">写入</span><span lang="EN-US">HDF5</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">存储：</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:39.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="37" src="http://images.cnitblog.com/blog/407700/201412/091345410091453.jpg" v:shapes="图片_x0020_75"></span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:39.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l13 level1 lfo19"><span lang="EN-US">2、<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; </span></span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">从</span><span lang="EN-US">HDF5</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">存储中读取：</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:39.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="280" src="http://images.cnitblog.com/blog/407700/201412/091345412433680.jpg" v:shapes="图片_x0020_76"></span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:21.0pt;text-indent:-21.0pt;
+mso-char-indent-count:0;mso-list:l3 level1 lfo12"><span lang="EN-US" style="font-family:Wingdings;mso-fareast-font-family:Wingdings;
+mso-bidi-font-family:Wingdings">l<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; </span></span><span lang="EN-US">Excel</span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">，参考：</span><a href="http://pandas.pydata.org/pandas-docs/stable/io.html#io-excel"><em><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;
+color:#005B81;background:white;text-decoration:none;text-underline:none">MS
+Excel</span></em></a><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:39.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l15 level1 lfo20"><span lang="EN-US">1、<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; </span></span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">写入</span><span lang="EN-US">excel</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">文件：</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:39.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="37" src="http://images.cnitblog.com/blog/407700/201412/091345417757350.jpg" v:shapes="图片_x0020_77"></span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:39.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l15 level1 lfo20"><span lang="EN-US">2、<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';">&nbsp; </span></span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">从</span><span lang="EN-US">excel</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">文件中读取：</span><span lang="EN-US"><o:p></o:p></span></p>
+
+<p class="MsoListParagraph" style="margin-left:39.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><img border="0" width="554" height="279" src="http://images.cnitblog.com/blog/407700/201412/091345420407037.jpg" v:shapes="图片_x0020_78"></span><span lang="EN-US"><o:p></o:p></span></p></p>
+
+
+
+<br /><br /><div><a title="来自为知笔记(Wiz)" href="http://www.wiz.cn/i/4158d356">来自为知笔记(Wiz)</a></div><br /><br /></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info">
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"></div>
+</div>
+
+
+		</div>
+		<div class = "postDesc">posted @ <span id="post-date">2014-12-09 13:46</span> <a href='http://www.cnblogs.com/chaosimple/'>ChaoSimple</a> 阅读(<span id="post_view_count">...</span>) 评论(<span id="post_comment_count">...</span>)  <a href ="http://i.cnblogs.com/EditPosts.aspx?postid=4153083" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(4153083);return false;">收藏</a></div>
+	</div>
+	<script type="text/javascript">var allowComments=true,isLogined=true,cb_blogId=117243,cb_entryId=4153083,cb_blogApp=currentBlogApp,cb_blogUserGuid='6299c80f-929a-e111-aa3f-842b2b196315',cb_entryCreatedDate='2014/12/9 13:46:00';loadViewCount(cb_entryId);</script>
+	
+</div><!--end: topics 文章、评论容器-->
+</div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" id="lnk_RefreshComments" onclick="return RefreshCommentList();">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+<div id="comment_form_container"></div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="site_nav_under"><a href="http://www.cnblogs.com/" target="_blank" title="开发者的网上家园">博客园首页</a><a href="http://q.cnblogs.com/" target="_blank" title="程序员问答社区">博问</a><a href="http://news.cnblogs.com/" target="_blank" title="IT新闻">新闻</a><a href="http://home.cnblogs.com/ing/" target="_blank">闪存</a><a href="http://job.cnblogs.com/" target="_blank">程序员招聘</a><a href="http://kb.cnblogs.com/" target="_blank">知识库</a></div>
+<div id="opt_under_post"></div>
+<script type="text/javascript">
+    var enableGoogleAd = canShowAdsense(); 
+    fixPostBodyFormat();
+</script>
+<script type='text/javascript'>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+    (function () {
+        if (enableGoogleAd) {
+            var gads = document.createElement('script');
+            gads.async = true;
+            gads.type = 'text/javascript';
+            var useSSL = 'https:' == document.location.protocol;
+            gads.src = (useSSL ? 'https:' : 'http:') +
+              '//www.googletagservices.com/tag/js/gpt.js';
+            var node = document.getElementsByTagName('script')[0];
+            node.parentNode.insertBefore(gads, node);
+        }
+  })();
+</script>
+<script type='text/javascript'>
+    try {
+        if (enableGoogleAd) {
+            googletag.cmd.push(function() {
+            googletag.defineSlot('/1090369/cnblogs_blogpost_C2', [468, 60], 'div-gpt-ad-1433581717989-0').addService(googletag.pubads());
+            googletag.defineSlot('/1090369/cnblogs_blogpost_C1_sitehome', [300, 250], 'div-gpt-ad-1433581717989-1').addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.pubads().collapseEmptyDivs();
+            googletag.enableServices();
+            });
+        };
+    } catch (e) { }
+</script>
+<div id="google_ad_c1" class="c_ad_block">
+    <div id='div-gpt-ad-1433581717989-1' style='height:250px; width:300px;'>
+    <script type='text/javascript'>
+        try {
+            if (enableGoogleAd) {
+                googletag.cmd.push(function () { googletag.display('div-gpt-ad-1433581717989-1'); });
+            } else {
+                $('#div-gpt-ad-1433581717989-1').hide();
+            }
+    } catch (e) { }
+    </script>
+    </div>
+</div>
+<div id="under_post_news"></div>
+<div id="google_ad_c2" class="c_ad_block">
+<div id='div-gpt-ad-1433581717989-0' style='height:60px; width:468px;'>
+<script type='text/javascript'>
+try {
+    if (enableGoogleAd) {
+        googletag.cmd.push(function () { googletag.display('div-gpt-ad-1433581717989-0'); });
+    } else {
+        $('#div-gpt-ad-1433581717989-0').hide();
+    }
+} catch (e) { }
+</script>
+</div>
+</div>
+<div id="under_post_kb"></div>
+<div id="HistoryToday" class="c_ad_block"></div>
+<script type="text/javascript">
+$(function () {
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 200);
+});
+</script>
+</div>
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news"></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="calendar"><div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script></div>
+			
+			<DIV id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div><script type="text/javascript">loadBlogSideColumn();</script>
+			</DIV>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright &copy;2015 ChaoSimple
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+</body>
+</html>
