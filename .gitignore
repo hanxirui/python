@@ -1,1 +1,14 @@
-/Users/hanxirui/Documents/workspace/github/python/movie_recommendation/datasets
+
+**/*.pyc
+
+movie_recommendation/datasets/*
+
+movie_recommendation/datasets/*.*
+
+movie_recommendation/datasets/ml-latest-small.zip
+
+movie_recommendation/datasets/ml-latest-small/movies.csv
+
+movie_recommendation/datasets/ml-latest-small/movies.csv
+
+**/__pycache__/*.*
