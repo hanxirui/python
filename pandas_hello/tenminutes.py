@@ -217,10 +217,19 @@ print(s)
 s = pd.Series(['A','B','C','Aaba','Bas',np.nan,'CABA','dog','cat'])
 s.str.lower()
 
-# 六、            合并
+# 六、 合并
 # Pandas提供了大量的方法能够轻松的对Series，DataFrame和Panel对象进行各种符合各种逻辑关系的合并操作。具体请参阅：Merging section
 
-# l  Concat
+# Concat
+df = pd.DataFrame(np.random.randn(10,4))
+print(df)
+
+pieces = [df[:3],df[3:7],df[7:]]
+pd.concat(pieces)
+print(pd)
+
+# Join 类似于SQL类型的合并，具体请参阅：Database style joining
+left = pd.DataFrame({'key':['foo','foo']})
 
 
 

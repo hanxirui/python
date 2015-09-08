@@ -5,10 +5,6 @@ movie_recommendation/datasets/*
 
 movie_recommendation/datasets/*.*
 
-movie_recommendation/datasets/ml-latest-small.zip
+**/__pycache__/**/*.*.*
 
-movie_recommendation/datasets/ml-latest-small/movies.csv
-
-movie_recommendation/datasets/ml-latest-small/movies.csv
-
-**/__pycache__/*.*
+*.pyc
