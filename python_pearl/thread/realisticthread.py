@@ -1,11 +1,17 @@
+#/usr/bin/env python3
+#-*- coding:utf-8 -*-
+
 '''
+一个还实用点儿的线程池例子
 A more realistic thread pool example
 '''
 
 import time
 import threading
-import Queue
-import urllib2
+# import Queue
+import queue
+# import urllib2
+from urllib.request import urlopen
 
 class Consumer(threading.Thread):
 	def __init__(self,queue):
@@ -17,27 +23,27 @@ class Consumer(threading.Thread):
 			content = self._queue.get()
 			if isinstance(content,str) and content == 'quit':
 				break
-			print content
-			response = urllib2.urlopen(content)
-		print "Bye bye!"
+			print (content)
+			response = urlopen(content)
+		print ("Bye bye!")
 
 def Producer():
 	urls = ['http://www.python.org','http://www.yahoo.com',
 			'http://www.scala.org','http://www.oracle.com']
-	queue = Queue.Queue()
-	worker_threads = build_worker_pool(queue,4)
+	myqueue = queue.Queue()
+	worker_threads = build_worker_pool(myqueue,4)
 	start_time = time.time()
 
 	for url in urls:
-		queue.put(url)
+		myqueue.put(url)
 
 	for worker in worker_threads:
-		queue.put('quit')
+		myqueue.put('quit')
 
 	for worker in worker_threads:
 		worker.join()
 
-	print 'Done! Time taken:{}'.format(time.time()-start_time)
+	print ('Done! Time taken:{}'.format(time.time()-start_time))
 
 def build_worker_pool(queue,size):
 	workers = []
