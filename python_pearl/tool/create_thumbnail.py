@@ -1,5 +1,11 @@
 from multiprocessing import Pool 
 from PIL import Image
+import os
+
+'''生成缩略图，使用的是Pillow，这个支持Python3，原生的PIL目前不支持python3
+pip install Pillow
+https://github.com/python-pillow/Pillow
+http://pillow.readthedocs.org/handbook/tutorial.html'''
 
 SIZE = (75,75)
 SAVE_DIRECTORY = 'thumbs'
@@ -7,7 +13,7 @@ SAVE_DIRECTORY = 'thumbs'
 def get_image_paths(folder):
   return (os.path.join(folder, f) 
       for f in os.listdir(folder) 
-      if 'jpeg' in f)
+      if 'jpg' in f)
 
 def create_thumbnail(filename): 
   im = Image.open(filename)
@@ -18,12 +24,12 @@ def create_thumbnail(filename):
 
 if __name__ == '__main__':
   folder = os.path.abspath(
-    '11_18_2013_R000_IQM_Big_Sur_Mon__e10d1958e7b766c3e840')
+    '/Users/hanxirui/Documents/workspace/github/python/stone/jpg')
   os.mkdir(os.path.join(folder, SAVE_DIRECTORY))
 
   images = get_image_paths(folder)
 
   pool = Pool()
-    pool.map(create_thumbnail, images)
-    pool.close() 
-    pool.join()
+  pool.map(create_thumbnail, images)
+  pool.close() 
+  pool.join()
