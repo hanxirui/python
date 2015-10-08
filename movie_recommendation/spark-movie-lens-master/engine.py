@@ -1,10 +1,19 @@
+# A recommendation engine
+# At the very core of our movie recommendation web service resides a recommendation engine (i.e. engine.py in our final 
+# 	deployment). It is represented by the class RecommendationEngine and this section will describe step by step how its 
+# functionality and implementation.
+# Starting the engine
+# When the engine is initialised, we need to geenrate the ALS model for the first time. Optionally (we won't do it here) we 
+# might be loading a previously persisted model in order to use it for recommendations. Moreover, we might need to load or 
+# precompute any RDDs that will be used later on to make recommendations.
+# We will do things of that kind in the __init__ method of our RecommendationEngine class (making use of two private methods). 
+# n this case, we won't save any time. We will repeat the whole process every time the engine is creates.
 import os
 from pyspark.mllib.recommendation import ALS
-
+ 
 import logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
-
 
 def get_counts_and_averages(ID_and_ratings_tuple):
     """Given a tuple (movieID, ratings_iterable) 
@@ -13,11 +22,24 @@ def get_counts_and_averages(ID_and_ratings_tuple):
     nratings = len(ID_and_ratings_tuple[1])
     return ID_and_ratings_tuple[0], (nratings, float(sum(x for x in ID_and_ratings_tuple[1]))/nratings)
 
+def debug_print(tokens):
+    try:
+        return (int(tokens[0]),int(tokens[1]),float(tokens[2]))
+        # return lambda tokens: (int(tokens[0]),int(tokens[1]),float(tokens[2]))
+    except IndexError as e:
+        print('IndexError:', e)
+        return (29592,42732,3.5)
+        print(tokens)
+    except EOFError as e:
+        print('EOFError:', e)
+        print(tokens)
+    # finally:
+
 
 class RecommendationEngine:
     """A movie recommendation engine
     """
-
+ 
     def __count_and_average_ratings(self):
         """Updates the movies ratings counts from 
         the current data self.ratings_RDD
@@ -26,8 +48,8 @@ class RecommendationEngine:
         movie_ID_with_ratings_RDD = self.ratings_RDD.map(lambda x: (x[1], x[2])).groupByKey()
         movie_ID_with_avg_ratings_RDD = movie_ID_with_ratings_RDD.map(get_counts_and_averages)
         self.movies_rating_counts_RDD = movie_ID_with_avg_ratings_RDD.map(lambda x: (x[0], x[1][0]))
-
-
+ 
+ 
     def __train_model(self):
         """Train the ALS model with the current dataset
         """
@@ -35,8 +57,12 @@ class RecommendationEngine:
         self.model = ALS.train(self.ratings_RDD, self.rank, seed=self.seed,
                                iterations=self.iterations, lambda_=self.regularization_parameter)
         logger.info("ALS model built!")
-
-
+ 
+ 
+    # Making recommendations
+    # We also explained how to make recommendations with our ALS model in the tutorial about building the movie recommender. 
+    # Here, we will basically repeat equivalent code, wrapped inside a method of our RecommendationEnginer class, and making use 
+    # of a private method that will be used for every predicting method.
     def __predict_ratings(self, user_and_movie_RDD):
         """Gets predictions for a given (userID, movieID) formatted RDD
         Returns: an RDD with format (movieTitle, movieRating, numRatings)
@@ -47,9 +73,12 @@ class RecommendationEngine:
             predicted_rating_RDD.join(self.movies_titles_RDD).join(self.movies_rating_counts_RDD)
         predicted_rating_title_and_count_RDD = \
             predicted_rating_title_and_count_RDD.map(lambda r: (r[1][0][1], r[1][0][0], r[1][1]))
-        
+
         return predicted_rating_title_and_count_RDD
-    
+
+    # Adding new ratings
+    # When using Collaborative Filtering and Spark's Alternating Least Squares, we need to recompute the prediction model for 
+    # every new batch of user ratings. This was explained in our previous tutorial on building the model.
     def add_ratings(self, ratings):
         """Add additional movie ratings in the format (user_id, movie_id, rating)
         """
@@ -61,9 +90,10 @@ class RecommendationEngine:
         self.__count_and_average_ratings()
         # Re-train the ALS model with the new ratings
         self.__train_model()
-        
-        return ratings
 
+        return ratings
+    # Apart form getting the top unrated movies, we will also want to get ratings to particular movies. We will do so with a 
+    # new mothod in our RecommendationEngine.
     def get_ratings_for_movie_ids(self, user_id, movie_ids):
         """Given a user_id and a list of movie_ids, predict ratings for them 
         """
@@ -72,7 +102,8 @@ class RecommendationEngine:
         ratings = self.__predict_ratings(requested_movies_RDD).collect()
 
         return ratings
-    
+
+        
     def get_top_ratings(self, user_id, movies_count):
         """Recommends up to movies_count top unrated movies to user_id
         """
@@ -83,21 +114,22 @@ class RecommendationEngine:
 
         return ratings
 
+
     def __init__(self, sc, dataset_path):
         """Init the recommendation engine given a Spark context and a dataset path
         """
-
+ 
         logger.info("Starting up the Recommendation Engine: ")
-
+ 
         self.sc = sc
-
+ 
         # Load ratings data for later use
         logger.info("Loading Ratings data...")
         ratings_file_path = os.path.join(dataset_path, 'ratings.csv')
+        print(ratings_file_path)
         ratings_raw_RDD = self.sc.textFile(ratings_file_path)
         ratings_raw_data_header = ratings_raw_RDD.take(1)[0]
-        self.ratings_RDD = ratings_raw_RDD.filter(lambda line: line!=ratings_raw_data_header)\
-            .map(lambda line: line.split(",")).map(lambda tokens: (int(tokens[0]),int(tokens[1]),float(tokens[2]))).cache()
+        self.ratings_RDD = ratings_raw_RDD.filter(lambda line: line!=ratings_raw_data_header).map(lambda line: line.split(",")).map(debug_print).cache()
         # Load movies data for later use
         logger.info("Loading Movies data...")
         movies_file_path = os.path.join(dataset_path, 'movies.csv')
@@ -108,10 +140,40 @@ class RecommendationEngine:
         self.movies_titles_RDD = self.movies_RDD.map(lambda x: (int(x[0]),x[1])).cache()
         # Pre-calculate movies ratings counts
         self.__count_and_average_ratings()
-
+ 
         # Train the model
         self.rank = 8
-        self.seed = 5L
+        # self.seed = 5L
+        self.seed = 5
         self.iterations = 10
         self.regularization_parameter = 0.1
         self.__train_model() 
+# Attach the functions to class methods
+#RecommendationEngine.__predict_ratings = __predict_ratings
+#RecommendationEngine.get_top_ratings = get_top_ratings
+# Attach the function to a class method
+#RecommendationEngine.add_ratings = add_ratings
+
+# Attach the function to a class method
+#RecommendationEngine.get_ratings_for_movie_ids = get_ratings_for_movie_ids
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# 

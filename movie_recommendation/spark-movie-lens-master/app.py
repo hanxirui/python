@@ -1,3 +1,10 @@
+
+# Building a web API around our engine using Flask
+# Flask is a web microframework for Python. It is very easy to start up a web API, by just importing in 
+# in our script and using some annotations to associate our service end-points with Python functions. 
+# In our case we will wrap our RecommendationEngine methods around some of these end-points and interchange JSON formatted data 
+# with the web client.
+# In fact is so simple that we will show the whole app.py here, instead of going piece by piece.
 from flask import Blueprint
 main = Blueprint('main', __name__)
  
@@ -38,9 +45,58 @@ def add_ratings(user_id):
  
 def create_app(spark_context, dataset_path):
     global recommendation_engine 
-
+ 
     recommendation_engine = RecommendationEngine(spark_context, dataset_path)    
     
     app = Flask(__name__)
     app.register_blueprint(main)
-    return app 
+    return app
+
+# Basically we use the app as follows:
+# We init the thing when calling create_app. Here the RecommendationEngine object is created and then 
+# we associate the @main.route annotations defined above. Each annotation is defined by (see Flask docs):
+# A route, that is its URL and may contain parameters between <>. They are mapped to the function arguments.
+# A list of HTTP available methods.
+# There are three of these annotations defined, that correspond with the three RecommendationEngine methods:
+# GET /<user_id>/ratings/top get top recommendations from the engine.
+# GET /<user_id>/ratings get predicted rating for a individual movie.
+# POST /<user_id>/ratings add new ratings. The format is a series of lines (ending with the newline separator) 
+# with movie_id and rating separated by commas. For example, the following file corresponds to the ten new user ratings 
+# used as a example in the tutorial about building the model:
+# `260,9
+# 1,8
+# 16,7
+# 25,8
+# 32,9
+# 335,4
+# 379,3
+# 296,7
+# 858,10
+# 50,8`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

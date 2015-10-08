@@ -1,4 +1,5 @@
 #/usr/bin/env python3
+'''spark解析数据分布式讲解过程'''
 #-*- coding:utf-8 -*-
 complete_dataset_url = 'http://files.grouplens.org/datasets/movielens/ml-latest.zip'
 small_dataset_url = 'http://files.grouplens.org/datasets/movielens/ml-latest-small.zip'

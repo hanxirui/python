@@ -1,0 +1,1 @@
+/Users/hanxirui/Documents/workspace/library/spark-1.4.1-bin-hadoop2.6/bin/spark-submit --total-executor-cores 8 --executor-memory 6g  /Users/hanxirui/Documents/workspace/github/python/movie_recommendation/newmovierecom/server.py
