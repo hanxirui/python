@@ -1,0 +1,1739 @@
+<!doctype html>
+<head lang="en-US" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+ 
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<link href="//www.google-analytics.com" rel="dns-prefetch">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/>
+<link rel="pingback" href="http://www.analyticsvidhya.com/xmlrpc.php">
+<link rel='icon' id='favicon' type='image/png' href='http://www.analyticsvidhya.com/wp-content/uploads/2015/02/logo_square_v2.jpg'><link rel='apple-touch-icon' href='http://www.analyticsvidhya.com/wp-content/uploads/2015/02/logo_square_v2.jpg'><link rel='apple-touch-icon' sizes='76x76' href='http://www.analyticsvidhya.com/wp-content/uploads/2015/02/logo_square_v2.jpg'><link rel='apple-touch-icon' sizes='114x114' href='http://www.analyticsvidhya.com/wp-content/uploads/2015/02/logo_square_v2.jpg'><link rel='apple-touch-icon' sizes='144x144' href='http://www.analyticsvidhya.com/wp-content/uploads/2015/02/logo_square_v2.jpg'>
+<title>Essentials of Machine Learning Algorithms (with Python and R Codes)</title>
+<!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+<script type="text/javascript">
+					var bhittani_plugin_kksr_js = {"nonce":"5517deb3c6","grs":false,"ajaxurl":"http:\/\/www.analyticsvidhya.com\/wp-admin\/admin-ajax.php","func":"kksr_ajax","msg":"Rate this post","fuelspeed":400,"thankyou":"Thank you for your vote","error_msg":"An error occurred","tooltip":"1","tooltips":[{"tip":"","color":"#ffffff"},{"tip":"","color":"#ffffff"},{"tip":"","color":"#ffffff"},{"tip":"","color":"#ffffff"},{"tip":"","color":"#ffffff"}]};
+				</script>
+ 
+<meta name="description" content="this article displays the list of machine learning algorithms such as linear, logistic regression, kmeans, decision trees along with Python R code"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="Essentials of Machine Learning Algorithms (with Python and R Codes)"/>
+<meta property="og:description" content="this article displays the list of machine learning algorithms such as linear, logistic regression, kmeans, decision trees along with Python R code"/>
+<meta property="og:url" content="http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/"/>
+<meta property="og:image" content="http://www.analyticsvidhya.com/wp-content/uploads/2015/08/Newl-Machine-Learning-Algorithms.jpg"/>
+<meta property="article:published_time" content="2015-08-10"/>
+<meta property="article:modified_time" content="2015-09-24"/>
+<meta property="article:author" content="http://www.analyticsvidhya.com/blog/author/sunil-ray/"/>
+<meta property="article:tag" content="Business Analytics"/>
+<meta property="article:tag" content="Python"/>
+<meta property="article:tag" content="R"/>
+<meta property="article:tag" content="C4.5"/>
+<meta property="article:tag" content="cart"/>
+<meta property="article:tag" content="decision tree"/>
+<meta property="article:tag" content="GBM"/>
+<meta property="article:tag" content="K-Means"/>
+<meta property="article:tag" content="KNN"/>
+<meta property="article:tag" content="Linear-regression"/>
+<meta property="article:tag" content="logistic regression"/>
+<meta property="article:tag" content="machine learning"/>
+<meta property="article:tag" content="Naive Bayes"/>
+<meta property="article:tag" content="Neural network"/>
+<meta property="article:tag" content="random forest"/>
+<meta property="article:tag" content="Reinforcement"/>
+<meta property="article:tag" content="Supervised Learning"/>
+<meta property="article:tag" content="Unsupervised"/>
+<meta property="og:site_name" content="Analytics Vidhya"/>
+<meta name="twitter:card" content="summary"/>
+ 
+<link rel="alternate" type="application/rss+xml" title="Analytics Vidhya &raquo; Feed" href="http://www.analyticsvidhya.com/feed/"/>
+<link rel="alternate" type="application/rss+xml" title="Analytics Vidhya &raquo; Comments Feed" href="http://www.analyticsvidhya.com/comments/feed/"/>
+<link rel="alternate" type="application/rss+xml" title="Analytics Vidhya &raquo; Essentials of Machine Learning Algorithms (with Python and R Codes) Comments Feed" href="http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/feed/"/>
+<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"http:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"http:\/\/www.analyticsvidhya.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.3.1"}};
+			!function(a,b,c){function d(a){var c=b.createElement("canvas"),d=c.getContext&&c.getContext("2d");return d&&d.fillText?(d.textBaseline="top",d.font="600 32px Arial","flag"===a?(d.fillText(String.fromCharCode(55356,56812,55356,56807),0,0),c.toDataURL().length>3e3):(d.fillText(String.fromCharCode(55357,56835),0,0),0!==d.getImageData(16,16,1,1).data[0])):!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g;c.supports={simple:d("simple"),flag:d("flag")},c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.simple&&c.supports.flag||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+<style type="text/css">img.wp-smiley,img.emoji{display:inline!important;border:none!important;box-shadow:none!important;height:1em!important;width:1em!important;margin:0 .07em!important;vertical-align:-0.1em!important;background:none!important;padding:0!important;}</style>
+<link rel='stylesheet' id='cptch_stylesheet-css' href='http://www.analyticsvidhya.com/wp-content/plugins/captcha/css/style.css?ver=4.3.1' type='text/css' media='all'/>
+<link rel='stylesheet' id='cntctfrm_form_style-css' href='http://www.analyticsvidhya.com/wp-content/plugins/contact-form-plugin/css/form_style.css?ver=4.3.1' type='text/css' media='all'/>
+<link rel='stylesheet' id='dgd-scrollbox-plugin-core-css' href='http://www.analyticsvidhya.com/wp-content/plugins/dreamgrow-scroll-triggered-box/css/style.css?ver=2.2.0' type='text/css' media='all'/>
+<link rel='stylesheet' id='bhittani_plugin_kksr-css' href='http://www.analyticsvidhya.com/wp-content/plugins/kk-star-ratings/css.css?ver=2.4' type='text/css' media='all'/>
+<link rel='stylesheet' id='social-widget-css' href='http://www.analyticsvidhya.com/wp-content/plugins/social-media-widget/social_widget.css?ver=4.3.1' type='text/css' media='all'/>
+<link rel='stylesheet' id='wsl-widget-css' href='http://www.analyticsvidhya.com/wp-content/plugins/wordpress-social-login/assets/css/style.css?ver=4.3.1' type='text/css' media='all'/>
+<link rel='stylesheet' id='maha-bootstrap-css' href='http://www.analyticsvidhya.com/wp-content/themes/Curated/static/css/bootstrap-responsive.css?ver=1.0' type='text/css' media='all'/>
+<link rel='stylesheet' id='maha-entypo-css' href='http://www.analyticsvidhya.com/wp-content/themes/Curated/static/css/entypo.css?ver=1.0' type='text/css' media='all'/>
+<link rel='stylesheet' id='maha-basix-css' href='http://www.analyticsvidhya.com/wp-content/themes/Curated/static/css/basix.css?ver=1.0' type='text/css' media='all'/>
+<link rel='stylesheet' id='maha-basix-r-css' href='http://www.analyticsvidhya.com/wp-content/themes/Curated/static/css/basix-responsive.css?ver=1.0' type='text/css' media='all'/>
+<link rel='stylesheet' id='maha_heading_font-css' href='//fonts.googleapis.com/css?family=Oswald%3A300%2C400%2C700&#038;subsets=latin%2Clatin&#038;ver=4.3.1' type='text/css' media='all'/>
+<link rel='stylesheet' id='maha_main_font-css' href='//fonts.googleapis.com/css?family=Oswald%3A300%2C400%2C700&#038;subsets=latin%2Clatin&#038;ver=4.3.1' type='text/css' media='all'/>
+<link rel='stylesheet' id='maha_content_font-css' href='//fonts.googleapis.com/css?family=Lato%3A100%2C300%2C400%2C700%2C900%2C100italic%2C300italic%2C400italic%2C700italic%2C900italic&#038;subsets=latin%2Clatin&#038;ver=4.3.1' type='text/css' media='all'/>
+<link rel='stylesheet' id='stbCoreCSS-css' href='http://www.analyticsvidhya.com/wp-content/plugins/wp-special-textboxes/css/stb-core.css?ver=5.4.98' type='text/css' media='all'/>
+<link rel='stylesheet' id='stbCSS-css' href='http://www.analyticsvidhya.com/wp-content/plugins/wp-special-textboxes/css/wp-special-textboxes.css.php?ver=5.4.98' type='text/css' media='all'/>
+<link rel='stylesheet' id='genericons-css' href='http://www.analyticsvidhya.com/wp-content/plugins/jetpack/_inc/genericons/genericons/genericons.css?ver=3.1' type='text/css' media='all'/>
+<link rel='stylesheet' id='jetpack_css-css' href='http://www.analyticsvidhya.com/wp-content/plugins/jetpack/css/jetpack.css?ver=3.6.1' type='text/css' media='all'/>
+<link rel='stylesheet' id='wpss-style-css' href='http://www.analyticsvidhya.com/wp-content/plugins/wordpress-simple-survey/assets/build/css/wpss-pkg.min.css?ver=4.3.1' type='text/css' media='all'/>
+<link rel='stylesheet' id='wpss-custom-db-style-css' href='http://www.analyticsvidhya.com/?wpss-routing=custom-css&#038;ver=4.3.1' type='text/css' media='all'/>
+<link rel='stylesheet' id='simplr-forms-style-css' href='http://www.analyticsvidhya.com/wp-content/plugins/simplr-registration-form/assets/skins/default.css?ver=4.3.1' type='text/css' media='all'/>
+<script type='text/javascript' src='http://www.analyticsvidhya.com/wp-includes/js/jquery/jquery.js?ver=1.11.3'></script>
+<script type='text/javascript' src='http://www.analyticsvidhya.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1' defer='defer'></script>
+<script type='text/javascript' src='http://www.analyticsvidhya.com/wp-content/plugins/q2w3-fixed-widget/js/q2w3-fixed-widget.min.js?ver=4.0.6' defer='defer'></script>
+<script type='text/javascript' src='http://www.analyticsvidhya.com/wp-content/plugins/jetpack/modules/related-posts/related-posts.js?ver=20150408' defer='defer'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var $DGD = {"ajaxurl":"http:\/\/www.analyticsvidhya.com\/wp-admin\/admin-ajax.php","nonce":"f4eccb4dc9","debug":"","permalink":"http:\/\/www.analyticsvidhya.com\/blog\/2015\/08\/common-machine-learning-algorithms\/","title":"Essentials of Machine Learning Algorithms (with Python and R Codes)","thumbnail":"http:\/\/www.analyticsvidhya.com\/wp-content\/uploads\/2015\/08\/Newl-Machine-Learning-Algorithms.jpg","scripthost":"http:\/\/www.analyticsvidhya.com\/wp-content\/plugins\/dreamgrow-scroll-triggered-box\/","scrollboxes":[{"trigger":{"action":"scroll","scroll":"30","delaytime":"0","element":""},"vpos":"center","hpos":"center","cookieLifetime":"7","hide_mobile":"1","receiver_email":"0","thankyou":"","submit_auto_close":"0.1","hide_submitted":"1","delay_auto_close":"60","theme":"","widget_enabled":"1","height":"350","width":"600","jsCss":{"padding":"10","margin":"10","backgroundColor":"#ffffff","boxShadow":"1px","borderColor":"#000000","borderWidth":"2px","borderRadius":"1px","backgroundImageUrl":""},"closeImageUrl":"http:\/\/www.analyticsvidhya.com\/wp-content\/uploads\/2015\/06\/cross.png","transition":{"from":"b","effect":"none","speed":"400"},"social":{"facebook":"","twitter":"","google":"","pinterest":"","stumbleupon":"","linkedin":""},"id":"dgd_scrollbox-16979","mode":"stb","voff":0,"hoff":0}]};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.analyticsvidhya.com/wp-content/plugins/dreamgrow-scroll-triggered-box/js/script.js?ver=2.2.0' defer='defer'></script>
+<script type='text/javascript' src='http://www.analyticsvidhya.com/wp-content/plugins/kk-star-ratings/js.min.js?ver=2.4' defer='defer'></script>
+<script type='text/javascript' src='http://www.analyticsvidhya.com/wp-content/plugins/useful-banner-manager/scripts.js?ver=4.3.1' defer='defer'></script>
+<script type='text/javascript' src='http://www.analyticsvidhya.com/wp-content/plugins/wordpress-simple-survey/assets/build/js/wpss-pkg.min.js?ver=3.0.0' defer='defer'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.analyticsvidhya.com/xmlrpc.php?rsd"/>
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.analyticsvidhya.com/wp-includes/wlwmanifest.xml"/>
+<link rel='prev' title='Marketing Analytics: Essentials of Cross-Selling and Upselling (with a case study)' href='http://www.analyticsvidhya.com/blog/2015/08/learn-cross-selling-upselling/'/>
+<link rel='next' title='Beginners Guide to learn about Content Based Recommender Engines' href='http://www.analyticsvidhya.com/blog/2015/08/beginners-guide-learn-content-based-recommender-systems/'/>
+<meta name="generator" content="WordPress 4.3.1"/>
+<link rel='canonical' href='http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/'/>
+<link rel='shortlink' href='http://wp.me/p3Zl4g-4SK'/>
+<style>.kk-star-ratings{width:120px;}.kk-star-ratings .kksr-stars a{width:24px;}.kk-star-ratings .kksr-stars,.kk-star-ratings .kksr-stars .kksr-fuel,.kk-star-ratings .kksr-stars a{height:24px;}.kk-star-ratings .kksr-star.gray{background-image:url(http://www.analyticsvidhya.com/blog/wp-content/plugins/kk-star-ratings/gray.png);}.kk-star-ratings .kksr-star.yellow{background-image:url(http://www.analyticsvidhya.com/blog/wp-content/plugins/kk-star-ratings/yellow.png);}.kk-star-ratings .kksr-star.orange{background-image:url(http://www.analyticsvidhya.com/blog/wp-content/plugins/kk-star-ratings/orange.png);}</style> <script type="text/javascript">/* <![CDATA[ */ jQuery.post("http://www.analyticsvidhya.com/wp-admin/admin-ajax.php", { action: "wmp_update", id: 18770, token: "7b1a286cc5" }); /* ]]> */</script>   
+<meta property="og:url" content="http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/"/>
+<meta property="og:title" content="Essentials of Machine Learning Algorithms (with Python and R Codes)"/>
+<meta property="og:description" content="Introduction  Google's self-driving cars and robots get a lot of press, but the company's real future is in machine learning, the technology that enables computers to get smarter and more personal.  - Eric Schmidt (Google Chairman)  We are probably living in the most defining period of human history. The period when computing moved"/>
+<meta property="og:image" content="http://www.analyticsvidhya.com/wp-content/uploads/2015/08/Newl-Machine-Learning-Algorithms-200x200.jpg"/>
+ 
+<style type="text/css">.pagethumb{height:141px;}#wpstats{display:none;}.trainingthumb{width:10%;}.training{padding-left:95px!important;}.admininfo{display:none;}.featurtr{height:25px;}#listcategorypostswidget-2 ul li a,#listcategorypostswidget-3 ul li a{font-size:16px;line-height:1.4em;letter-spacing:0.1px;font-family:"Oswald",Arial,sans-serif;color:#333;}#latestdiscoursepostswidget-3 ul li a,#latestdiscoursepostswidget-2 ul li a{font-size:16px;line-height:1.4em;letter-spacing:0.1px;font-family:"Oswald",Arial,sans-serif;color:#333;}.widget_menus ul li{width:53%;}.cntctfrm_label,.cntctfrm_input,.cntctfrm_select,.cntctfrm_checkbox{max-width:100%;margin:5px;}.cntctfrm_contact_submit{-moz-border-bottom-colors:none;-moz-border-left-colors:none;-moz-border-right-colors:none;-moz-border-top-colors:none;background:none repeat scroll 0 0 #151515;border-bottom:0 none!important;border-image:none;border-left:medium none;border-radius:3px;border-right:medium none;border-top:medium none;color:#fff;display:inline-block;font-family:"Oswald",Arial,sans-serif;font-size:13px;letter-spacing:0.4px;opacity:0.8;padding:9px 20px;text-transform:uppercase;transition:all 0.3s linear 0s;}#body-maha{background-color:#fff;background-image:url("/wp-content/uploads/2015/02/wild-sea24.jpg");background-repeat:repeat;background-position:center center;}.page-id-12650 #body-maha #body-background #off-canvas-body .page-wrapper .page-default #cur-page .post-box-oblog.animated.fadeInUp{padding-left:0px;}.sidebar .block-cap h3{margin-bottom:10px;}#text-8 .textwidget{height:260px!important;}.pagetitle-divider{border-bottom:4px solid #333333;display:block;margin:15px 0 16px;}#resultip{margin-left:0px;}.text-content a{color:#F60;}.submit a{background:none repeat scroll 0 0 #D34821;border:medium none;border-radius:3px;color:#fff;font-family:"Oswald",Arial,sans-serif;font-size:15px;letter-spacing:.3px;padding:10px 15px;text-transform:uppercase;}.submit{background:none repeat scroll 0 0 #D34821;border:medium none;border-radius:3px;color:#fff;font-family:"Oswald",Arial,sans-serif;font-size:15px;letter-spacing:.3px;padding:10px 15px;text-transform:uppercase;width:18%;float:right;}.jobsform{border-top:0!important;border-bottom:0!important;}.jobsform tr{padding:5px 20px;border-top:0!important;border-bottom:0!important;}.jobsform .jobstext{margin:0;height:35px;width:60%;padding:2px 5px;}.jobsform .submit{width:100%;}.star{color:#E00202;}.textwidget{height:auto!important;}.popup-bg-1{clear:both;background-color:#E32626;height:10px;margin:-10px;}.h5-popup{font-size:28px;margin-top:20px!important;}.h6-popup{font-size:19px;color:#02396F;}.p-popup{color:#02396F;font-size:16px;}.popup-email{background-color:#fff;width:50%;border:1px solid #ccc;font-size:16px;line-height:24px;padding:10px 6px;overflow:hidden;outline:none;margin:0 0 15px;vertical-align:middle;height:46px;}.popup-subscribe{background-color:#be1616;background-image:none;width:35%!important;height:41px!important;cursor:pointer;float:right!important;color:#FFF!important;font-size:18px;margin-right:62px;margin-top:-65px;}.popup-ul{color:#02396F;font-weight:bold;}.popup-ul li{list-style:none;background:url("http://www.analyticsvidhya.com/wp-content/plugins/dreamgrow-scroll-triggered-box/themes/clean_white/bullet.png") 0 6px no-repeat;padding:0 0 0 25px;line-height:17px;}</style> <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-40101183-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-40101183-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body class="single single-post postid-18770 single-format-standard chrome mh-body">
+<div id="body-maha" class="body-maha">
+<nav id="mobile-bar-sticky" role="navigation" class="mobile-bar bar-sticky">
+<div id="close-mobile-bar"><i class="icon-cancel"></i></div>
+<div id="search-mobile-bar"><form action="http://www.analyticsvidhya.com/" class="searchform" method="get">
+<button class="search-button"><i class="icon-search"></i></button>
+<input type="text" name="s" value="Search" onfocus="if(this.value=='Search')this.value='';" onblur="if(this.value=='')this.value='Search';" autocomplete="off"/>
+</form></div>
+<ul id="menu-main-menu" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home mh-navcat-0"><span></span><a href="http://www.analyticsvidhya.com/">Home</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children mh-navcat-0"><span></span><a href="http://www.analyticsvidhya.com/blog/">Blog</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children mh-navcat-5"><span></span><a href="http://www.analyticsvidhya.com/blog/category/business-analytics/">Business Analytics</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category mh-navcat-11"><span></span><a href="http://www.analyticsvidhya.com/blog/category/sas/">SAS</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent mh-navcat-72"><span></span><a href="http://www.analyticsvidhya.com/blog/category/r/">R</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent mh-navcat-396"><span></span><a href="http://www.analyticsvidhya.com/blog/category/python-2/">Python</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children mh-navcat-8"><span></span><a href="http://www.analyticsvidhya.com/blog/category/business-intelligence/">Business Intelligence</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category mh-navcat-9"><span></span><a href="http://www.analyticsvidhya.com/blog/category/qlikview/">Qlikview</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category mh-navcat-25"><span></span><a href="http://www.analyticsvidhya.com/blog/category/web-analytics-2/">Web Analytics</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category mh-navcat-29"><span></span><a href="http://www.analyticsvidhya.com/blog/category/big-data/">Big data</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category mh-navcat-1915"><span></span><a href="http://www.analyticsvidhya.com/blog/category/events/">Events</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children mh-navcat-170"><span></span><a href="http://www.analyticsvidhya.com/jobs/">Jobs</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page mh-navcat-0"><span></span><a href="http://www.analyticsvidhya.com/trainings/">Trainings</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom mh-navcat-0"><span></span><a href="http://discuss.analyticsvidhya.com">Discuss</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children mh-navcat-0"><span></span><a href="http://www.analyticsvidhya.com/about-me/">About</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page mh-navcat-0"><span></span><a href="http://www.analyticsvidhya.com/about-me/team/">Our team</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page mh-navcat-0"><span></span><a href="http://www.analyticsvidhya.com/about-me/write/">Write for us</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page mh-navcat-0"><span></span><a href="http://www.analyticsvidhya.com/analytics-vidhya-apprentice-programme/">AV Apprentice</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page mh-navcat-0"><span></span><a href="http://www.analyticsvidhya.com/learn-analytics-place/">Article index</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page mh-navcat-0"><span></span><a href="http://www.analyticsvidhya.com/contact/">Contact</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page mh-navcat-0"><span></span><a href="http://www.analyticsvidhya.com/testimonials-year-anniversary/">Testimonials</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children mh-navcat-0"><span></span><a href="http://www.analyticsvidhya.com/learning-paths-data-science-business-analytics-business-intelligence-big-data/">Learning Paths</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page mh-navcat-0"><span></span><a href="http://www.analyticsvidhya.com/learning-paths-data-science-business-analytics-business-intelligence-big-data/learning-path-business-analyst-sas/">SAS Business Analyst</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page mh-navcat-0"><span></span><a href="http://www.analyticsvidhya.com/learning-paths-data-science-business-analytics-business-intelligence-big-data/learning-path-r-data-science/">LeaRn Data Science on R</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page mh-navcat-0"><span></span><a href="http://www.analyticsvidhya.com/learning-paths-data-science-business-analytics-business-intelligence-big-data/learning-path-data-science-python/">Data Science in Python</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page mh-navcat-0"><span></span><a href="http://www.analyticsvidhya.com/learning-path-learn-machine-learning/">Machine Learning</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page mh-navcat-0"><span></span><a href="http://www.analyticsvidhya.com/learning-paths-data-science-business-analytics-business-intelligence-big-data/qlikview-learning-path/">Data Visualization with QlikView</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page mh-navcat-0"><span></span><a href="http://www.analyticsvidhya.com/learning-paths-data-science-business-analytics-business-intelligence-big-data/weka-gui-learn-machine-learning/">DATA SCIENCE IN WEKA</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom mh-navcat-0"><span></span><a href="http://datahack.analyticsvidhya.com">DataHack</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category mh-navcat-1915"><span></span><a href="http://www.analyticsvidhya.com/blog/category/events/">Events</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category mh-navcat-2284"><span></span><a href="http://www.analyticsvidhya.com/blog/category/infographics/">Infographics</a></li>
+</ul> </nav>
+ 
+<div id='body-background'>
+ 
+<div id="off-canvas-body" class="off-canvas-body animati-on">
+ 
+<div id="top-bar-sticky" class="bar-sticky">
+<div class="top-bar">
+ 
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<div id="top-right-nav" class="ul-nav">
+<ul>
+<li><a target="_blank" href="https://www.facebook.com/AnalyticsVidhya"><i class="icon-facebook"></i></a></li><li><a target="_blank" href="https://twitter.com/analyticsvidhya"><i class="icon-twitter"></i></a></li><li><a target="_blank" href="https://plus.google.com/+Analyticsvidhya/posts"><i class="icon-gplus"></i></a></li><li><a target="_blank" href="https://www.linkedin.com/groups/Analytics-Vidhya-Learn-everything-about-5057165"><i class="icon-linkedin"></i></a></li> </ul>
+</div>
+<nav id="top-nav-wrapper" class="ul-nav">
+<ul id="menu-top" class="menu"><li id="menu-item-12951" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12951 mh-navcat-0"><span></span><a href="http://www.analyticsvidhya.com/">Home</a></li>
+<li id="menu-item-12992" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12992 mh-navcat-0"><span></span><a href="http://www.analyticsvidhya.com/blog/">Blog</a></li>
+<li id="menu-item-12658" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12658 mh-navcat-170"><span></span><a href="http://www.analyticsvidhya.com/jobs/">Jobs</a></li>
+<li id="menu-item-12643" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12643 mh-navcat-0"><span></span><a href="http://www.analyticsvidhya.com/trainings/">Trainings</a></li>
+<li id="menu-item-12644" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12644 mh-navcat-0"><span></span><a href="http://www.analyticsvidhya.com/learning-paths-data-science-business-analytics-business-intelligence-big-data/">Learning Paths</a></li>
+<li id="menu-item-12952" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12952 mh-navcat-0"><span></span><a href="http://discuss.analyticsvidhya.com">Discuss</a></li>
+<li id="menu-item-20125" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20125 mh-navcat-0"><span></span><a href="http://datahack.analyticsvidhya.com">DataHack</a></li>
+</ul> </nav>
+<nav id="top-mobile-wrapper" class="ul-nav">
+<ul><li><a><i class="icon-menu"></i></a></li></ul>
+</nav>
+</div>
+</div>
+</div>
+ 
+</div>
+</div>
+ 
+ 
+<div class="main-logo-ads-wrap">
+<div class="main-logo-ads">
+ 
+<div class="container">
+<div class="row ">
+<div class="col-sm-12">
+ 
+<div id="thelogo" class="logo ">
+<a href="http://www.analyticsvidhya.com">
+<img alt="Analytics Vidhya - Learn everything about Analytics" src="http://www.analyticsvidhya.com/wp-content/uploads/2014/12/analytics-logo-300x70.jpg" data-retina="http://www.analyticsvidhya.com/wp-content/uploads/2014/12/analytics-logo-300x70.jpg" data-first="http://www.analyticsvidhya.com/wp-content/uploads/2014/12/analytics-logo-300x70.jpg"/>
+</a>
+</div>
+<h2 class='site-outline'>Learn everything about Analytics</h2>
+ 
+<div id="main-ads" class="">
+<div class="vp-1170 vp-fluid"> 
+ 
+ 
+<a href="http://discuss.analyticsvidhya.com" target="_blank"><img src="http://www.analyticsvidhya.com/wp-content/uploads/2015/05/discussions-banner.jpg"></a>
+ 
+ 
+</div>
+<div class="vp-970 vp-750"> 
+<a href="http://discuss.analyticsvidhya.com" target="_blank"><img src="http://www.analyticsvidhya.com/wp-content/uploads/2015/05/discussions-banner.jpg"></a>
+ 
+ 
+</div>
+<div class="vp-320"> 
+<a href="http://discuss.analyticsvidhya.com" target="_blank"><img src="http://www.analyticsvidhya.com/wp-content/uploads/2015/05/discussions-banner.jpg"></a>
+ 
+ 
+</div>
+</div>
+</div>
+</div>
+</div>
+ 
+</div>
+</div>
+ 
+ 
+ 
+<div id="main-nav-bar" class="main-nav-bar clearfix ">
+<div id="main-search" class=" clearfix">
+<div id="con-search">
+<div class="container">
+<div class="cols-sm12">
+<form action="http://www.analyticsvidhya.com/" id="main-search-form">
+ 
+<span class="close-search-form"><i class="icon-cancel"></i></span>
+<span class="loading-search-result"><img src="http://www.analyticsvidhya.com/wp-content/themes/Curated/images/loading.gif" alt=""></span>
+<input type="text" class="search-field" autocomplete="off" name="s" placeholder="Type here... and hit enter"/>
+<div class="search-result">
+<div class="container search-result-content">
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+<div class='maha-notification container'><div id="main-notif"></div></div>
+<div class="container clearfix">
+</div>
+ 
+<div class="container clearfix">
+<div class="row clearfix">
+<div class="col-sm-12 clearfix">
+ 
+ 
+ 
+<div id="search-nav" class="search-nav clearfix">
+<span class="open-search-form"><i class="icon-search"></i></span>
+</div>
+ 
+ 
+<nav id="main-nav-wrapper" class="main-ul-nav clearfix">
+<div id="thelogosmall" class="logo">
+<a href="http://www.analyticsvidhya.com">
+<img alt="Analytics Vidhya - Learn everything about Analytics" src="http://www.analyticsvidhya.com/wp-content/uploads/2015/02/analytics-logo-214x501.jpg" data-retina="http://www.analyticsvidhya.com/wp-content/uploads/2015/02/analytics-logo-214x501.jpg" data-first="http://www.analyticsvidhya.com/wp-content/uploads/2015/02/analytics-logo-214x501.jpg"/>
+</a>
+</div>
+<ul id="menu-main-menu-1" class="menu"><li id="menu-item-1463" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home mh-navcat-0"><a href="http://www.analyticsvidhya.com/">Home</a><div class="nav-sub-wrap container"><div class="nsw row"></div></div>
+</li>
+<li id="menu-item-12993" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children mh-navcat-0"><a href="http://www.analyticsvidhya.com/blog/">Blog</a><div class="nav-sub-wrap container"><div class="nsw row">
+<div class="nav-sub-menus"><ul>
+<li id="menu-item-2475" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children mh-navcat-5"><a href="http://www.analyticsvidhya.com/blog/category/business-analytics/">Business Analytics</a>
+<div class="nav-sub-menus"><ul>
+<li id="menu-item-2478" class="menu-item menu-item-type-taxonomy menu-item-object-category mh-navcat-11"><a href="http://www.analyticsvidhya.com/blog/category/sas/">SAS</a></li>
+<li id="menu-item-7476" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent mh-navcat-72"><a href="http://www.analyticsvidhya.com/blog/category/r/">R</a></li>
+<li id="menu-item-7713" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent mh-navcat-396"><a href="http://www.analyticsvidhya.com/blog/category/python-2/">Python</a></li>
+</ul></div>
+</li>
+<li id="menu-item-2476" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children mh-navcat-8"><a href="http://www.analyticsvidhya.com/blog/category/business-intelligence/">Business Intelligence</a>
+<div class="nav-sub-menus"><ul>
+<li id="menu-item-2477" class="menu-item menu-item-type-taxonomy menu-item-object-category mh-navcat-9"><a href="http://www.analyticsvidhya.com/blog/category/qlikview/">Qlikview</a></li>
+<li id="menu-item-2479" class="menu-item menu-item-type-taxonomy menu-item-object-category mh-navcat-25"><a href="http://www.analyticsvidhya.com/blog/category/web-analytics-2/">Web Analytics</a></li>
+</ul></div>
+</li>
+<li id="menu-item-2474" class="menu-item menu-item-type-taxonomy menu-item-object-category mh-navcat-29"><a href="http://www.analyticsvidhya.com/blog/category/big-data/">Big data</a></li>
+<li id="menu-item-13172" class="menu-item menu-item-type-taxonomy menu-item-object-category mh-navcat-1915"><a href="http://www.analyticsvidhya.com/blog/category/events/">Events</a></li>
+</ul></div>
+</div></div>
+</li>
+<li id="menu-item-12994" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children mh-navcat-170"><a href="http://www.analyticsvidhya.com/jobs/">Jobs</a><div class="nav-sub-wrap container"><div class="nsw row">
+<div class="nav-sub-menus"><ul>
+<li id="menu-item-7328" class="menu-item menu-item-type-post_type menu-item-object-page mh-navcat-0"><a href="http://www.analyticsvidhya.com/trainings/">Trainings</a><div class="nav-sub-wrap container"><div class="nsw row"></div></div>
+</li>
+</ul></div>
+</div></div>
+</li>
+<li id="menu-item-11881" class="menu-item menu-item-type-custom menu-item-object-custom mh-navcat-0"><a href="http://discuss.analyticsvidhya.com">Discuss</a><div class="nav-sub-wrap container"><div class="nsw row"></div></div>
+</li>
+<li id="menu-item-8641" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children mh-navcat-0"><a href="http://www.analyticsvidhya.com/about-me/">About</a><div class="nav-sub-wrap container"><div class="nsw row">
+<div class="nav-sub-menus"><ul>
+<li id="menu-item-1561" class="menu-item menu-item-type-post_type menu-item-object-page mh-navcat-0"><a href="http://www.analyticsvidhya.com/about-me/team/">Our team</a><div class="nav-sub-wrap container"><div class="nsw row"></div></div>
+</li>
+<li id="menu-item-3817" class="menu-item menu-item-type-post_type menu-item-object-page mh-navcat-0"><a href="http://www.analyticsvidhya.com/about-me/write/">Write for us</a><div class="nav-sub-wrap container"><div class="nsw row"></div></div>
+</li>
+<li id="menu-item-4067" class="menu-item menu-item-type-post_type menu-item-object-page mh-navcat-0"><a href="http://www.analyticsvidhya.com/analytics-vidhya-apprentice-programme/">AV Apprentice</a><div class="nav-sub-wrap container"><div class="nsw row"></div></div>
+</li>
+<li id="menu-item-8292" class="menu-item menu-item-type-post_type menu-item-object-page mh-navcat-0"><a href="http://www.analyticsvidhya.com/learn-analytics-place/">Article index</a><div class="nav-sub-wrap container"><div class="nsw row"></div></div>
+</li>
+<li id="menu-item-12704" class="menu-item menu-item-type-post_type menu-item-object-page mh-navcat-0"><a href="http://www.analyticsvidhya.com/contact/">Contact</a><div class="nav-sub-wrap container"><div class="nsw row"></div></div>
+</li>
+<li id="menu-item-15647" class="menu-item menu-item-type-post_type menu-item-object-page mh-navcat-0"><a href="http://www.analyticsvidhya.com/testimonials-year-anniversary/">Testimonials</a><div class="nav-sub-wrap container"><div class="nsw row"></div></div>
+</li>
+</ul></div>
+</div></div>
+</li>
+<li id="menu-item-12170" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children mh-navcat-0"><a href="http://www.analyticsvidhya.com/learning-paths-data-science-business-analytics-business-intelligence-big-data/">Learning Paths</a><div class="nav-sub-wrap container"><div class="nsw row">
+<div class="nav-sub-menus"><ul>
+<li id="menu-item-12503" class="menu-item menu-item-type-post_type menu-item-object-page mh-navcat-0"><a href="http://www.analyticsvidhya.com/learning-paths-data-science-business-analytics-business-intelligence-big-data/learning-path-business-analyst-sas/">SAS Business Analyst</a><div class="nav-sub-wrap container"><div class="nsw row"></div></div>
+</li>
+<li id="menu-item-14416" class="menu-item menu-item-type-post_type menu-item-object-page mh-navcat-0"><a href="http://www.analyticsvidhya.com/learning-paths-data-science-business-analytics-business-intelligence-big-data/learning-path-r-data-science/">LeaRn Data Science on R</a><div class="nav-sub-wrap container"><div class="nsw row"></div></div>
+</li>
+<li id="menu-item-12171" class="menu-item menu-item-type-post_type menu-item-object-page mh-navcat-0"><a href="http://www.analyticsvidhya.com/learning-paths-data-science-business-analytics-business-intelligence-big-data/learning-path-data-science-python/">Data Science in Python</a><div class="nav-sub-wrap container"><div class="nsw row"></div></div>
+</li>
+<li id="menu-item-18055" class="menu-item menu-item-type-post_type menu-item-object-page mh-navcat-0"><a href="http://www.analyticsvidhya.com/learning-path-learn-machine-learning/">Machine Learning</a><div class="nav-sub-wrap container"><div class="nsw row"></div></div>
+</li>
+<li id="menu-item-12320" class="menu-item menu-item-type-post_type menu-item-object-page mh-navcat-0"><a href="http://www.analyticsvidhya.com/learning-paths-data-science-business-analytics-business-intelligence-big-data/qlikview-learning-path/">Data Visualization with QlikView</a><div class="nav-sub-wrap container"><div class="nsw row"></div></div>
+</li>
+<li id="menu-item-13207" class="menu-item menu-item-type-post_type menu-item-object-page mh-navcat-0"><a href="http://www.analyticsvidhya.com/learning-paths-data-science-business-analytics-business-intelligence-big-data/weka-gui-learn-machine-learning/">DATA SCIENCE IN WEKA</a><div class="nav-sub-wrap container"><div class="nsw row"></div></div>
+</li>
+</ul></div>
+</div></div>
+</li>
+<li id="menu-item-20124" class="menu-item menu-item-type-custom menu-item-object-custom mh-navcat-0"><a href="http://datahack.analyticsvidhya.com">DataHack</a><div class="nav-sub-wrap container"><div class="nsw row"></div></div>
+</li>
+<li id="menu-item-13204" class="menu-item menu-item-type-taxonomy menu-item-object-category mh-navcat-1915"><a href="http://www.analyticsvidhya.com/blog/category/events/">Events</a></li>
+<li id="menu-item-18233" class="menu-item menu-item-type-taxonomy menu-item-object-category mh-navcat-2284"><a href="http://www.analyticsvidhya.com/blog/category/infographics/">Infographics</a></li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+ 
+</div>
+ 
+ 
+ 
+<div class="page-wrapper">
+ 
+<div class="cur-no">
+<div class="container">
+<div class="row">
+<div class="col-sm-12 myrun">
+<div class="cur-runtext" id="runtext">
+<div class="thumb-runtext">
+<a href="http://www.analyticsvidhya.com/blog/2015/10/cheatsheet-11-steps-data-exploration-with-codes/" rel="bookmark" title="Cheatsheet &#8211; 11 Steps for Data Exploration in R (with codes)">
+<img width="45" height="35" src="http://www.analyticsvidhya.com/wp-content/uploads/2015/10/capture-83x63.jpg" alt="Cheatsheet &#8211; 11 Steps for Data Exploration in R (with codes)" title="Cheatsheet &#8211; 11 Steps for Data Exploration in R (with codes)"/> Cheatsheet &#8211; 11 Steps for Data Exploration in R (with codes) </a>
+</div>
+<div class="thumb-runtext">
+<a href="http://www.analyticsvidhya.com/blog/2015/10/notes-impressions-experience-excitement-pycon-india-2015/" rel="bookmark" title="Notes, impressions, experience and excitement from PyCon India 2015, Bengaluru">
+<img width="45" height="35" src="http://www.analyticsvidhya.com/wp-content/uploads/2015/10/pycon-83x63.jpg" alt="Notes, impressions, experience and excitement from PyCon India 2015, Bengaluru" title="Notes, impressions, experience and excitement from PyCon India 2015, Bengaluru"/> Notes, impressions, experience and excitement from PyCon India 2015, Bengaluru </a>
+</div>
+<div class="thumb-runtext">
+<a href="http://www.analyticsvidhya.com/blog/2015/10/basics-logistic-regression/" rel="bookmark" title="Building a Logistic Regression model from scratch">
+<img width="45" height="35" src="http://www.analyticsvidhya.com/wp-content/uploads/2015/10/logistic-83x63.jpg" alt="Building a Logistic Regression model from scratch" title="Building a Logistic Regression model from scratch"/> Building a Logistic Regression model from scratch </a>
+</div>
+<div class="thumb-runtext">
+<a href="http://www.analyticsvidhya.com/blog/2015/10/guide-design-of-experiments-case-study/" rel="bookmark" title="Beginner&#8217;s guide to Design of Experiments (with case study on banner advertisement)">
+<img width="45" height="35" src="http://www.analyticsvidhya.com/wp-content/uploads/2015/09/design6-83x63.jpg" alt="Beginner&#8217;s guide to Design of Experiments (with case study on banner advertisement)" title="Beginner&#8217;s guide to Design of Experiments (with case study on banner advertisement)"/> Beginner&#8217;s guide to Design of Experiments (with case study on banner advertisement) </a>
+</div>
+<div class="thumb-runtext">
+<a href="http://www.analyticsvidhya.com/blog/2015/09/questions-ensemble-modeling/" rel="bookmark" title="5 Easy questions on Ensemble Modeling everyone should know">
+<img width="45" height="35" src="http://www.analyticsvidhya.com/wp-content/uploads/2015/09/5-question2-83x63.jpg" alt="5 Easy questions on Ensemble Modeling everyone should know" title="5 Easy questions on Ensemble Modeling everyone should know"/> 5 Easy questions on Ensemble Modeling everyone should know </a>
+</div>
+<div class="thumb-runtext">
+<a href="http://www.analyticsvidhya.com/blog/2015/09/damn-good-hiring-path-hired-data-scientist/" rel="bookmark" title="Damn Good Hiring Path to get yourself hired as a Data Scientist">
+<img width="45" height="35" src="http://www.analyticsvidhya.com/wp-content/uploads/2015/09/featured1-83x63.jpg" alt="Damn Good Hiring Path to get yourself hired as a Data Scientist" title="Damn Good Hiring Path to get yourself hired as a Data Scientist"/> Damn Good Hiring Path to get yourself hired as a Data Scientist </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mh-el page-sidebar single-regular">
+ 
+<div class="container">
+<div class="row">
+ 
+<div class="col-sm-8">
+<div class="main-content">
+ 
+<div class="maha-crumbs" prefix="v: http://rdf.data-vocabulary.org/#"><span typeof="v:Breadcrumb"><a href="http://www.analyticsvidhya.com/" rel="v:url" property="v:title">Home</a></span> <i class="icon-right-open-mini"></i> <span typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="http://www.analyticsvidhya.com/blog/category/business-analytics/">Business Analytics</a></span> <i class="icon-right-open-mini"></i> <span typeof="v:Breadcrumb"><a rel="v:url" property="v:title" href="http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/">Essentials of Machine Learning Algorithms (with Python and R Codes)</a></span></div> 
+<article id="post-2729" class="main-content single-post-box" itemscope="" itemtype="http://schema.org/Article">
+<header itemscope itemtype="http://schema.org/Blog">
+ 
+<meta itemprop="datecreated" content="2015-08-10T22:23:26+00:00">
+<meta itemprop="image" content="http://www.analyticsvidhya.com/wp-content/uploads/2015/08/Newl-Machine-Learning-Algorithms.jpg">
+<meta itemprop="about" content="">
+<h1 itemprop="name" class="entry-title">Essentials of Machine Learning Algorithms (with Python and R Codes)</h1>
+<div class="hidden" itemscope itemtype="http://schema.org/Thing">
+<span itemprop="name">Essentials of Machine Learning Algorithms (with Python and R Codes)</span>
+</div>
+<div class="meta-count">
+<span class="i-category"><a class="mh-elcat-5" href="http://www.analyticsvidhya.com/blog/category/business-analytics/" title="Business Analytics" rel="category">Business Analytics</a> <a class="mh-elcat-396" href="http://www.analyticsvidhya.com/blog/category/python-2/" title="Python" rel="category">Python</a> <a class="mh-elcat-72" href="http://www.analyticsvidhya.com/blog/category/r/" title="R" rel="category">R</a> </span>
+</div>
+<div class="title-divider"></div>
+<div class="meta-share">
+<span class="header-font">SHARE </span>
+<a class="social-facebook" href="http://www.facebook.com/sharer.php?u=http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/&amp;t=Essentials%20of%20Machine%20Learning%20Algorithms%20(with%20Python%20and%20R%20Codes)" title="Share on Facebook" target="_blank"><i class="icon-facebook"></i></a>
+<a class="social-twitter" href="https://twitter.com/home?status=Essentials%20of%20Machine%20Learning%20Algorithms%20(with%20Python%20and%20R%20Codes)+http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/" title="Share on Twitter" target="_blank"><i class="icon-twitter"></i></a>
+<a class="social-googleplus" href="https://plus.google.com/share?url=http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/" title="Share on Google+" target="_blank"><i class="icon-gplus"></i></a>
+<a class="social-pinterest" href="http://pinterest.com/pin/create/button/?url=http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/&amp;media=http://www.analyticsvidhya.com/wp-content/uploads/2015/08/Newl-Machine-Learning-Algorithms.jpg&amp;description=Essentials%20of%20Machine%20Learning%20Algorithms%20(with%20Python%20and%20R%20Codes)" title="Share on Pinterest" target="_blank"><i class="icon-pinterest"></i></a>
+</div>
+<div class="meta-info">
+<span class="ava-auth">
+<img width="14" height="14" class="entry-thumb" src="https://graph.facebook.com/926326180764547/picture?width=150&height=150" alt="" title="Sunil Ray"/>
+</span>
+<span itemprop="author" itemscope itemtype="http://schema.org/Person" class="entry-author">
+<a href="http://www.analyticsvidhya.com/blog/author/sunil-ray/">
+<span itemprop="name">Sunil Ray</span>
+</a>
+</span>,
+<time itemprop="datePublished" class="entry-date" content="2015-08-10" datetime="2015-08-10T22:23:26+00:00">
+August 10, 2015 </time>
+<span class="meta-info-divider">/</span>
+<span class="meta-info-comments"><i class="icon-comment"></i><a href="http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/#comments">22 </a></span>
+</div>
+</header>
+<div class="text-content">
+ 
+<div style="float:none;margin:10px 0 10px 0;text-align:center;">
+<a href="http://admissions.bridgesom.com/pba-new/general/index.aspx?utm_source=AnalyticsVidhya&utm_medium=Banner&utm_campaign=PBAAV" target="_blank" rel="nofollow"><img src="http://www.analyticsvidhya.com/wp-content/uploads/2015/10/bridge-728x90.jpg"></a>
+</div>
+<h2>Introduction</h2>
+<blockquote>
+<p style="text-align: justify;">Google&#8217;s self-driving cars and robots get a lot of press, but the company&#8217;s real future is in machine learning, the technology that enables computers to get smarter and more personal.</p>
+<p style="text-align: right;"> &#8211; Eric Schmidt (Google Chairman)</p>
+</blockquote>
+<p>We are probably living in the most defining period of human history. The period when computing moved from large mainframes to PCs to cloud. But what makes it defining is not what has happened, but what is coming our way in years to come.</p>
+<p style="text-align: justify;">What makes this period exciting for some one like me is the democratization of the tools and techniques, which followed the boost in computing. Today, as a data scientist, I can build data crunching machines with complex algorithms for a few dollors per hour. But, reaching here wasn&#8217;t easy! I had my dark days and nights.</p>
+<p>&nbsp;</p>
+<h2 style="text-align: justify;">Who can benefit the most from this guide?</h2>
+<h4 style="text-align: center;">What I am giving out today is probably the most valuable guide, I have ever created.</h4>
+<p style="text-align: justify;">The idea behind creating this guide is to simplify the journey of aspiring data scientists and machine learning enthusiasts across the world. Through this guide, I will enable you to work on machine learning problems and gain from experience. <strong>I am providing a high level understanding about various machine learning algorithms along with R &amp; Python codes to run them. These should be sufficient to get your hands dirty.</strong></p>
+<p><a href="http://www.analyticsvidhya.com/wp-content/uploads/2015/08/Newl-Machine-Learning-Algorithms.jpg"><img class=" size-full wp-image-18862 aligncenter" src="http://www.analyticsvidhya.com/wp-content/uploads/2015/08/Newl-Machine-Learning-Algorithms.jpg" alt="machine learning algorithms, supervised, unsupervised" width="495" height="338"/></a></p>
+<p>I have deliberately skipped the statistics behind these techniques, as you don&#8217;t need to understand them at the start. So, if you are looking for statistical understanding of these algorithms, you should look elsewhere. But, if you are looking to equip yourself to start building machine learning project, you are in for a treat.</p>
+<p>&nbsp;</p>
+<h2>Broadly, there are 3 types of Machine Learning Algorithms..</h2>
+<h3>1. Supervised Learning</h3>
+<p style="text-align: justify;"><span style="text-decoration: underline;"><strong>How it works:</strong></span> This algorithm consist of a target / outcome variable (or dependent variable) which is to be predicted from a given set of predictors (independent variables). Using these set of variables, we generate a function that map inputs to desired outputs. The training process continues until the model achieves a desired level of accuracy on the training data. Examples of Supervised Learning: Regression, <a href="http://www.analyticsvidhya.com/blog/2015/01/decision-tree-simplified/" target="_blank">Decision Tree</a>, <a href="http://www.analyticsvidhya.com/blog/2014/06/introduction-random-forest-simplified/" target="_blank">Random Forest</a>, KNN, Logistic Regression etc.</p>
+<p>&nbsp;</p>
+<h3 style="text-align: justify;">2. Unsupervised Learning</h3>
+<p style="text-align: justify;"><strong><span style="text-decoration: underline;">How it works:</span> </strong>In this algorithm, we do not have any target or outcome variable to predict / estimate.  It is used for clustering population in different groups, which is widely used for segmenting customers in different groups for specific intervention. Examples of Unsupervised Learning: Apriori algorithm, K-means.</p>
+<p>&nbsp;</p>
+<h3 style="text-align: justify;">3. Reinforcement Learning:</h3>
+<p style="text-align: justify;"><strong><span style="text-decoration: underline;">How it works:</span></strong>  Using this algorithm, the machine is trained to make specific decisions. It works this way: the machine is exposed to an environment where it trains itself continually using trial and error. This machine learns from past experience and tries to capture the best possible knowledge to make accurate business decisions. Example of Reinforcement Learning: Markov Decision Process</p>
+<h2></h2>
+<h2><strong>List of Common Machine Learning Algorithms</strong></h2>
+<p style="text-align: justify;">Here is the list of commonly used machine learning algorithms. These algorithms can be applied to almost any data problem:</p>
+<ol>
+<li>Linear Regression</li>
+<li>Logistic Regression</li>
+<li>Decision Tree</li>
+<li>SVM</li>
+<li>Naive Bayes</li>
+<li>KNN</li>
+<li>K-Means</li>
+<li>Random Forest</li>
+<li>Dimensionality Reduction Algorithms</li>
+<li>Gradient Boost &amp; Adaboost</li>
+</ol>
+<h3></h3>
+<h2>1. Linear Regression</h2>
+<p style="text-align: justify;">It is used to estimate real values (cost of houses, number of calls, total sales etc.) based on continuous variable(s). Here, we establish relationship between independent and dependent variables by fitting a best line. This best fit line is known as regression line and represented by a linear equation Y= a *X + b.</p>
+<p style="text-align: justify;">The best way to understand linear regression is to relive this experience of childhood. Let us say, you ask a child in fifth grade to arrange people in his class by increasing order of weight, without asking them their weights! What do you think the child will do? He / she would likely look (visually analyze) at the height and build of people and arrange them using a combination of these visible parameters. This is linear regression in real life! The child has actually figured out that height and build would be correlated to the weight by a relationship, which looks like the equation above.</p>
+<p style="text-align: justify;">In this equation:</p>
+<ul>
+<li style="text-align: justify;">Y &#8211; Dependent Variable</li>
+<li style="text-align: justify;">a &#8211; Slope</li>
+<li style="text-align: justify;">X &#8211; Independent variable</li>
+<li style="text-align: justify;">b &#8211; Intercept</li>
+</ul>
+<p style="text-align: justify;">These coefficients a and b are derived based on minimizing the sum of squared difference of distance between data points and regression line.</p>
+<p style="text-align: justify;">Look at the below example. Here we have identified the best fit line having linear equation <strong>y=0.2811x+13.9</strong>. Now using this equation, we can find the weight, knowing the height of a person.</p>
+<p style="text-align: justify;"><a href="http://www.analyticsvidhya.com/wp-content/uploads/2015/08/Linear_Regression.png"><img class="aligncenter wp-image-18773 " src="http://www.analyticsvidhya.com/wp-content/uploads/2015/08/Linear_Regression.png" alt="Linear_Regression" width="427" height="254"/></a></p>
+<p style="text-align: justify;">Linear Regression is of mainly two types: Simple Linear Regression and Multiple Linear Regression. Simple Linear Regression is characterized by one independent variable. And, Multiple Linear Regression(as the name suggests) is characterized by multiple (more than 1) independent variables. While finding best fit line, you can fit a polynomial or curvilinear regression. And these are known as polynomial or curvilinear regression.</p>
+<p><span style="text-decoration: underline;"><strong>Python Code</strong></span></p>
+<pre><span class="kn">#Import Library
+#Import other necessary libraries like pandas, numpy...
+from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">linear_model
+</span>#Load Train and Test datasets
+#Identify feature and response variable(s) and values must be numeric and numpy arrays
+x_train=input_variables_values_training_datasets
+y_train=target_variables_values_training_datasets
+x_test=input_variables_values_test_datasets
+<span class="c"># Create linear regression object</span>
+linear <span class="o">=</span> <span class="n">linear_model</span><span class="o">.</span><span class="n">LinearRegression</span><span class="p">()
+</span><span class="c"># Train the model using the training sets and check score
+</span><span class="n">linear</span><span class="o">.</span><span class="n">fit</span><span class="p">(x</span><span class="n">_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)
+</span><span class="n">linear</span><span class="o">.score</span><span class="p">(x</span><span class="n">_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)
+</span><span class="c">#Equation coefficient and Intercept
+<span class="k">print</span><span class="p">(</span><span class="s">'Coefficient: </span><span class="se">\n</span><span class="s">'</span><span class="p">,</span> linear<span class="o">.</span><span class="n">coef_</span><span class="p">)
+</span></span><span class="c"><span class="k">print</span><span class="p">(</span><span class="s">'Intercept: </span><span class="se">\n</span><span class="s">'</span><span class="p">,</span> linear<span class="o">.intercept</span><span class="n">_</span><span class="p">)
+</span></span><span class="c">#Predict Output
+predicted= </span><span class="n">linear</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">)
+</span></pre>
+<p><span style="text-decoration: underline;"><strong>R Code</strong></span></p>
+<pre>#Load Train and Test datasets
+#Identify feature and response variable(s) and values must be numeric and numpy arrays
+x_train &lt;- input_variables_values_training_datasets
+y_train &lt;- target_variables_values_training_datasets
+x_test &lt;- input_variables_values_test_datasets
+x &lt;- cbind(x_train,y_train)
+<span class="c"># Train the model using the training sets and check score
+</span><span class="hl std">linear</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">lm</span><span class="hl std">(y_train</span> <span class="hl opt">~</span> <span class="hl std">.</span><span class="hl std">,</span> <span class="hl kwc">data</span> <span class="hl std">= x</span><span class="hl std">)
+summary(linear)</span><span class="c">
+#Predict Output
+predicted= </span><span class="n">predict</span><span class="p">(linear,</span><span class="n">x_test</span><span class="p">)</span><span class="hl std"> </span></pre>
+<p>&nbsp;</p>
+<h2>2. Logistic Regression</h2>
+<p style="text-align: justify;">Don&#8217;t get confused by its name! It is a classification not a regression algorithm. It is used to estimate discrete values ( Binary values like 0/1, yes/no, true/false ) based on given set of independent variable(s). In simple words, it predicts the probability of occurrence of an event by fitting data to a <a href="https://en.wikipedia.org/wiki/Logistic_function" target="_blank" rel="nofollow">logit function</a>. Hence, it is also known as <strong>logit regression</strong>. Since, it predicts the probability, its output values lies between 0 and 1 (as expected).</p>
+<p style="text-align: justify;">Again, let us try and understand this through a simple example.</p>
+<p style="text-align: justify;">Let&#8217;s say your friend gives you a puzzle to solve. There are only 2 outcome scenarios &#8211; either you solve it or you don&#8217;t. Now imagine, that you are being given wide range of puzzles / quizzes in an attempt to understand which subjects you are good at. The outcome to this study would be something like this &#8211; if you are given a trignometry based tenth grade problem, you are 70% likely to solve it. On the other hand, if it is grade fifth history question, the probability of getting an answer is only 30%. This is what Logistic Regression provides you.</p>
+<p>Coming to the math, the log odds of the outcome is modeled as a linear combination of the predictor variables.</p>
+<pre style="text-align: left;">odds= p/ (1-p) = probability of event occurrence / probability of not event occurrence
+ln(odds) = ln(p/(1-p))
+logit(p) = ln(p/(1-p)) = b0+b1X1+b2X2+b3X3....+bkXk</pre>
+<p style="text-align: justify;">Above, p is the probability of presence of the characteristic of interest. It chooses parameters that maximize the likelihood of observing the sample values rather than that minimize the sum of squared errors (like in ordinary regression).</p>
+<p style="text-align: justify;">Now, you may ask, why take a log? For the sake of simplicity, let&#8217;s just say that this is one of the best mathematical way to replicate a step function. I can go in more details, but that will beat the purpose of this article.</p>
+<p style="text-align: justify;"><a href="http://www.analyticsvidhya.com/wp-content/uploads/2015/08/Logistic_Regression.png"><img class="aligncenter wp-image-18792 " src="http://www.analyticsvidhya.com/wp-content/uploads/2015/08/Logistic_Regression.png" alt="Logistic_Regression" width="355" height="270"/></a><span style="text-decoration: underline;"><strong>Python Code</strong></span></p>
+<pre><span class="kn">#Import Library
+</span><span class="kn" style="line-height: 1.5;">from</span> <span class="nn" style="line-height: 1.5;">sklearn.linear_model</span> <span class="k" style="line-height: 1.5;">import</span> <span class="n" style="line-height: 1.5;">LogisticRegression
+</span><span class="c">#Assumed you have, X (predictor) and Y (target) for training data set and x_test(predictor) of test_dataset
+# Create logistic regression object
+</span><span class="n">model</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()
+</span><span class="c"># Train the model using the training sets and check score
+</span><span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)
+</span><span class="n">model</span><span class="o">.score</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)
+</span><span class="c">#Equation coefficient and Intercept
+<span class="k">print</span><span class="p">(</span><span class="s">'Coefficient: </span><span class="se">\n</span><span class="s">'</span><span class="p">,</span> model<span class="o">.</span><span class="n">coef_</span><span class="p">)
+</span></span><span class="c"><span class="k">print</span><span class="p">(</span><span class="s">'Intercept: </span><span class="se">\n</span><span class="s">'</span><span class="p">,</span> model<span class="o">.intercept</span><span class="n">_</span><span class="p">)</span></span><span class="c">
+#Predict Output
+predicted= model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">)
+</span></pre>
+<p><span style="text-decoration: underline;"><strong>R Code</strong></span></p>
+<pre>x &lt;- cbind(x_train,y_train)
+<span class="c"># Train the model using the training sets and check score
+</span><span class="hl std">logistic</span> <span class="hl kwb">&lt;-</span> g<span class="hl kwd">lm</span><span class="hl std">(y_train</span> <span class="hl opt">~</span> <span class="hl std">.</span><span class="hl std">,</span> <span class="hl kwc">data</span> <span class="hl std">= x,family='binomial'</span><span class="hl std">)
+summary(logistic)</span><span class="c">
+#Predict Output
+predicted= </span><span class="n">predict</span><span class="p">(</span><span class="hl std">logistic</span><span class="p">,</span><span class="n">x_test</span><span class="p">)</span></pre>
+<p>&nbsp;</p>
+<h3 id="Next-Steps">Furthermore..</h3>
+<p>There are many different steps that could be tried in order to improve the model:</p>
+<ul>
+<li>including interaction terms</li>
+<li>removing features</li>
+<li><a href="http://www.analyticsvidhya.com/blog/2015/02/avoid-over-fitting-regularization/" target="_blank">regularization techniques</a></li>
+<li>using a non-linear model</li>
+</ul>
+<p>&nbsp;</p>
+<h2>3. Decision Tree</h2>
+<p style="text-align: justify;">This is one of my favorite algorithm and I use it quite frequently. It is a type of supervised learning algorithm that is mostly used for classification problems. Surprisingly, it works for both categorical and continuous dependent variables. In this algorithm, we split the population into two or more homogeneous sets. This is done based on most significant attributes/ independent variables to make as distinct groups as possible. For more details, you can read: <a href="http://www.analyticsvidhya.com/blog/2015/01/decision-tree-simplified/" target="_blank">Decision Tree Simplified</a>.</p>
+<p><a href="http://www.analyticsvidhya.com/wp-content/uploads/2015/08/IkBzK.png"><img class="aligncenter wp-image-18795 " src="http://www.analyticsvidhya.com/wp-content/uploads/2015/08/IkBzK.png" alt="IkBzK" width="412" height="303"/></a></p>
+<p style="text-align: center;">source: <a href="http://stats.stackexchange.com" target="_blank" rel="nofollow">statsexchange</a></p>
+<p style="text-align: justify;">In the image above, you can see that population is classified into four different groups based on multiple attributes to identify &#8216;if they will play or not&#8217;. To split the population into different heterogeneous groups, it uses various techniques like Gini, Information Gain, Chi-square, entropy.</p>
+<p style="text-align: justify;">The best way to understand how decision tree works, is to play Jezzball &#8211; a classic game from Microsoft (image below). Essentially, you have a room with moving walls and you need to create walls such that maximum area gets cleared off with out the balls.</p>
+<p style="text-align: justify;"><a href="http://www.analyticsvidhya.com/wp-content/uploads/2015/08/download.jpg"><img class="aligncenter size-full wp-image-18855" src="http://www.analyticsvidhya.com/wp-content/uploads/2015/08/download.jpg" alt="download" width="290" height="174"/></a></p>
+<p style="text-align: justify;">So, every time you split the room with a wall, you are trying to create 2 different populations with in the same room. Decision trees work in very similar fashion by dividing a population in as different groups as possible.</p>
+<p style="text-align: justify;"><em>More</em>: <a href="http://www.analyticsvidhya.com/blog/2015/01/decision-tree-simplified/" target="_blank">Simplified Version of Decision Tree Algorithms</a></p>
+<h4><span style="text-decoration: underline;">Python Code</span></h4>
+<pre><span class="kn">#Import Library
+#Import other necessary libraries like pandas, numpy...
+</span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">tree
+</span><span class="c">#Assumed you have, X (predictor) and Y (target) for training data set and x_test(predictor) of test_dataset
+</span><span class="c"># Create tree object 
+</span>model = tree.DecisionTreeClassifier(criterion='gini') <span class="c"># for classification, here you can change the algorithm as gini or entropy (information gain) by default it is gini </span> 
+# model = tree.DecisionTreeRegressor() for regression
+<span class="c"># Train the model using the training sets and check score
+</span><span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)
+</span><span class="n">model</span><span class="o">.score</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)
+</span><span class="c">#Predict Output
+predicted= model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">)
+</span></pre>
+<p><span style="text-decoration: underline;"><strong>R Code</strong></span></p>
+<pre>library(rpart)
+x &lt;- cbind(x_train,y_train)
+<span class="c"># grow tree 
+fit &lt;- rpart(</span><span class="hl std">y_train</span> <span class="hl opt">~</span> <span class="hl std">.</span><span class="hl std">,</span> <span class="hl kwc">data</span> <span class="hl std">= x,</span><span class="c">method="class")
+</span><span class="hl std">summary(fit)</span><span class="c">
+#Predict Output 
+predicted= </span><span class="n">predict</span><span class="p">(</span><span class="c">fit</span><span class="p">,</span><span class="n">x_test</span><span class="p">)</span></pre>
+<p>&nbsp;</p>
+<h2>4. SVM (Support Vector Machine)</h2>
+<p style="text-align: justify;">It is a classification method. In this algorithm, we plot each data item as a point in n-dimensional space (where n is number of features you have) with the value of each feature being the value of a particular coordinate.</p>
+<p style="text-align: justify;">For example, if we only had two features like Height and Hair length of an individual, we&#8217;d first plot these two variables in two dimensional space where each point has two co-ordinates (these co-ordinates are known as <strong>Support Vectors</strong>)</p>
+<p><a href="http://www.analyticsvidhya.com/wp-content/uploads/2015/08/SVM1.png"><img class="aligncenter wp-image-18797 " src="http://www.analyticsvidhya.com/wp-content/uploads/2015/08/SVM1.png" alt="SVM1" width="368" height="249"/></a></p>
+<p style="text-align: justify;">Now, we will find some <em>line</em> that splits the data between the two differently classified groups of data. This will be the line such that the distances from the closest point in each of the two groups will be farthest away.</p>
+<p><a href="http://www.analyticsvidhya.com/wp-content/uploads/2015/08/SVM2.png"><img class=" wp-image-18798 aligncenter" src="http://www.analyticsvidhya.com/wp-content/uploads/2015/08/SVM2-300x204.png" alt="SVM2" width="343" height="233"/></a></p>
+<p style="text-align: justify;">In the example shown above, the line which splits the data into two differently classified groups is the <em>black</em> line, since the two closest points are the farthest apart from the line. This line is our classifier. Then, depending on where the testing data lands on either side of the line, that&#8217;s what class we can classify the new data as.</p>
+<p style="text-align: justify;">More: <a href="http://www.analyticsvidhya.com/blog/2014/10/support-vector-machine-simplified/" target="_blank">Simplified Version of Support Vector Machine</a></p>
+<p style="text-align: justify;"><strong>Think of this algorithm as playing JezzBall in n-dimensional space. The tweaks in the game are:</strong></p>
+<ul>
+<li style="text-align: justify;">You can draw lines / planes at any angles (rather than just horizontal or vertical as in classic game)</li>
+<li style="text-align: justify;">The objective of the game is to segregate balls of different colors in different rooms.</li>
+<li style="text-align: justify;">And the balls are not moving.</li>
+</ul>
+<p>&nbsp;</p>
+<h4><span style="text-decoration: underline;">Python Code</span></h4>
+<pre><span class="kn">#Import Library
+</span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> svm
+<span class="c">#Assumed you have, X (predictor) and Y (target) for training data set and x_test(predictor) of test_dataset
+</span><span class="c"># Create SVM classification object 
+</span>model = svm.svc() <span class="c"># there is various option associated with it, this is simple for classification. You can refer <a href="http://scikit-learn.org/stable/modules/svm.html" target="_blank" rel="nofollow">link</a>, for mo# re detail.
+</span><span class="c"># Train the model using the training sets and check score
+</span><span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)
+</span><span class="n">model</span><span class="o">.score</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)
+</span><span class="c">#Predict Output
+predicted= model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">)
+</span></pre>
+<p><span style="text-decoration: underline;"><strong>R Code</strong></span></p>
+<pre>library(e1071)
+x &lt;- cbind(x_train,y_train)
+<span class="c"># Fitting model
+fit &lt;-</span>svm(<span class="hl std">y_train</span> <span class="hl opt">~</span> <span class="hl std">.</span>, data = x)
+<span class="c">summary(fit)</span><span class="c">
+#Predict Output 
+predicted= </span><span class="n">predict</span><span class="p">(</span><span class="c">fit</span><span class="p">,</span><span class="n">x_test</span><span class="p">)</span></pre>
+<p>&nbsp;</p>
+<h2>5. Naive Bayes</h2>
+<p style="text-align: justify;">It is a classification technique based on <a href="https://en.wikipedia.org/wiki/Bayes%27_theorem" target="_blank" rel="nofollow">Bayes’ theorem</a> with an assumption of independence between predictors. In simple terms, a Naive Bayes classifier assumes that the presence of a particular feature in a class is unrelated to the presence of any other feature. For example, a fruit may be considered to be an apple if it is red, round, and about 3 inches in diameter. Even if these features depend on each other or upon the existence of the other features, a naive Bayes classifier would consider all of these properties to independently contribute to the probability that this fruit is an apple.</p>
+<p style="text-align: justify;">Naive Bayesian model is easy to build and particularly useful for very large data sets. Along with simplicity, Naive Bayes is known to outperform even highly sophisticated classification methods.</p>
+<p>Bayes theorem provides a way of calculating posterior probability P(c|x) from P(c), P(x) and P(x|c). Look at the equation below:<br/>
+<a href="http://www.analyticsvidhya.com/wp-content/uploads/2015/08/Bayes_rule.png"><img class=" wp-image-18799 aligncenter" src="http://www.analyticsvidhya.com/wp-content/uploads/2015/08/Bayes_rule-300x172.png" alt="Bayes_rule" width="373" height="214"/></a></p>
+<p style="text-align: justify;">Here,</p>
+<ul>
+<li><i>P</i>(<i>c|x</i>)<span style="font-family: Calibri;"> is the posterior probability of </span><i>class</i><span style="font-family: Calibri;"> (<i>target</i>) given </span><i>predictor</i><span style="font-family: Calibri;"> (<i>attribute</i>). </span></li>
+<li><i>P</i>(<i>c</i>)<span style="font-family: Calibri;"> is the prior probability of </span><i>class</i><span style="font-family: Calibri;">. </span></li>
+<li><i>P</i>(<i>x|c</i>)<span style="font-family: Calibri;"> is the likelihood which is the probability of </span><i>predictor</i><span style="font-family: Calibri;"> given </span><i>class</i><span style="font-family: Calibri;">. </span></li>
+<li><i>P</i>(<i>x</i>)<span style="font-family: Calibri;"> is the prior probability of </span><i>predictor</i><span style="font-family: Calibri;">.</span></li>
+</ul>
+<p style="text-align: justify;"><strong>Example: </strong>Let&#8217;s understand it using an example. Below I have a training data set of weather and corresponding target variable &#8216;Play&#8217;. Now, we need to classify whether players will play or not based on weather condition. Let&#8217;s follow the below steps to perform it.</p>
+<p>Step 1: Convert the data set to frequency table</p>
+<p>Step 2: Create Likelihood table by finding the probabilities like Overcast probability = 0.29 and probability of playing is 0.64.</p>
+<p><a href="http://www.analyticsvidhya.com/wp-content/uploads/2015/08/Bayes_41.png"><img class="aligncenter wp-image-18801 " src="http://www.analyticsvidhya.com/wp-content/uploads/2015/08/Bayes_41.png" alt="Bayes_4" width="590" height="215"/></a></p>
+<p>Step 3: Now, use Naive Bayesian equation to calculate the posterior probability for each class. The class with the highest posterior probability is the outcome of prediction.</p>
+<p><strong>Problem: </strong>Players will pay if weather is sunny, is this statement is correct?</p>
+<p>We can solve it using above discussed method, so P(Yes | Sunny) = P( Sunny | Yes) * P(Yes) / P (Sunny)</p>
+<p>Here we have P (Sunny |Yes) = 3/9 = 0.33, P(Sunny) = 5/14 = 0.36, P( Yes)= 9/14 = 0.64</p>
+<p>Now, P (Yes | Sunny) = 0.33 * 0.64 / 0.36 = 0.60, which has higher probability.</p>
+<p style="text-align: justify;">Naive Bayes uses a similar method to predict the probability of different class based on various attributes. This algorithm is mostly used in text classification and with problems having multiple classes.</p>
+<h4><span style="text-decoration: underline;">Python Code</span></h4>
+<pre><span class="kn">#Import Library
+</span><span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">GaussianNB
+</span><span class="c">#Assumed you have, X (predictor) and Y (target) for training data set and x_test(predictor) of test_dataset
+</span><span class="c"># Create SVM classification object </span><span class="n">model</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">()</span> <span class="c"># there is other distribution for multinomial classes like Bernoulli Naive Bayes, <a href="http://scikit-learn.org/stable/modules/naive_bayes.html" target="_blank" rel="nofollow">Refer link
+</a></span><span class="c"># Train the model using the training sets and check score
+</span><span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)
+</span><span class="c">#Predict Output
+predicted= model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">)
+</span></pre>
+<p><span style="text-decoration: underline;"><strong>R Code</strong></span></p>
+<pre>library(e1071)
+x &lt;- cbind(x_train,y_train)
+<span class="c"># Fitting model
+fit &lt;-naiveBayes</span>(<span class="hl std">y_train</span> <span class="hl opt">~</span> <span class="hl std">.</span>, data = x)
+<span class="c">summary(fit)</span><span class="c">
+#Predict Output 
+predicted= </span><span class="n">predict</span><span class="p">(</span><span class="c">fit</span><span class="p">,</span><span class="n">x_test</span><span class="p">)</span></pre>
+<p>&nbsp;</p>
+<h2>6. KNN (K- Nearest Neighbors)</h2>
+<p style="text-align: justify;">It can be used for both classification and regression problems. However, it is more widely used in classification problems in the industry. K nearest neighbors is a simple algorithm that stores all available cases and classifies new cases by a majority vote of its k neighbors. The case being assigned to the class is most common amongst its K nearest neighbors measured by a distance function.</p>
+<p style="text-align: justify;">These distance functions can be Euclidean, Manhattan, Minkowski and Hamming distance. First three functions are used for continuous function and fourth one (Hamming) for categorical variables. If K = 1, then the case is simply assigned to the class of its nearest neighbor. At times, choosing K turns out to be a challenge while performing KNN modeling.</p>
+<p style="text-align: justify;">More: <a href="http://Introduction to k-nearest neighbors : Simplified">Introduction to k-nearest neighbors : Simplified</a>.</p>
+<p style="text-align: justify;"><a href="http://www.analyticsvidhya.com/wp-content/uploads/2015/08/KNN.png"><img class="aligncenter wp-image-18803 " src="http://www.analyticsvidhya.com/wp-content/uploads/2015/08/KNN.png" alt="KNN" width="431" height="189"/></a></p>
+<p style="text-align: justify;">KNN can easily be mapped to our real lives. If you want to learn about a person, of whom you have no information, you might like to find out about his close friends and the circles he moves in and gain access to his/her information!</p>
+<p><strong>Things to consider before selecting KNN:</strong></p>
+<ul>
+<li>KNN is computationally expensive</li>
+<li>Variables should be normalized else higher range variables can bias it</li>
+<li>Works on pre-processing stage more before going for KNN like outlier, noise removal</li>
+</ul>
+<h4><span style="text-decoration: underline;">Python Code</span></h4>
+<pre><span class="kn">#Import Library
+</span><span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier
+</span><span class="c">#Assumed you have, X (predictor) and Y (target) for training data set and x_test(predictor) of test_dataset
+</span><span class="c"># Create KNeighbors classifier object </span><span class="n">model</span> 
+<span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=6</span><span class="p">) # default value for n_neighbors is 5
+</span><span class="c"># Train the model using the training sets and check score
+</span><span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)
+</span><span class="c">#Predict Output
+predicted= model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">)
+</span></pre>
+<p><span style="text-decoration: underline;"><strong>R Code</strong></span></p>
+<pre>library(knn)
+x &lt;- cbind(x_train,y_train)
+<span class="c"># Fitting model
+fit &lt;-knn</span>(<span class="hl std">y_train</span> <span class="hl opt">~</span> <span class="hl std">.</span>, data = x,k=5)
+<span class="c">summary(fit)</span><span class="c">
+#Predict Output 
+predicted= </span><span class="n">predict</span><span class="p">(</span><span class="c">fit</span><span class="p">,</span><span class="n">x_test</span><span class="p">)</span></pre>
+<p>&nbsp;</p>
+<h2>7. K-Means</h2>
+<p style="text-align: justify;">It is a type of unsupervised algorithm which  solves the clustering problem. Its procedure follows a simple and easy  way to classify a given data set through a certain number of  clusters (assume k clusters). Data points inside a cluster are homogeneous and heterogeneous to peer groups.</p>
+<p style="text-align: justify;">Remember figuring out shapes from ink blots? k means is somewhat similar this activity. You look at the shape and spread to decipher how many different clusters / population are present!</p>
+<p style="text-align: justify;"><a href="http://www.analyticsvidhya.com/wp-content/uploads/2015/08/splatter_ink_blot_texture_by_maki_tak-d5p6zph.jpg"><img class="aligncenter wp-image-18857 size-medium" src="http://www.analyticsvidhya.com/wp-content/uploads/2015/08/splatter_ink_blot_texture_by_maki_tak-d5p6zph-284x300.jpg" alt="splatter_ink_blot_texture_by_maki_tak-d5p6zph" width="284" height="300"/></a></p>
+<p><strong>How K-means forms cluster:</strong></p>
+<ol>
+<li>K-means picks k number of points for each cluster known as centroids.</li>
+<li style="text-align: justify;">Each data point forms a cluster with the closest centroids i.e. k clusters.</li>
+<li style="text-align: justify;">Finds the centroid of each cluster based on existing cluster members. Here we have new centroids.</li>
+<li style="text-align: justify;">As we have new centroids, repeat step 2 and 3. Find the closest distance for each data point from new centroids and get associated with new k-clusters. Repeat this process until convergence occurs i.e. centroids does not change.</li>
+</ol>
+<p><strong>How to determine value of K:</strong></p>
+<p style="text-align: justify;">In K-means, we have clusters and each cluster has its own centroid. Sum of square of difference between centroid and the data points within a cluster constitutes within sum of square value for that cluster. Also, when the sum of square values for all the clusters are added, it becomes total within sum of square value for the cluster solution.</p>
+<p style="text-align: justify;">We know that as the number of cluster increases, this value keeps on decreasing but if you plot the result you may see that the sum of squared distance decreases sharply up to some value of k, and then much more slowly after that. Here, we can find the optimum number of cluster.</p>
+<p style="text-align: justify;"><a href="http://www.analyticsvidhya.com/wp-content/uploads/2015/08/Kmenas.png"><img class="aligncenter wp-image-18805 " src="http://www.analyticsvidhya.com/wp-content/uploads/2015/08/Kmenas-1024x516.png" alt="Kmenas" width="492" height="248"/></a></p>
+<h4><span style="text-decoration: underline;">Python Code</span></h4>
+<pre><span class="kn">#Import Library
+</span><span class="kn" style="line-height: 1.5;">from</span> <span class="nn" style="line-height: 1.5;">sklearn.cluster</span> <span class="kn" style="line-height: 1.5;">import</span><span style="line-height: 1.5;"> KMeans
+</span><span class="c">#Assumed you have, X (</span><span class="c">attributes</span><span class="c">) for training data set and x_test(attributes) of test_dataset
+</span><span class="c"># Create KNeighbors classifier object </span><span class="n">model</span> 
+<span class="n">k_means</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)
+</span><span class="c"># Train the model using the training sets and check score
+</span><span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">)
+</span><span class="c">#Predict Output
+predicted= model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">)
+</span></pre>
+<p><span style="text-decoration: underline;"><strong>R Code</strong></span></p>
+<pre>library(cluster)
+fit &lt;- kmeans(X, 3) # 5 cluster solution</pre>
+<p>&nbsp;</p>
+<h2>8. Random Forest</h2>
+<p style="text-align: justify;">Random Forest is a trademark term for an ensemble of decision trees. In Random Forest, we&#8217;ve collection of decision trees (so known as &#8220;Forest&#8221;). To classify a new object based on attributes, each tree gives a classification and we say the tree &#8220;votes&#8221; for that class. The forest chooses the classification having the most votes (over all the trees in the forest).</p>
+<p style="text-align: justify;">Each tree is planted &amp; grown as follows:</p>
+<ol>
+<li style="text-align: justify;">If the number of cases in the training set is N, then sample of N cases is taken at random but <em>with replacement</em>. This sample will be the training set for growing the tree.</li>
+<li style="text-align: justify;">If there are M input variables, a number m&lt;&lt;M is specified such that at each node, m variables are selected at random out of the M and the best split on these m is used to split the node. The value of m is held constant during the forest growing.</li>
+<li style="text-align: justify;">Each tree is grown to the largest extent possible. There is no pruning.</li>
+</ol>
+<p>For more details on this algorithm, comparing with decision tree and tuning model parameters, I would suggest you to read these articles:</p>
+<ol>
+<li>
+<p class="entry-title"><a href="http://www.analyticsvidhya.com/blog/2014/06/introduction-random-forest-simplified/">Introduction to Random forest – Simplified</a></p>
+</li>
+<li>
+<p class="entry-title"><a href="http://www.analyticsvidhya.com/blog/2014/06/comparing-cart-random-forest-1/">Comparing a CART model to Random Forest (Part 1)</a></p>
+</li>
+<li>
+<p class="entry-title"><a href="http://www.analyticsvidhya.com/blog/2014/06/comparing-random-forest-simple-cart-model/">Comparing a Random Forest to a CART model (Part 2)</a></p>
+</li>
+<li>
+<p class="entry-title"><a href="http://www.analyticsvidhya.com/blog/2015/06/tuning-random-forest-model/">Tuning the parameters of your Random Forest model</a></p>
+</li>
+</ol>
+<p><strong><span style="text-decoration: underline;">Python</span></strong></p>
+<pre><span class="kn">#Import Library
+</span><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier
+</span><span class="c">#Assumed you have, X (predictor) and Y (target) for training data set and x_test(predictor) of test_dataset
+</span><span class="c"># Create Random Forest object</span>
+<span class="n">model= </span><span class="n">RandomForestClassifier</span><span class="p">(</span><span class="p">)
+</span><span class="c"># Train the model using the training sets and check score
+</span><span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)
+</span><span class="c">#Predict Output
+predicted= model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">)
+</span></pre>
+<p><span style="text-decoration: underline;"><strong>R Code</strong></span></p>
+<pre>library(randomForest)
+x &lt;- cbind(x_train,y_train)
+<span class="c"># Fitting model
+</span><span style="line-height: 1.5;">fit &lt;- randomForest(Species ~ ., x,ntree=500)
+</span><span class="c">summary(fit)</span><span class="c">
+#Predict Output 
+predicted= </span><span class="n">predict</span><span class="p">(</span><span class="c">fit</span><span class="p">,</span><span class="n">x_test</span><span class="p">)</span></pre>
+<p>&nbsp;</p>
+<h2>9. Dimensionality Reduction Algorithms</h2>
+<p style="text-align: justify;">In the last 4-5 years, there has been an exponential increase in data capturing at every possible stages. Corporates/ Government Agencies/ Research organisations are not only coming with new sources but also they are capturing data in great detail.</p>
+<p style="text-align: justify;">For example: E-commerce companies are capturing more details about customer like their demographics, web crawling history, what they like or dislike, purchase history, feedback and many others to give them personalized attention more than your nearest grocery shopkeeper.</p>
+<p style="text-align: justify;">As a data scientist, the data we are offered also consist of many features, this sounds good for building good robust model but there is a challenge. How&#8217;d you identify highly significant variable(s) out 1000 or 2000? In such cases, dimensionality reduction algorithm helps us along with various other algorithms like Decision Tree, Random Forest, PCA, Factor Analysis, Identify based on correlation matrix, missing value ratio and others.</p>
+<p style="text-align: justify;">To know more about this algorithms, you can read &#8220;<a href="http://www.analyticsvidhya.com/blog/2015/07/dimension-reduction-methods/">Beginners Guide To Learn Dimension Reduction Techniques</a>&#8220;.</p>
+<h4><span style="text-decoration: underline;">Python  Code</span></h4>
+<pre><span class="kn">#Import Library
+</span>from sklearn import decomposition
+<span class="c">#Assumed you have training and test data set as train and test
+</span><span class="c"># Create PCA obeject</span> <span class="n">pca= decomposition.PCA(n_components=k) #default value of k =min(n_sample, n_features)
+</span><span class="c"># For Factor analysis
+</span><span class="n">#fa= decomposition.FactorAnalysis()</span><span class="c">
+# Reduced the dimension of training dataset using PCA
+</span><span class="p">train_reduced = pca.fit_transform(train)
+</span><span class="c">#Reduced the dimension of test dataset
+</span><span class="p">test_reduced = pca.transform(test)
+</span>#For more detail on this, please refer  <a href="http://scikit-learn.org/stable/modules/decomposition.html#decompositions" target="_blank" rel="nofollow">this link</a>.</pre>
+<h4><span style="text-decoration: underline;">R Code</span></h4>
+<pre>library(stats)
+pca &lt;- princomp(<span class="p">train</span>, cor = TRUE)
+<span class="p">train_reduced  &lt;- predict(pca,</span><span class="p">train)
+</span><span class="p" style="line-height: 1.5;">test_reduced  &lt;- predict(pca,</span><span class="p" style="line-height: 1.5;">test)</span></pre>
+<p>&nbsp;</p>
+<h2>10. Gradient Boosting &amp; AdaBoost</h2>
+<p style="text-align: justify;">GBM &amp; AdaBoost are boosting algorithms used when we deal with plenty of data to make a prediction with high prediction power. Boosting is an ensemble learning algorithm which combines the prediction of several base estimators in order to improve robustness over a single estimator. It combines multiple weak or average predictors to a build strong predictor. These boosting algorithms always work well in data science competitions like Kaggle, AV Hackathon, CrowdAnalytix.</p>
+<p style="text-align: justify;">More: <a href="http://www.analyticsvidhya.com/blog/2015/05/boosting-algorithms-simplified/" target="_blank">Know about Gradient and AdaBoost in detail</a></p>
+<h4><span style="text-decoration: underline;">Python Code</span></h4>
+<pre><span class="kn">#Import Library
+</span><span class="kn" style="line-height: 1.5;">from</span> <span class="nn" style="line-height: 1.5;">sklearn.ensemble</span> <span class="kn" style="line-height: 1.5;">import</span> <span class="n" style="line-height: 1.5;">GradientBoostingClassifier
+</span><span class="c">#Assumed you have, X (predictor) and Y (target) for training data set and x_test(predictor) of test_dataset
+</span><span class="c"># Create Gradient Boosting Classifier object</span>
+<span class="n">model= </span><span class="n">GradientBoostingClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">learning_rate</span><span class="o">=</span><span class="mf">1.0</span><span class="p">, </span><span class="n">max_depth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)
+</span><span class="c"># Train the model using the training sets and check score
+</span><span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)
+</span><span class="c">#Predict Output
+predicted= model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">)
+</span></pre>
+<h4>R Code</h4>
+<pre>library(caret)
+x &lt;- cbind(x_train,y_train)
+<span class="c"># Fitting model
+</span><span style="line-height: 1.5;">fitControl &lt;- trainControl( method = "repeatedcv", number = 4, repeats = 4)
+</span>fit &lt;- train(y ~ ., data = x, method = "gbm", trControl = fitControl,verbose = FALSE)
+<span class="c">predicted= </span><span class="n">predict</span><span class="p">(</span><span class="c">fit</span><span class="p">,</span><span class="n">x_test,type= "prob"</span><span class="p">)[,2] </span></pre>
+<p>GradientBoostingClassifier and Random Forest are two different boosting tree classifier and often people ask about the <a href="http://discuss.analyticsvidhya.com/t/what-is-the-fundamental-difference-between-randomforest-and-gradient-boosting-algorithms/2341" target="_blank">difference between these two algorithms</a>.</p>
+<h3>End Notes</h3>
+<p>By now, I am sure, you would have an idea of commonly used machine learning algorithms. My sole intention behind writing this article and providing the codes in R and Python is to get you started right away. If you are keen to master machine learning, start right away. Take up problems, develop a physical understanding of the process, apply these codes and see the fun!</p>
+<p>Did you find this article useful ? Share your views and opinions in the comments section below.</p>
+<h3>If you like what you just read &amp; want to continue your analytics learning, <a href="http://feedburner.google.com/fb/a/mailverify?uri=analyticsvidhya" target="_blank" rel="nofollow">subscribe to our emails</a>, <a href="http://twitter.com/analyticsvidhya" target="_blank" rel="nofollow">follow us on twitter</a> or like our <a href="http://facebook.com/analyticsvidhya" target="_blank" rel="nofollow">facebook page</a>.</h3>
+<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both"></div><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing"><h3 class="sd-title">Share this:</h3><div class="sd-content"><ul><li class="share-linkedin"><a rel="nofollow" data-shared="sharing-linkedin-18770" class="share-linkedin sd-button share-icon no-text" href="http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/?share=linkedin" target="_blank" title="Click to share on LinkedIn"><span></span><span class="sharing-screen-reader-text">Click to share on LinkedIn (Opens in new window)</span></a></li><li class="share-facebook"><a rel="nofollow" data-shared="sharing-facebook-18770" class="share-facebook sd-button share-icon no-text" href="http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/?share=facebook" target="_blank" title="Share on Facebook"><span></span><span class="sharing-screen-reader-text">Share on Facebook (Opens in new window)</span></a></li><li class="share-google-plus-1"><a rel="nofollow" data-shared="sharing-google-18770" class="share-google-plus-1 sd-button share-icon no-text" href="http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/?share=google-plus-1" target="_blank" title="Click to share on Google+"><span></span><span class="sharing-screen-reader-text">Click to share on Google+ (Opens in new window)</span></a></li><li class="share-twitter"><a rel="nofollow" data-shared="sharing-twitter-18770" class="share-twitter sd-button share-icon no-text" href="http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/?share=twitter" target="_blank" title="Click to share on Twitter"><span></span><span class="sharing-screen-reader-text">Click to share on Twitter (Opens in new window)</span></a></li><li class="share-pocket"><a rel="nofollow" data-shared="" class="share-pocket sd-button share-icon no-text" href="http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/?share=pocket" target="_blank" title="Click to share on Pocket"><span></span><span class="sharing-screen-reader-text">Click to share on Pocket (Opens in new window)</span></a></li><li class="share-reddit"><a rel="nofollow" data-shared="" class="share-reddit sd-button share-icon no-text" href="http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/?share=reddit" target="_blank" title="Click to share on Reddit"><span></span><span class="sharing-screen-reader-text">Click to share on Reddit (Opens in new window)</span></a></li><li class="share-end"></li></ul></div></div></div>
+<div id='jp-relatedposts' class='jp-relatedposts'>
+<h3 class="jp-relatedposts-headline"><em>Related</em></h3>
+</div>
+</div>
+<footer class="clearfix both">
+<div class="meta-tags clearfix">
+Tags: <a href="http://www.analyticsvidhya.com/blog/tag/c4-5/" rel="tag">C4.5</a>, <a href="http://www.analyticsvidhya.com/blog/tag/cart/" rel="tag">cart</a>, <a href="http://www.analyticsvidhya.com/blog/tag/decision-tree/" rel="tag">decision tree</a>, <a href="http://www.analyticsvidhya.com/blog/tag/gbm/" rel="tag">GBM</a>, <a href="http://www.analyticsvidhya.com/blog/tag/k-means/" rel="tag">K-Means</a>, <a href="http://www.analyticsvidhya.com/blog/tag/knn/" rel="tag">KNN</a>, <a href="http://www.analyticsvidhya.com/blog/tag/linear-regression/" rel="tag">Linear-regression</a>, <a href="http://www.analyticsvidhya.com/blog/tag/logistic-regression/" rel="tag">logistic regression</a>, <a href="http://www.analyticsvidhya.com/blog/tag/machine-learning/" rel="tag">machine learning</a>, <a href="http://www.analyticsvidhya.com/blog/tag/naive-bayes/" rel="tag">Naive Bayes</a>, <a href="http://www.analyticsvidhya.com/blog/tag/neural-network/" rel="tag">Neural network</a>, <a href="http://www.analyticsvidhya.com/blog/tag/random-forest/" rel="tag">random forest</a>, <a href="http://www.analyticsvidhya.com/blog/tag/reinforcement/" rel="tag">Reinforcement</a>, <a href="http://www.analyticsvidhya.com/blog/tag/supervised-learning/" rel="tag">Supervised Learning</a>, <a href="http://www.analyticsvidhya.com/blog/tag/unsupervised/" rel="tag">Unsupervised</a> </div>
+<div class="one-divider"></div>
+<div class="bottom meta-share">
+<a class="social-facebook" href="http://www.facebook.com/sharer.php?u=http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/&amp;t=Essentials%20of%20Machine%20Learning%20Algorithms%20(with%20Python%20and%20R%20Codes)" title="Share on Facebook" target="_blank"><i class="icon-facebook"></i></a>
+<a class="social-twitter" href="https://twitter.com/home?status=Essentials%20of%20Machine%20Learning%20Algorithms%20(with%20Python%20and%20R%20Codes)+http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/" title="Share on Twitter" target="_blank"><i class="icon-twitter"></i></a>
+<a class="social-googleplus" href="https://plus.google.com/share?url=http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/" title="Share on Google+" target="_blank"><i class="icon-gplus"></i></a>
+<a class="social-pinterest" href="http://pinterest.com/pin/create/button/?url=http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/&amp;media=http://www.analyticsvidhya.com/wp-content/uploads/2015/08/Newl-Machine-Learning-Algorithms.jpg&amp;description=Essentials%20of%20Machine%20Learning%20Algorithms%20(with%20Python%20and%20R%20Codes)" title="Share on Pinterest" target="_blank"><i class="icon-pinterest"></i></a>
+</div>
+<div class="one-divider"></div>
+<div class="next-prev">
+<a class="next" href="http://www.analyticsvidhya.com/blog/2015/08/beginners-guide-learn-content-based-recommender-systems/" rel="next"><i class="icon-right-open-big"></i><div class="np-caption">Next Article</div><div class="np-title">Beginners Guide to learn about Content Based Recommender Engines</div></a>
+<a class="prev" href="http://www.analyticsvidhya.com/blog/2015/08/learn-cross-selling-upselling/" rel="prev"><i class="icon-left-open-big"></i><div class="np-caption">Previous Article</div><div class="np-title">Marketing Analytics: Essentials of Cross-Selling and Upselling (with a case study)</div></a>
+</div>
+<div class="meta-author">
+<div class="author-thumb">
+<a itemprop="author" href="http://www.analyticsvidhya.com/blog/author/sunil-ray/">
+<img src="https://graph.facebook.com/926326180764547/picture?width=150&height=150" class="avatar avatar-wordpress-social-login avatar-200 photo" height="200" width="200"/> </a>
+</div>
+<div class="author-info">
+<div class="np-caption">Author</div>
+<div class="author-name">
+<a itemprop="author" href="http://www.analyticsvidhya.com/blog/author/sunil-ray/">Sunil Ray</a>
+</div>
+<div class="author-desc">
+<span class="fn">I am a Business Analytics and Intelligence professional with deep experience in the Indian Insurance industry. I have worked for various multi-national Insurance companies in last 7 years.</span>
+</div>
+<ul class="author-links">
+</ul>
+</div>
+</div>
+<div class="related-article">
+ 
+<div class="row">
+<div class="col-sm-12">
+<div class="block-cap">
+<h3>Related Articles</h3>
+</div>
+</div>
+</div>
+<div class="row block-streams el-block-5">
+ 
+<div class="col-sm-4">
+<div class="post-box-normal" itemscope itemtype="http://schema.org/Article">
+<div class="meta-info">
+<span class="ava-auth">
+<img width="14" height="14" class="entry-thumb" src="http://1.gravatar.com/avatar/4881b6eff4a916300c9a785c9f103f24?s=48&#038;d=mm&#038;r=g" alt="" title="Kunal Jain"/>
+</span>
+<span itemprop="author" class="entry-author"><a href="http://www.analyticsvidhya.com/blog/author/kunalj/">Kunal Jain</a></span><span class="coma">,</span>
+<time itemprop="dateCreated" class="entry-date" datetime="2014-11-10T05:00:02+00:00">
+November 10, 2014 </time>
+</div>
+<div class="thumb-wrap zoom-zoom">
+<a href="http://www.analyticsvidhya.com/blog/2014/11/data-science-projects-learn/" rel="bookmark" title="Five data science projects to learn data science">
+<img height="141" width="262" class="zoom-it three entry-thumb" itemprop="image" src="http://www.analyticsvidhya.com/wp-content/uploads/2014/11/Comp-3-0-00-00-00-262x141.jpg" alt="Five data science projects to learn data science" title="Five data science projects to learn data science"/>
+</a>
+</div>
+<h3 itemprop="name" class="entry-title">
+<a itemprop="url" href="http://www.analyticsvidhya.com/blog/2014/11/data-science-projects-learn/" rel="bookmark" title="Five data science projects to learn data science">
+Five data science projects to learn data science </a>
+</h3>
+ 
+</div> </div>
+ 
+<div class="col-sm-4">
+<div class="post-box-normal" itemscope itemtype="http://schema.org/Article">
+<div class="meta-info">
+<span class="ava-auth">
+<img width="14" height="14" class="entry-thumb" src="http://2.gravatar.com/avatar/51bf7a2a1f2a0dd3a1012fa4cf5a9e80?s=48&#038;d=mm&#038;r=g" alt="" title="Tavish Srivastava"/>
+</span>
+<span itemprop="author" class="entry-author"><a href="http://www.analyticsvidhya.com/blog/author/tavish1/">Tavish Srivastava</a></span><span class="coma">,</span>
+<time itemprop="dateCreated" class="entry-date" datetime="2015-06-04T20:28:28+00:00">
+June 4, 2015 </time>
+</div>
+<div class="thumb-wrap zoom-zoom">
+<a href="http://www.analyticsvidhya.com/blog/2015/06/start-journey-kaggle/" rel="bookmark" title="Kaggle Competitions: How and where to begin?">
+<img height="141" width="262" class="zoom-it three entry-thumb" itemprop="image" src="http://www.analyticsvidhya.com/wp-content/uploads/2015/06/kaggle1-262x141.jpg" alt="Kaggle Competitions: How and where to begin?" title="Kaggle Competitions: How and where to begin?"/>
+</a>
+</div>
+<h3 itemprop="name" class="entry-title">
+<a itemprop="url" href="http://www.analyticsvidhya.com/blog/2015/06/start-journey-kaggle/" rel="bookmark" title="Kaggle Competitions: How and where to begin?">
+Kaggle Competitions: How and where to begin? </a>
+</h3>
+ 
+</div> </div>
+ 
+<div class="col-sm-4">
+<div class="post-box-normal" itemscope itemtype="http://schema.org/Article">
+<div class="meta-info">
+<span class="ava-auth">
+<img width="14" height="14" class="entry-thumb" src="http://1.gravatar.com/avatar/4881b6eff4a916300c9a785c9f103f24?s=48&#038;d=mm&#038;r=g" alt="" title="Kunal Jain"/>
+</span>
+<span itemprop="author" class="entry-author"><a href="http://www.analyticsvidhya.com/blog/author/kunalj/">Kunal Jain</a></span><span class="coma">,</span>
+<time itemprop="dateCreated" class="entry-date" datetime="2014-10-06T05:25:53+00:00">
+October 6, 2014 </time>
+</div>
+<div class="thumb-wrap zoom-zoom">
+<a href="http://www.analyticsvidhya.com/blog/2014/10/learning-path-resources-start-analytics/" rel="bookmark" title="Learning path &#038; resources to start your data science (analytics) career today">
+<img height="141" width="262" class="zoom-it three entry-thumb" itemprop="image" src="http://www.analyticsvidhya.com/wp-content/uploads/2014/10/career1-262x141.jpg" alt="Learning path &#038; resources to start your data science (analytics) career today" title="Learning path &#038; resources to start your data science (analytics) career today"/>
+</a>
+</div>
+<h3 itemprop="name" class="entry-title">
+<a itemprop="url" href="http://www.analyticsvidhya.com/blog/2014/10/learning-path-resources-start-analytics/" rel="bookmark" title="Learning path &#038; resources to start your data science (analytics) career today">
+Learning path &#038; resources to start your data science (analytics) career today </a>
+</h3>
+ 
+</div> </div>
+</div>
+</div>
+</footer>
+</article>  
+ 
+ 
+ 
+<div class="row">
+<div class="col-sm-12">
+<div class="block-cap" id="comments">
+<h3 id="comment">22 Comments</h3>
+</div>
+</div>
+</div>
+<div class="navigation">
+<div class="alignleft"></div>
+<div class="alignright"></div>
+</div>
+<ul class="comment-list">
+<li class="comment byuser comment-author-kuber even thread-even depth-1" id="comment-92380">
+<div id="div-comment-92380" class="comment-body">
+<div class="comment-author vcard">
+<img alt='' src='http://2.gravatar.com/avatar/bc5ff4cf949f6b7718a5125cebd2ba64?s=100&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/bc5ff4cf949f6b7718a5125cebd2ba64?s=200&amp;d=mm&amp;r=g 2x' class='avatar avatar-100 photo' height='100' width='100'/> <cite class="fn">Kuber</cite> <span class="says">says:</span> </div>
+<div class="comment-meta commentmetadata"><a href="http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/#comment-92380">
+August 10, 2015 at 11:59 pm</a> </div>
+<p>Awesowe compilation!! Thank you.</p>
+<div class="reply"><a rel='nofollow' class='comment-reply-link' href='http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/?replytocom=92380#respond' onclick='return addComment.moveForm( "div-comment-92380", "92380", "respond", "18770" )' aria-label='Reply to Kuber'>Reply</a></div>
+</div>
+</li> 
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-92394">
+<div id="div-comment-92394" class="comment-body">
+<div class="comment-author vcard">
+<img alt='' src='http://2.gravatar.com/avatar/b77a26b04536bcbfbf29915230db5929?s=100&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b77a26b04536bcbfbf29915230db5929?s=200&amp;d=mm&amp;r=g 2x' class='avatar avatar-100 photo' height='100' width='100'/> <cite class="fn">Karthikeyan</cite> <span class="says">says:</span> </div>
+<div class="comment-meta commentmetadata"><a href="http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/#comment-92394">
+August 11, 2015 at 3:13 am</a> </div>
+<p>Thank you very much, A Very useful and excellent compilation. I have already bookmarked this page.</p>
+<div class="reply"><a rel='nofollow' class='comment-reply-link' href='http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/?replytocom=92394#respond' onclick='return addComment.moveForm( "div-comment-92394", "92394", "respond", "18770" )' aria-label='Reply to Karthikeyan'>Reply</a></div>
+</div>
+</li> 
+<li class="comment even thread-even depth-1" id="comment-92400">
+<div id="div-comment-92400" class="comment-body">
+<div class="comment-author vcard">
+<img alt='' src='http://0.gravatar.com/avatar/078b1950b3d1724eb2519bee855057e2?s=100&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/078b1950b3d1724eb2519bee855057e2?s=200&amp;d=mm&amp;r=g 2x' class='avatar avatar-100 photo' height='100' width='100'/> <cite class="fn">hemanth</cite> <span class="says">says:</span> </div>
+<div class="comment-meta commentmetadata"><a href="http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/#comment-92400">
+August 11, 2015 at 4:50 am</a> </div>
+<p>Straight, Informative and effective!!<br/>
+Thank you</p>
+<div class="reply"><a rel='nofollow' class='comment-reply-link' href='http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/?replytocom=92400#respond' onclick='return addComment.moveForm( "div-comment-92400", "92400", "respond", "18770" )' aria-label='Reply to hemanth'>Reply</a></div>
+</div>
+</li> 
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-92402">
+<div id="div-comment-92402" class="comment-body">
+<div class="comment-author vcard">
+<img alt='' src='http://0.gravatar.com/avatar/635487e0c29b164f9808bb387bba457f?s=100&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/635487e0c29b164f9808bb387bba457f?s=200&amp;d=mm&amp;r=g 2x' class='avatar avatar-100 photo' height='100' width='100'/> <cite class="fn">venugopal</cite> <span class="says">says:</span> </div>
+<div class="comment-meta commentmetadata"><a href="http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/#comment-92402">
+August 11, 2015 at 6:05 am</a> </div>
+<p>Good Summary airticle</p>
+<div class="reply"><a rel='nofollow' class='comment-reply-link' href='http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/?replytocom=92402#respond' onclick='return addComment.moveForm( "div-comment-92402", "92402", "respond", "18770" )' aria-label='Reply to venugopal'>Reply</a></div>
+</div>
+</li> 
+<li class="comment even thread-even depth-1" id="comment-92404">
+<div id="div-comment-92404" class="comment-body">
+<div class="comment-author vcard">
+<img alt='' src='http://0.gravatar.com/avatar/635487e0c29b164f9808bb387bba457f?s=100&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/635487e0c29b164f9808bb387bba457f?s=200&amp;d=mm&amp;r=g 2x' class='avatar avatar-100 photo' height='100' width='100'/> <cite class="fn">Dr Venugopala Rao</cite> <span class="says">says:</span> </div>
+<div class="comment-meta commentmetadata"><a href="http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/#comment-92404">
+August 11, 2015 at 6:27 am</a> </div>
+<p>Super Compilation&#8230;</p>
+<div class="reply"><a rel='nofollow' class='comment-reply-link' href='http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/?replytocom=92404#respond' onclick='return addComment.moveForm( "div-comment-92404", "92404", "respond", "18770" )' aria-label='Reply to Dr Venugopala Rao'>Reply</a></div>
+</div>
+</li> 
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-92410">
+<div id="div-comment-92410" class="comment-body">
+<div class="comment-author vcard">
+<img alt='' src='http://2.gravatar.com/avatar/51824f6eb3d91566f11603d57b84cd68?s=100&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/51824f6eb3d91566f11603d57b84cd68?s=200&amp;d=mm&amp;r=g 2x' class='avatar avatar-100 photo' height='100' width='100'/> <cite class="fn">Kishor Basyal</cite> <span class="says">says:</span> </div>
+<div class="comment-meta commentmetadata"><a href="http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/#comment-92410">
+August 11, 2015 at 7:30 am</a> </div>
+<p>Wonderful! Really helpful</p>
+<div class="reply"><a rel='nofollow' class='comment-reply-link' href='http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/?replytocom=92410#respond' onclick='return addComment.moveForm( "div-comment-92410", "92410", "respond", "18770" )' aria-label='Reply to Kishor Basyal'>Reply</a></div>
+</div>
+</li> 
+<li class="comment even thread-even depth-1" id="comment-92414">
+<div id="div-comment-92414" class="comment-body">
+<div class="comment-author vcard">
+<img alt='' src='http://0.gravatar.com/avatar/3226cb8a925a607d59b548af926132be?s=100&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/3226cb8a925a607d59b548af926132be?s=200&amp;d=mm&amp;r=g 2x' class='avatar avatar-100 photo' height='100' width='100'/> <cite class="fn">Brian Thomas</cite> <span class="says">says:</span> </div>
+<div class="comment-meta commentmetadata"><a href="http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/#comment-92414">
+August 11, 2015 at 9:24 am</a> </div>
+<p>Very nicely done! Thanks for this.</p>
+<div class="reply"><a rel='nofollow' class='comment-reply-link' href='http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/?replytocom=92414#respond' onclick='return addComment.moveForm( "div-comment-92414", "92414", "respond", "18770" )' aria-label='Reply to Brian Thomas'>Reply</a></div>
+</div>
+</li> 
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-92416">
+<div id="div-comment-92416" class="comment-body">
+<div class="comment-author vcard">
+<img alt='' src='http://2.gravatar.com/avatar/e6f7b6e1d28e6daa36ee217443833735?s=100&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/e6f7b6e1d28e6daa36ee217443833735?s=200&amp;d=mm&amp;r=g 2x' class='avatar avatar-100 photo' height='100' width='100'/> <cite class="fn">Tesfaye</cite> <span class="says">says:</span> </div>
+<div class="comment-meta commentmetadata"><a href="http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/#comment-92416">
+August 11, 2015 at 10:30 am</a> </div>
+<p>Thank you! Well presented article.</p>
+<div class="reply"><a rel='nofollow' class='comment-reply-link' href='http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/?replytocom=92416#respond' onclick='return addComment.moveForm( "div-comment-92416", "92416", "respond", "18770" )' aria-label='Reply to Tesfaye'>Reply</a></div>
+</div>
+</li> 
+<li class="comment even thread-even depth-1" id="comment-92417">
+<div id="div-comment-92417" class="comment-body">
+<div class="comment-author vcard">
+<img alt='' src='http://2.gravatar.com/avatar/e6f7b6e1d28e6daa36ee217443833735?s=100&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/e6f7b6e1d28e6daa36ee217443833735?s=200&amp;d=mm&amp;r=g 2x' class='avatar avatar-100 photo' height='100' width='100'/> <cite class="fn">Tesfaye</cite> <span class="says">says:</span> </div>
+<div class="comment-meta commentmetadata"><a href="http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/#comment-92417">
+August 11, 2015 at 10:31 am</a> </div>
+<p>Thank you! Well presented.</p>
+<div class="reply"><a rel='nofollow' class='comment-reply-link' href='http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/?replytocom=92417#respond' onclick='return addComment.moveForm( "div-comment-92417", "92417", "respond", "18770" )' aria-label='Reply to Tesfaye'>Reply</a></div>
+</div>
+</li> 
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-92436">
+<div id="div-comment-92436" class="comment-body">
+<div class="comment-author vcard">
+<img alt='' src='http://0.gravatar.com/avatar/c4d28abda64a2d268be9a2d7a3a2a9f9?s=100&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/c4d28abda64a2d268be9a2d7a3a2a9f9?s=200&amp;d=mm&amp;r=g 2x' class='avatar avatar-100 photo' height='100' width='100'/> <cite class="fn">Huzefa</cite> <span class="says">says:</span> </div>
+<div class="comment-meta commentmetadata"><a href="http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/#comment-92436">
+August 11, 2015 at 3:53 pm</a> </div>
+<p>Hello,</p>
+<p>Superb information in just one blog. Can anyone help me to run the codes in R what should be replaced with &#8220;~&#8221; symbol in codes? Help is appreciated</p>
+<div class="reply"><a rel='nofollow' class='comment-reply-link' href='http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/?replytocom=92436#respond' onclick='return addComment.moveForm( "div-comment-92436", "92436", "respond", "18770" )' aria-label='Reply to Huzefa'>Reply</a></div>
+</div>
+</li> 
+<li class="comment even thread-even depth-1" id="comment-92437">
+<div id="div-comment-92437" class="comment-body">
+<div class="comment-author vcard">
+<img alt='' src='http://0.gravatar.com/avatar/c4d28abda64a2d268be9a2d7a3a2a9f9?s=100&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/c4d28abda64a2d268be9a2d7a3a2a9f9?s=200&amp;d=mm&amp;r=g 2x' class='avatar avatar-100 photo' height='100' width='100'/> <cite class="fn">Huzefa</cite> <span class="says">says:</span> </div>
+<div class="comment-meta commentmetadata"><a href="http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/#comment-92437">
+August 11, 2015 at 3:54 pm</a> </div>
+<p>Hello,</p>
+<p>Superb information in just one blog. Can anyone help me to run the codes in R what should be replaced with &#8220;~&#8221; symbol in codes? Help is appreciated .</p>
+<div class="reply"><a rel='nofollow' class='comment-reply-link' href='http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/?replytocom=92437#respond' onclick='return addComment.moveForm( "div-comment-92437", "92437", "respond", "18770" )' aria-label='Reply to Huzefa'>Reply</a></div>
+</div>
+</li> 
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-92497">
+<div id="div-comment-92497" class="comment-body">
+<div class="comment-author vcard">
+<img alt='' src='http://1.gravatar.com/avatar/a5cbc7c6f559f16cab0484b9dab46352?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/a5cbc7c6f559f16cab0484b9dab46352?s=200&amp;d=mm&amp;r=g 2x' class='avatar avatar-100 photo' height='100' width='100'/> <cite class="fn">Sudipta Basak</cite> <span class="says">says:</span> </div>
+<div class="comment-meta commentmetadata"><a href="http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/#comment-92497">
+August 12, 2015 at 3:35 am</a> </div>
+<p>Enjoyed the simplicity. Thanks for the effort.</p>
+<div class="reply"><a rel='nofollow' class='comment-reply-link' href='http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/?replytocom=92497#respond' onclick='return addComment.moveForm( "div-comment-92497", "92497", "respond", "18770" )' aria-label='Reply to Sudipta Basak'>Reply</a></div>
+</div>
+</li> 
+<li class="comment byuser comment-author-im_utm even thread-even depth-1" id="comment-92552">
+<div id="div-comment-92552" class="comment-body">
+<div class="comment-author vcard">
+<img src="http://pbs.twimg.com/profile_images/566834432892342272/s0gOACeV.jpeg" class="avatar avatar-wordpress-social-login avatar-100 photo" height="100" width="100"/> <cite class="fn"><a href='http://twitter.com/Im_utm' rel='external nofollow' class='url'>Im_utm</a></cite> <span class="says">says:</span> </div>
+<div class="comment-meta commentmetadata"><a href="http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/#comment-92552">
+August 12, 2015 at 2:37 pm</a> </div>
+<p>Great Article&#8230; Helps a lot, as naive in Machine Learning.</p>
+<div class="reply"><a rel='nofollow' class='comment-reply-link' href='http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/?replytocom=92552#respond' onclick='return addComment.moveForm( "div-comment-92552", "92552", "respond", "18770" )' aria-label='Reply to Im_utm'>Reply</a></div>
+</div>
+</li> 
+<li class="comment byuser comment-author-sunil-ray bypostauthor odd alt thread-odd thread-alt depth-1" id="comment-92706">
+<div id="div-comment-92706" class="comment-body">
+<div class="comment-author vcard">
+<img src="https://graph.facebook.com/926326180764547/picture?width=150&height=150" class="avatar avatar-wordpress-social-login avatar-100 photo" height="100" width="100"/> <cite class="fn">Sunil Ray</cite> <span class="says">says:</span> </div>
+<div class="comment-meta commentmetadata"><a href="http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/#comment-92706">
+August 14, 2015 at 7:36 am</a> </div>
+<p>Hi All,</p>
+<p>Thanks for the comment &#8230;</p>
+<div class="reply"><a rel='nofollow' class='comment-reply-link' href='http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/?replytocom=92706#respond' onclick='return addComment.moveForm( "div-comment-92706", "92706", "respond", "18770" )' aria-label='Reply to Sunil Ray'>Reply</a></div>
+</div>
+</li> 
+<li class="comment even thread-even depth-1 parent" id="comment-92744">
+<div id="div-comment-92744" class="comment-body">
+<div class="comment-author vcard">
+<img alt='' src='http://1.gravatar.com/avatar/db015de93a5653d51295570f25580bc7?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/db015de93a5653d51295570f25580bc7?s=200&amp;d=mm&amp;r=g 2x' class='avatar avatar-100 photo' height='100' width='100'/> <cite class="fn">Dalila</cite> <span class="says">says:</span> </div>
+<div class="comment-meta commentmetadata"><a href="http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/#comment-92744">
+August 14, 2015 at 1:35 pm</a> </div>
+<p>Very good summary.</p>
+<p>Thank!<br/>
+One simple point. The reason for taking the log(p/(1-p)) in Logistic Regression is to make the equation linear, I.e., easy to solve.</p>
+<div class="reply"><a rel='nofollow' class='comment-reply-link' href='http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/?replytocom=92744#respond' onclick='return addComment.moveForm( "div-comment-92744", "92744", "respond", "18770" )' aria-label='Reply to Dalila'>Reply</a></div>
+</div>
+<ul class="children">
+<li class="comment byuser comment-author-sunil-ray bypostauthor odd alt depth-2" id="comment-93236">
+<div id="div-comment-93236" class="comment-body">
+<div class="comment-author vcard">
+<img src="https://graph.facebook.com/926326180764547/picture?width=150&height=150" class="avatar avatar-wordpress-social-login avatar-100 photo" height="100" width="100"/> <cite class="fn">Sunil Ray</cite> <span class="says">says:</span> </div>
+<div class="comment-meta commentmetadata"><a href="http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/#comment-93236">
+August 21, 2015 at 5:21 am</a> </div>
+<p>Thanks Dalila&#8230; <img src="http://www.analyticsvidhya.com/wp-includes/images/smilies/simple-smile.png" alt=":)" class="wp-smiley" style="height: 1em; max-height: 1em;"/></p>
+<div class="reply"><a rel='nofollow' class='comment-reply-link' href='http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/?replytocom=93236#respond' onclick='return addComment.moveForm( "div-comment-93236", "93236", "respond", "18770" )' aria-label='Reply to Sunil Ray'>Reply</a></div>
+</div>
+</li> 
+</ul> 
+</li> 
+<li class="comment even thread-odd thread-alt depth-1" id="comment-93085">
+<div id="div-comment-93085" class="comment-body">
+<div class="comment-author vcard">
+<img alt='' src='http://1.gravatar.com/avatar/d577f081d9d588d1039aee1fed40860f?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/d577f081d9d588d1039aee1fed40860f?s=200&amp;d=mm&amp;r=g 2x' class='avatar avatar-100 photo' height='100' width='100'/> <cite class="fn">Statis</cite> <span class="says">says:</span> </div>
+<div class="comment-meta commentmetadata"><a href="http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/#comment-93085">
+August 19, 2015 at 12:14 am</a> </div>
+<p>Nice summary!<br/>
+@Huzefa: you shouldn&#8217;t replace the &#8220;~&#8221; in the R code, it basically means &#8220;as a function of&#8221;. You can also keep the &#8220;.&#8221; right after, it stands for &#8220;all other variables in the dataset provided&#8221;. If you want to be explicit, you can write y ~ x1 + x2 + &#8230; where x1, x2 .. are the names of the columns of your data.frame or data.table.<br/>
+Further note on formula specification: by default R adds an intercept, so that y ~ x is equivalent to y ~ 1 + x, you can remove it via y ~ 0 + x. Interactions are specified with either * (which also adds the two variables) or : (which only adds the interaction term). y ~ x1 * x2 is equivalent to y ~ x1 + x2 + x1 : x2.<br/>
+Hope this helps!</p>
+<div class="reply"><a rel='nofollow' class='comment-reply-link' href='http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/?replytocom=93085#respond' onclick='return addComment.moveForm( "div-comment-93085", "93085", "respond", "18770" )' aria-label='Reply to Statis'>Reply</a></div>
+</div>
+</li> 
+<li class="comment odd alt thread-even depth-1" id="comment-93518">
+<div id="div-comment-93518" class="comment-body">
+<div class="comment-author vcard">
+<img alt='' src='http://0.gravatar.com/avatar/c384d48570eebd88bae6bf8c06f8d39c?s=100&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/c384d48570eebd88bae6bf8c06f8d39c?s=200&amp;d=mm&amp;r=g 2x' class='avatar avatar-100 photo' height='100' width='100'/> <cite class="fn">Chris</cite> <span class="says">says:</span> </div>
+<div class="comment-meta commentmetadata"><a href="http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/#comment-93518">
+August 26, 2015 at 1:01 am</a> </div>
+<p>You did a Wonderful job! This is really helpful. Thanks!</p>
+<div class="reply"><a rel='nofollow' class='comment-reply-link' href='http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/?replytocom=93518#respond' onclick='return addComment.moveForm( "div-comment-93518", "93518", "respond", "18770" )' aria-label='Reply to Chris'>Reply</a></div>
+</div>
+</li> 
+<li class="comment byuser comment-author-glenn_nelson even thread-odd thread-alt depth-1" id="comment-94650">
+<div id="div-comment-94650" class="comment-body">
+<div class="comment-author vcard">
+<img src="https://graph.facebook.com/10153310687928141/picture?width=150&height=150" class="avatar avatar-wordpress-social-login avatar-100 photo" height="100" width="100"/> <cite class="fn"><a href='https://www.facebook.com/app_scoped_user_id/10153310687928141/' rel='external nofollow' class='url'>Glenn Nelson</a></cite> <span class="says">says:</span> </div>
+<div class="comment-meta commentmetadata"><a href="http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/#comment-94650">
+September 10, 2015 at 7:48 pm</a> </div>
+<p>I took the Stanford-Coursera ML class, but have not used it, and I found this to be an incredibly useful summary. I appreciate the real-world analogues, such as your mention of Jezzball. And showing the brief code snips is terrific.</p>
+<div class="reply"><a rel='nofollow' class='comment-reply-link' href='http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/?replytocom=94650#respond' onclick='return addComment.moveForm( "div-comment-94650", "94650", "respond", "18770" )' aria-label='Reply to Glenn Nelson'>Reply</a></div>
+</div>
+</li> 
+<li class="comment byuser comment-author-shankar_pandala odd alt thread-even depth-1" id="comment-95096">
+<div id="div-comment-95096" class="comment-body">
+<div class="comment-author vcard">
+<img src="https://graph.facebook.com/10153564059874654/picture?width=150&height=150" class="avatar avatar-wordpress-social-login avatar-100 photo" height="100" width="100"/> <cite class="fn"><a href='https://www.facebook.com/app_scoped_user_id/10153564059874654/' rel='external nofollow' class='url'>Shankar Pandala</a></cite> <span class="says">says:</span> </div>
+<div class="comment-meta commentmetadata"><a href="http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/#comment-95096">
+September 15, 2015 at 12:09 pm</a> </div>
+<p>This is very easy and helpful than any other courses I have completed.<br/>
+simple. clear. To the point.</p>
+<div class="reply"><a rel='nofollow' class='comment-reply-link' href='http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/?replytocom=95096#respond' onclick='return addComment.moveForm( "div-comment-95096", "95096", "respond", "18770" )' aria-label='Reply to Shankar Pandala'>Reply</a></div>
+</div>
+</li> 
+<li class="comment byuser comment-author-markpratley even thread-odd thread-alt depth-1" id="comment-96010">
+<div id="div-comment-96010" class="comment-body">
+<div class="comment-author vcard">
+<img alt='' src='http://1.gravatar.com/avatar/7149ad5afc3022c53018d3c1d7e1404d?s=100&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/7149ad5afc3022c53018d3c1d7e1404d?s=200&amp;d=mm&amp;r=g 2x' class='avatar avatar-100 photo' height='100' width='100'/> <cite class="fn">markpratley</cite> <span class="says">says:</span> </div>
+<div class="comment-meta commentmetadata"><a href="http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/#comment-96010">
+September 26, 2015 at 9:29 am</a> </div>
+<p>You Sir are a gentleman and a scholar!</p>
+<div class="reply"><a rel='nofollow' class='comment-reply-link' href='http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/?replytocom=96010#respond' onclick='return addComment.moveForm( "div-comment-96010", "96010", "respond", "18770" )' aria-label='Reply to markpratley'>Reply</a></div>
+</div>
+</li> 
+<li class="comment byuser comment-author-why-statistics odd alt thread-even depth-1" id="comment-96181">
+<div id="div-comment-96181" class="comment-body">
+<div class="comment-author vcard">
+<img alt='' src='http://2.gravatar.com/avatar/8b9c03a9d15528d3cf9d35237831c2d1?s=100&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/8b9c03a9d15528d3cf9d35237831c2d1?s=200&amp;d=mm&amp;r=g 2x' class='avatar avatar-100 photo' height='100' width='100'/> <cite class="fn">whystatistics</cite> <span class="says">says:</span> </div>
+<div class="comment-meta commentmetadata"><a href="http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/#comment-96181">
+September 29, 2015 at 10:25 am</a> </div>
+<p>Hi Sunil,</p>
+<p>This is really superb tutorial along with good examples and codes which is surely much helpful. Just, can you add Neural Network here in simple terms with example and code.</p>
+<div class="reply"><a rel='nofollow' class='comment-reply-link' href='http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/?replytocom=96181#respond' onclick='return addComment.moveForm( "div-comment-96181", "96181", "respond", "18770" )' aria-label='Reply to whystatistics'>Reply</a></div>
+</div>
+</li> 
+</ul>
+<div id="respond" class="comment-respond">
+<h3 id="reply-title" class="comment-reply-title">Leave A Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/blog/2015/08/common-machine-learning-algorithms/#respond" style="display:none;">Cancel Reply</a></small></h3>
+<form action="http://www.analyticsvidhya.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+ 
+<style type="text/css">.wp-social-login-connect-with{}.wp-social-login-provider-list{}.wp-social-login-provider-list a{}.wp-social-login-provider-list img{}.wsl_connect_with_provider{}</style>
+<div class="wp-social-login-widget">
+<div class="wp-social-login-connect-with">Connect with:</div>
+<div class="wp-social-login-provider-list">
+<a rel="nofollow" href="http://www.analyticsvidhya.com/wp-login.php?action=wordpress_social_authenticate&#038;mode=login&#038;provider=Facebook&#038;redirect_to=http%3A%2F%2Fwww.analyticsvidhya.com%2Fblog%2F2015%2F08%2Fcommon-machine-learning-algorithms%2F" title="Connect with Facebook" class="wp-social-login-provider wp-social-login-provider-facebook" data-provider="Facebook">
+<img alt="Facebook" title="Connect with Facebook" src="http://www.analyticsvidhya.com/wp-content/plugins/wordpress-social-login/assets/img/32x32/wpzoom/facebook.png"/>
+</a>
+</div>
+<div class="wp-social-login-widget-clearing"></div>
+</div>
+ 
+<p class="comment-notes">Your email address will not be published.</p> <div class="row"><div class="col-sm-12"><input id="author" name="author" placeholder="Name (required)" type="text" value="" size="30"/></div>
+<div class="col-sm-12"><input id="email" name="email" placeholder="Email (required)" type="text" value="" size="30"/></div>
+<div class="col-sm-12 col_last"><input id="url" name="url" placeholder="Website" type="text" value="" size="30"/></div></div>
+<div class="row"><div class="col-sm-12"><textarea placeholder="Comment" id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></div></div>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Submit Comment"/> <input type='hidden' name='comment_post_ID' value='18770' id='comment_post_ID'/>
+<input type='hidden' name='comment_parent' id='comment_parent' value='0'/>
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="03d1d08978"/></p><p class="comment-subscription-form"><input type="checkbox" name="subscribe_comments" id="subscribe_comments" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"/> <label class="subscribe-label" id="subscribe-label" for="subscribe_comments">Notify me of follow-up comments by email.</label></p><p class="comment-subscription-form"><input type="checkbox" name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"/> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog">Notify me of new posts by email.</label></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="112"/></p> </form>
+</div> 
+</div>
+</div>
+ 
+<div class="col-sm-4">
+<div class="sidebar">
+<div id="maha_social_subscribe-4" class="widget clearfix social_subscribe"><div class="widget-title"><div class="block-cap"><h3>Get Connected</h3></div></div>
+<div class="social-network twitter">
+<a class="social-network-icon trans-it" target="_blank" href="http://www.twitter.com/analyticsvidhya" title="Follow our twitter"><i class="icon-twitter trans-it"></i></a>
+<div class="social-network-counter">
+<div class="social-network-count">2,585</div>
+<div class="social-network-unit">Followers</div>
+</div>
+<div class="clearfix"></div>
+</div>
+<div class="social-network facebook">
+<a class="social-network-icon trans-it" target="_blank" href="https://www.facebook.com/AnalyticsVidhya" title="Like our Facebook"><i class="icon-facebook trans-it"></i></a>
+<div class="social-network-counter">
+<div class="social-network-count">7,277</div>
+<div class="social-network-unit">Followers</div>
+</div>
+<div class="clearfix"></div>
+</div>
+<div class="social-network gplus">
+<a class="social-network-icon trans-it" target="_blank" href="https://plus.google.com/+Analyticsvidhya" title="Follow our Google+"><i class="icon-gplus trans-it"></i></a>
+<div class="social-network-counter">
+<div class="social-network-count">544</div>
+<div class="social-network-unit">Followers</div>
+</div>
+<div class="clearfix"></div>
+</div>
+<div class="social-network rss">
+<a class="social-network-icon trans-it" target="_blank" href="http://feedburner.google.com/fb/a/mailverify?uri=analyticsvidhya" title="RSS Feeds"><i class="icon-rss trans-it"></i></a>
+<div class="social-network-counter">
+<div class="social-network-count">Email</div>
+<div class="social-network-unit">Subscribe</div>
+</div>
+<div class="clearfix"></div>
+</div>
+</div><div id="useful-banner-manager-banners-2" class="widget clearfix useful_banner_manager_widget"> <div class="useful_banner_manager_banner">
+<a href="http://pgpba.greatlakes.edu.in/" target="_blank" rel="nofollow">
+<img src="http://www.analyticsvidhya.com/wp-content/uploads/useful_banner_manager_banners/35-GL_Banner_600x600.gif" width="300" height="250" alt=""/>
+</a>
+</div>
+</div><div id="wmp_widget-2" class="widget clearfix widget_wmp_widget"><div class="widget-title"><div class="block-cap"><h3>Popular posts</h3></div></div><ul> <li><a href="http://www.analyticsvidhya.com/blog/2015/09/full-cheatsheet-machine-learning-algorithms/" title="Cheatsheet &#8211; Python &#038; R codes for common Machine Learning Algorithms">Cheatsheet &#8211; Python &#038; R codes for common Machine Learning Algorithms</a></li>
+<li><a href="http://www.analyticsvidhya.com/blog/2015/09/random-forest-algorithm-multiple-challenges/" title="Powerful Guide to learn Random Forest (with codes in R &#038; Python)">Powerful Guide to learn Random Forest (with codes in R &#038; Python)</a></li>
+<li><a href="http://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms/" title="Essentials of Machine Learning Algorithms (with Python and R Codes)">Essentials of Machine Learning Algorithms (with Python and R Codes)</a></li>
+<li><a href="http://www.analyticsvidhya.com/blog/2015/09/ultimate-data-scientists-world-today/" title="24 Ultimate Data Scientists To Follow in the World Today">24 Ultimate Data Scientists To Follow in the World Today</a></li>
+<li><a href="http://www.analyticsvidhya.com/blog/2014/03/sas-vs-vs-python-tool-learn/" title="SAS vs. R (vs. Python) &#8211; which tool should I learn?">SAS vs. R (vs. Python) &#8211; which tool should I learn?</a></li>
+<li><a href="http://www.analyticsvidhya.com/blog/2014/05/planning-late-career-shift-analytics-big-data-prepared/" title="Planning a late career shift to Analytics / Big data? Better be prepared!">Planning a late career shift to Analytics / Big data? Better be prepared!</a></li>
+<li><a href="http://www.analyticsvidhya.com/blog/2015/09/perfect-build-predictive-model-10-minutes/" title="Perfect way to build a Predictive Model in less than 10 minutes">Perfect way to build a Predictive Model in less than 10 minutes</a></li>
+<li><a href="http://www.analyticsvidhya.com/blog/2015/09/hypothesis-testing-explained/" title="Your Guide to Master Hypothesis Testing in Statistics">Your Guide to Master Hypothesis Testing in Statistics</a></li>
+</ul></div><div id="useful-banner-manager-banners-rotation-6" class="widget clearfix useful_banner_manager_rotation_widget"> <div id="useful-banner-manager-banners-rotation-6" data-interval="10000" class="useful_banner_manager_banners_rotation" style="overflow: hidden; width: 280px; height: 250px;">
+<div id="14_useful_banner_manager_banner" class="useful_banner_manager_rotating_banner">
+<a href="http://www.edvancer.in/certified-business-analytics?utm_source=AV&utm_medium=AVads&utm_campaign=AVads1&utm_content=cbapavad" target="_blank" rel="nofollow">
+<img src="http://www.analyticsvidhya.com/wp-content/uploads/useful_banner_manager_banners/14-250x250-CBAP.gif" width="280" height="250" alt="Edvancer - EBAP"/>
+</a>
+</div>
+</div>
+</div><div id="latestdiscoursepostswidget-2" class="widget clearfix LatestDiscoursePostsWidget"><div class="widget-title"><div class="block-cap"><h3>Latest Discussions</h3></div></div><ul><li><a href='http://discuss.analyticsvidhya.com/t/for-r-users-download-cheat-sheet-on-data-exploration-11-steps'>For R Users: Download cheat sheet on Data Exploration (11 Steps)</a></li><li><a href='http://discuss.analyticsvidhya.com/t/welcome-to-analytics-vidhya-discussions'>Welcome to Analytics Vidhya discussions</a></li><li><a href='http://discuss.analyticsvidhya.com/t/is-it-necessary-to-know-big-data-to-learn-data-science'>Is it necessary to know Big data to learn data science</a></li><li><a href='http://discuss.analyticsvidhya.com/t/how-to-convert-the-column-of-data-frame-to-index-of-data-frame-in-python'>How to convert the column of Data frame to index of Data frame in python?</a></li><li><a href='http://discuss.analyticsvidhya.com/t/error-prediction-from-a-rank-deficient-fit-may-be-misleading-in-glm-in-r'>Error 'prediction from a rank-deficient fit may be misleading' in glm in R</a></li><li><a href='http://discuss.analyticsvidhya.com/t/help-required-on-data-analysis-with-excel'>Help required on Data Analysis with Excel</a></li><li><a href='http://discuss.analyticsvidhya.com/t/predicting-delays-in-a-multi-node-supply-chain-of-a-courier-company'>Predicting delays in a multi node supply chain of a courier company?</a></li></ul></div><div id="useful-banner-manager-banners-rotation-20" class="widget clearfix useful_banner_manager_rotation_widget"> <div id="useful-banner-manager-banners-rotation-20" data-interval="4000" class="useful_banner_manager_banners_rotation" style="overflow: hidden; width: 300px; height: 250px;">
+<div id="28_useful_banner_manager_banner" class="useful_banner_manager_rotating_banner">
+<a href="http://imarticus.org/programs/business-analytics-professional/" target="_blank" rel="nofollow">
+<img src="http://www.analyticsvidhya.com/wp-content/uploads/useful_banner_manager_banners/28-imarticus.gif" width="300" height="250" alt=""/>
+</a>
+</div>
+</div>
+</div><div id="maha_recent_posts-3" class="widget clearfix widget_recents"><div class="widget-title"><div class="block-cap"><h3>Recent Posts</h3></div></div>
+<div class="post-box-small recent-item clearfix" itemscope itemtype="http://schema.org/Article">
+<div class="thumb-wrap zoom-zoom three">
+<a href="http://www.analyticsvidhya.com/blog/2015/10/cheatsheet-11-steps-data-exploration-with-codes/" rel="bookmark" title="Cheatsheet &#8211; 11 Steps for Data Exploration in R (with codes)">
+<img width="83" height="63" itemprop="image" class="entry-thumb zoom-it three" src="http://www.analyticsvidhya.com/wp-content/uploads/2015/10/capture-83x63.jpg" alt="Cheatsheet &#8211; 11 Steps for Data Exploration in R (with codes)" title="Cheatsheet &#8211; 11 Steps for Data Exploration in R (with codes)"/>
+</a>
+</div>
+<div class="box-small-wrap">
+<h3 itemprop="name" class="entry-title short-bottom">
+<a itemprop="url" href="http://www.analyticsvidhya.com/blog/2015/10/cheatsheet-11-steps-data-exploration-with-codes/" rel="bookmark" title="Cheatsheet &#8211; 11 Steps for Data Exploration in R (with codes)">
+Cheatsheet &#8211; 11 Steps for Data Exploration in R (with codes) </a>
+</h3>
+<div class="meta-info">
+<span itemprop="author" class="entry-author">Manish Saraswat</span>
+<span class="coma">,</span>
+<time itemprop="dateCreated" class="entry-date" datetime="2015-10-06T03:11:55+00:00">
+October 6, 2015 </time>
+</div>
+</div>
+</div>
+<div class="post-box-small recent-item clearfix" itemscope itemtype="http://schema.org/Article">
+<div class="thumb-wrap zoom-zoom three">
+<a href="http://www.analyticsvidhya.com/blog/2015/10/notes-impressions-experience-excitement-pycon-india-2015/" rel="bookmark" title="Notes, impressions, experience and excitement from PyCon India 2015, Bengaluru">
+<img width="83" height="63" itemprop="image" class="entry-thumb zoom-it three" src="http://www.analyticsvidhya.com/wp-content/uploads/2015/10/pycon-83x63.jpg" alt="Notes, impressions, experience and excitement from PyCon India 2015, Bengaluru" title="Notes, impressions, experience and excitement from PyCon India 2015, Bengaluru"/>
+</a>
+</div>
+<div class="box-small-wrap">
+<h3 itemprop="name" class="entry-title short-bottom">
+<a itemprop="url" href="http://www.analyticsvidhya.com/blog/2015/10/notes-impressions-experience-excitement-pycon-india-2015/" rel="bookmark" title="Notes, impressions, experience and excitement from PyCon India 2015, Bengaluru">
+Notes, impressions, experience and excitement from PyCon India 2015, Bengaluru </a>
+</h3>
+<div class="meta-info">
+<span itemprop="author" class="entry-author">Kunal Jain</span>
+<span class="coma">,</span>
+<time itemprop="dateCreated" class="entry-date" datetime="2015-10-06T03:08:58+00:00">
+October 6, 2015 </time>
+</div>
+</div>
+</div>
+<div class="post-box-small recent-item clearfix" itemscope itemtype="http://schema.org/Article">
+<div class="thumb-wrap zoom-zoom three">
+<a href="http://www.analyticsvidhya.com/blog/2015/10/basics-logistic-regression/" rel="bookmark" title="Building a Logistic Regression model from scratch">
+<img width="83" height="63" itemprop="image" class="entry-thumb zoom-it three" src="http://www.analyticsvidhya.com/wp-content/uploads/2015/10/logistic-83x63.jpg" alt="Building a Logistic Regression model from scratch" title="Building a Logistic Regression model from scratch"/>
+</a>
+</div>
+<div class="box-small-wrap">
+<h3 itemprop="name" class="entry-title short-bottom">
+<a itemprop="url" href="http://www.analyticsvidhya.com/blog/2015/10/basics-logistic-regression/" rel="bookmark" title="Building a Logistic Regression model from scratch">
+Building a Logistic Regression model from scratch </a>
+</h3>
+<div class="meta-info">
+<span itemprop="author" class="entry-author">Tavish Srivastava</span>
+<span class="coma">,</span>
+<time itemprop="dateCreated" class="entry-date" datetime="2015-10-04T21:40:46+00:00">
+October 4, 2015 </time>
+</div>
+</div>
+</div>
+<div class="post-box-small recent-item clearfix" itemscope itemtype="http://schema.org/Article">
+<div class="thumb-wrap zoom-zoom three">
+<a href="http://www.analyticsvidhya.com/blog/2015/10/guide-design-of-experiments-case-study/" rel="bookmark" title="Beginner&#8217;s guide to Design of Experiments (with case study on banner advertisement)">
+<img width="83" height="63" itemprop="image" class="entry-thumb zoom-it three" src="http://www.analyticsvidhya.com/wp-content/uploads/2015/09/design6-83x63.jpg" alt="Beginner&#8217;s guide to Design of Experiments (with case study on banner advertisement)" title="Beginner&#8217;s guide to Design of Experiments (with case study on banner advertisement)"/>
+</a>
+</div>
+<div class="box-small-wrap">
+<h3 itemprop="name" class="entry-title short-bottom">
+<a itemprop="url" href="http://www.analyticsvidhya.com/blog/2015/10/guide-design-of-experiments-case-study/" rel="bookmark" title="Beginner&#8217;s guide to Design of Experiments (with case study on banner advertisement)">
+Beginner&#8217;s guide to Design of Experiments (with case study on banner advertisement) </a>
+</h3>
+<div class="meta-info">
+<span itemprop="author" class="entry-author">Guest Blog</span>
+<span class="coma">,</span>
+<time itemprop="dateCreated" class="entry-date" datetime="2015-10-01T20:22:08+00:00">
+October 1, 2015 </time>
+</div>
+</div>
+</div>
+</div><div id="useful-banner-manager-banners-rotation-19" class="widget clearfix useful_banner_manager_rotation_widget"> <div id="useful-banner-manager-banners-rotation-19" data-interval="5000" class="useful_banner_manager_banners_rotation" style="overflow: hidden; width: 300px; height: 250px;">
+<div id="36_useful_banner_manager_banner" class="useful_banner_manager_rotating_banner">
+<a href="http://www.digitalvidya.com/lp/web-analytics-training-course/?utm_source=analyticsvidhya.com&utm_medium=affiliate&utm_campaign=website-banner" target="_blank" rel="nofollow">
+<img src="http://www.analyticsvidhya.com/wp-content/uploads/useful_banner_manager_banners/36-Web-analytic-banner-2 (1).gif" width="300" height="250" alt=""/>
+</a>
+</div>
+</div>
+</div><div id="text-15" class="widget clearfix widget_text"> <div class="textwidget"></div>
+</div><div id="useful-banner-manager-banners-rotation-17" class="widget clearfix useful_banner_manager_rotation_widget"> <div id="useful-banner-manager-banners-rotation-17" data-interval="10000" class="useful_banner_manager_banners_rotation" style="overflow: hidden; width: 350px; height: 340px;">
+<div id="18_useful_banner_manager_banner" class="useful_banner_manager_rotating_banner">
+<a href="http://discuss.analyticsvidhya.com" target="_blank" rel="dofollow">
+<img src="http://www.analyticsvidhya.com/wp-content/uploads/useful_banner_manager_banners/18-question_answer_v2.jpg" width="350" height="340" alt="Analytics Vidhya Discuss"/>
+</a>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+ 
+ 
+<footer id="footer">
+ 
+<div id="footer-sidebar">
+<div class="container">
+<div class="row">
+<div class="col-sm-4">
+<div id="text-9" class="widget clearfix widget_text"><div class="widget-title"><div class="block-cap"><h3>About Us</h3></div></div> <div class="textwidget">For those of you, who are wondering what is “Analytics Vidhya”, “Analytics” can be defined as the science of extracting insights from raw data. The spectrum of analytics starts from capturing data and evolves into using insights / trends from this data to make informed decisions.</div>
+</div><div id="maha_social_subscribe-3" class="widget clearfix social_subscribe"><div class="widget-title"><div class="block-cap"><h3>Stay Connected</h3></div></div>
+<div class="social-network twitter">
+<a class="social-network-icon trans-it" target="_blank" href="http://www.twitter.com/analyticsvidhya" title="Follow our twitter"><i class="icon-twitter trans-it"></i></a>
+<div class="social-network-counter">
+<div class="social-network-count">2,585</div>
+<div class="social-network-unit">Followers</div>
+</div>
+<div class="clearfix"></div>
+</div>
+<div class="social-network facebook">
+<a class="social-network-icon trans-it" target="_blank" href="https://www.facebook.com/AnalyticsVidhya" title="Like our Facebook"><i class="icon-facebook trans-it"></i></a>
+<div class="social-network-counter">
+<div class="social-network-count">7,277</div>
+<div class="social-network-unit">Followers</div>
+</div>
+<div class="clearfix"></div>
+</div>
+<div class="social-network gplus">
+<a class="social-network-icon trans-it" target="_blank" href="https://plus.google.com/+Analyticsvidhya" title="Follow our Google+"><i class="icon-gplus trans-it"></i></a>
+<div class="social-network-counter">
+<div class="social-network-count">544</div>
+<div class="social-network-unit">Followers</div>
+</div>
+<div class="clearfix"></div>
+</div>
+<div class="social-network rss">
+<a class="social-network-icon trans-it" target="_blank" href="http://feedburner.google.com/fb/a/mailverify?uri=analyticsvidhya" title="RSS Feeds"><i class="icon-rss trans-it"></i></a>
+<div class="social-network-counter">
+<div class="social-network-count">Email</div>
+<div class="social-network-unit">Subscribe</div>
+</div>
+<div class="clearfix"></div>
+</div>
+</div> </div>
+<div class="col-sm-4">
+<div id="maha_recent_posts-4" class="widget clearfix widget_recents"><div class="widget-title"><div class="block-cap"><h3>Latest Posts</h3></div></div>
+<div class="post-box-small recent-item clearfix" itemscope itemtype="http://schema.org/Article">
+<div class="thumb-wrap zoom-zoom three">
+<a href="http://www.analyticsvidhya.com/blog/2015/10/cheatsheet-11-steps-data-exploration-with-codes/" rel="bookmark" title="Cheatsheet &#8211; 11 Steps for Data Exploration in R (with codes)">
+<img width="83" height="63" itemprop="image" class="entry-thumb zoom-it three" src="http://www.analyticsvidhya.com/wp-content/uploads/2015/10/capture-83x63.jpg" alt="Cheatsheet &#8211; 11 Steps for Data Exploration in R (with codes)" title="Cheatsheet &#8211; 11 Steps for Data Exploration in R (with codes)"/>
+</a>
+</div>
+<div class="box-small-wrap">
+<h3 itemprop="name" class="entry-title short-bottom">
+<a itemprop="url" href="http://www.analyticsvidhya.com/blog/2015/10/cheatsheet-11-steps-data-exploration-with-codes/" rel="bookmark" title="Cheatsheet &#8211; 11 Steps for Data Exploration in R (with codes)">
+Cheatsheet &#8211; 11 Steps for Data Exploration in R (with codes) </a>
+</h3>
+<div class="meta-info">
+<span itemprop="author" class="entry-author">Manish Saraswat</span>
+<span class="coma">,</span>
+<time itemprop="dateCreated" class="entry-date" datetime="2015-10-06T03:11:55+00:00">
+October 6, 2015 </time>
+</div>
+</div>
+</div>
+<div class="post-box-small recent-item clearfix" itemscope itemtype="http://schema.org/Article">
+<div class="thumb-wrap zoom-zoom three">
+<a href="http://www.analyticsvidhya.com/blog/2015/10/notes-impressions-experience-excitement-pycon-india-2015/" rel="bookmark" title="Notes, impressions, experience and excitement from PyCon India 2015, Bengaluru">
+<img width="83" height="63" itemprop="image" class="entry-thumb zoom-it three" src="http://www.analyticsvidhya.com/wp-content/uploads/2015/10/pycon-83x63.jpg" alt="Notes, impressions, experience and excitement from PyCon India 2015, Bengaluru" title="Notes, impressions, experience and excitement from PyCon India 2015, Bengaluru"/>
+</a>
+</div>
+<div class="box-small-wrap">
+<h3 itemprop="name" class="entry-title short-bottom">
+<a itemprop="url" href="http://www.analyticsvidhya.com/blog/2015/10/notes-impressions-experience-excitement-pycon-india-2015/" rel="bookmark" title="Notes, impressions, experience and excitement from PyCon India 2015, Bengaluru">
+Notes, impressions, experience and excitement from PyCon India 2015, Bengaluru </a>
+</h3>
+<div class="meta-info">
+<span itemprop="author" class="entry-author">Kunal Jain</span>
+<span class="coma">,</span>
+<time itemprop="dateCreated" class="entry-date" datetime="2015-10-06T03:08:58+00:00">
+October 6, 2015 </time>
+</div>
+</div>
+</div>
+<div class="post-box-small recent-item clearfix" itemscope itemtype="http://schema.org/Article">
+<div class="thumb-wrap zoom-zoom three">
+<a href="http://www.analyticsvidhya.com/blog/2015/10/basics-logistic-regression/" rel="bookmark" title="Building a Logistic Regression model from scratch">
+<img width="83" height="63" itemprop="image" class="entry-thumb zoom-it three" src="http://www.analyticsvidhya.com/wp-content/uploads/2015/10/logistic-83x63.jpg" alt="Building a Logistic Regression model from scratch" title="Building a Logistic Regression model from scratch"/>
+</a>
+</div>
+<div class="box-small-wrap">
+<h3 itemprop="name" class="entry-title short-bottom">
+<a itemprop="url" href="http://www.analyticsvidhya.com/blog/2015/10/basics-logistic-regression/" rel="bookmark" title="Building a Logistic Regression model from scratch">
+Building a Logistic Regression model from scratch </a>
+</h3>
+<div class="meta-info">
+<span itemprop="author" class="entry-author">Tavish Srivastava</span>
+<span class="coma">,</span>
+<time itemprop="dateCreated" class="entry-date" datetime="2015-10-04T21:40:46+00:00">
+October 4, 2015 </time>
+</div>
+</div>
+</div>
+<div class="post-box-small recent-item clearfix" itemscope itemtype="http://schema.org/Article">
+<div class="thumb-wrap zoom-zoom three">
+<a href="http://www.analyticsvidhya.com/blog/2015/10/guide-design-of-experiments-case-study/" rel="bookmark" title="Beginner&#8217;s guide to Design of Experiments (with case study on banner advertisement)">
+<img width="83" height="63" itemprop="image" class="entry-thumb zoom-it three" src="http://www.analyticsvidhya.com/wp-content/uploads/2015/09/design6-83x63.jpg" alt="Beginner&#8217;s guide to Design of Experiments (with case study on banner advertisement)" title="Beginner&#8217;s guide to Design of Experiments (with case study on banner advertisement)"/>
+</a>
+</div>
+<div class="box-small-wrap">
+<h3 itemprop="name" class="entry-title short-bottom">
+<a itemprop="url" href="http://www.analyticsvidhya.com/blog/2015/10/guide-design-of-experiments-case-study/" rel="bookmark" title="Beginner&#8217;s guide to Design of Experiments (with case study on banner advertisement)">
+Beginner&#8217;s guide to Design of Experiments (with case study on banner advertisement) </a>
+</h3>
+<div class="meta-info">
+<span itemprop="author" class="entry-author">Guest Blog</span>
+<span class="coma">,</span>
+<time itemprop="dateCreated" class="entry-date" datetime="2015-10-01T20:22:08+00:00">
+October 1, 2015 </time>
+</div>
+</div>
+</div>
+</div> </div>
+<div class="col-sm-4">
+<div id="maha_menus-2" class="widget clearfix widget_menus"><div class="widget-title"><div class="block-cap"><h3>Quick Links</h3></div></div><ul><li><a href="http://www.analyticsvidhya.com/">Home</a></li><li><a href="http://www.analyticsvidhya.com/about-me/">About Us</a></li><li><a href="http://www.analyticsvidhya.com/about-me/team/">Our team</a></li><li><a href="http://www.analyticsvidhya.com/privacy-policy/">Privacy Policy</a></li><li><a href="http://www.analyticsvidhya.com/refund-policy/">Refund Policy</a></li><li><a href="http://www.analyticsvidhya.com/terms/">Terms of Use</a></li></ul></div><div id="top-reviews-2" class="widget clearfix widget_review"><div class="widget-title"><div class="block-cap"><h3>Top Reviews</h3></div></div></div><div id="text-11" class="widget clearfix widget_text"> <div class="textwidget"><a href="http://www.alexa.com/siteinfo/yoursite.com"><script type="text/javascript" src="http://xslt.alexa.com/site_stats/js/t/a?url=analyticsvidhya.com"></script></a></div>
+</div> </div>
+</div>
+</div>
+</div>
+ 
+ 
+<div class="f-copyright">
+<div class="container">
+<div class="row">
+<div class="col-sm-8">
+© Copyright 2015 Analytics Vidhya </div>
+<div class="col-sm-4">
+<nav>
+</nav>
+</div>
+</div>
+</div>
+</div>
+ 
+</footer>
+ 
+</div>
+ 
+</div>
+ 
+<div id="scrolltop">
+<a><i class="icon-up-open-big"></i></a>
+</div>
+</div>
+<div style="display:none">
+<div class="grofile-hash-map-e3bea1e58e6e462c72b1684b66c7f99a">
+</div>
+<div class="grofile-hash-map-4881b6eff4a916300c9a785c9f103f24">
+</div>
+<div class="grofile-hash-map-51bf7a2a1f2a0dd3a1012fa4cf5a9e80">
+</div>
+<div class="grofile-hash-map-bc5ff4cf949f6b7718a5125cebd2ba64">
+</div>
+<div class="grofile-hash-map-b77a26b04536bcbfbf29915230db5929">
+</div>
+<div class="grofile-hash-map-078b1950b3d1724eb2519bee855057e2">
+</div>
+<div class="grofile-hash-map-635487e0c29b164f9808bb387bba457f">
+</div>
+<div class="grofile-hash-map-63459dd149b15af0ec03bf0e98f2b495">
+</div>
+<div class="grofile-hash-map-3226cb8a925a607d59b548af926132be">
+</div>
+<div class="grofile-hash-map-e6f7b6e1d28e6daa36ee217443833735">
+</div>
+<div class="grofile-hash-map-c4d28abda64a2d268be9a2d7a3a2a9f9">
+</div>
+<div class="grofile-hash-map-a5cbc7c6f559f16cab0484b9dab46352">
+</div>
+<div class="grofile-hash-map-ebf162e08aa5498a293816b45140d5d8">
+</div>
+<div class="grofile-hash-map-e3bea1e58e6e462c72b1684b66c7f99a">
+</div>
+<div class="grofile-hash-map-39492a2a749a004b46c951052986a1b0">
+</div>
+<div class="grofile-hash-map-d577f081d9d588d1039aee1fed40860f">
+</div>
+<div class="grofile-hash-map-c384d48570eebd88bae6bf8c06f8d39c">
+</div>
+<div class="grofile-hash-map-560cfab92c1dec67d45b84f240293ee5">
+</div>
+<div class="grofile-hash-map-cb3e3c4fe1b6b522e545eb9329ece5c5">
+</div>
+<div class="grofile-hash-map-7149ad5afc3022c53018d3c1d7e1404d">
+</div>
+<div class="grofile-hash-map-8b9c03a9d15528d3cf9d35237831c2d1">
+</div>
+</div>
+<script type="text/javascript">
+jQuery(document).ready(function(){
+  var q2w3_sidebar_1_options = { "sidebar" : "blog-sidebar", "margin_top" : 100, "margin_bottom" : 800, "screen_max_width" : 0, "width_inherit" : false, "widgets" : ['useful-banner-manager-banners-rotation-17'] };
+  q2w3_sidebar(q2w3_sidebar_1_options);
+  setInterval(function () { q2w3_sidebar(q2w3_sidebar_1_options); }, 1500);
+});
+</script>
+<div id="su-footer-links" style="text-align: center;"></div>
+<script type="text/javascript">
+		window.WPCOM_sharing_counts = {"http:\/\/www.analyticsvidhya.com\/blog\/2015\/08\/common-machine-learning-algorithms\/":18770};
+		window.WPCOM_jetpack = true;
+				window.WPCOM_site_ID = 58948004;
+			</script>
+<script type="text/javascript">
+			var windowOpen;
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-linkedin' ).on( 'click', function() {
+				if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomlinkedin', 'menubar=1,resizable=1,width=580,height=450' );
+				return false;
+			});
+		});
+		</script>
+<script type="text/javascript">
+			var windowOpen;
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-facebook' ).on( 'click', function() {
+				if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+		});
+		</script>
+<script type="text/javascript">
+			var windowOpen;
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-google-plus-1' ).on( 'click', function() {
+				if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomgoogle-plus-1', 'menubar=1,resizable=1,width=480,height=550' );
+				return false;
+			});
+		});
+		</script>
+<script type="text/javascript">
+			var windowOpen;
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-twitter' ).on( 'click', function() {
+				if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+				return false;
+			});
+		});
+		</script>
+<script type="text/javascript">
+			var windowOpen;
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-pocket' ).on( 'click', function() {
+				if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcompocket', 'menubar=1,resizable=1,width=450,height=450' );
+				return false;
+			});
+		});
+		</script>
+<script type='text/javascript' src='http://www.analyticsvidhya.com/wp-content/plugins/akismet/_inc/form.js?ver=3.1.3' defer='defer'></script>
+<script type='text/javascript' src='http://www.analyticsvidhya.com/wp-includes/js/jquery/ui/core.min.js?ver=1.11.4' defer='defer'></script>
+<script type='text/javascript' src='http://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201541' defer='defer'></script>
+<script type='text/javascript' src='http://s.gravatar.com/js/gprofiles.js?ver=2015Octaa' defer='defer'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.analyticsvidhya.com/wp-content/plugins/jetpack/modules/wpgroho.js?ver=4.3.1' defer='defer'></script>
+<script type='text/javascript' src='http://www.analyticsvidhya.com/wp-content/themes/Curated/static/js/main.js?ver=1.0.0'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var MahaAjax = {"ajaxurl":"http:\/\/www.analyticsvidhya.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.analyticsvidhya.com/wp-content/themes/Curated/static/js/basix.js?ver=1.0.0' defer='defer'></script>
+<script type='text/javascript' src='http://www.analyticsvidhya.com/wp-content/themes/Curated/static/js/add_to_cart.js?ver=1.0.0' defer='defer'></script>
+<script type='text/javascript' src='http://www.analyticsvidhya.com/wp-includes/js/comment-reply.min.js?ver=4.3.1' defer='defer'></script>
+<script type='text/javascript' src='http://www.analyticsvidhya.com/wp-includes/js/jquery/ui/effect.min.js?ver=1.11.4' defer='defer'></script>
+<script type='text/javascript' src='http://www.analyticsvidhya.com/wp-includes/js/jquery/ui/effect-blind.min.js?ver=1.11.4' defer='defer'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var stbUserOptions = {"mode":"css","cssOptions":{"roundedCorners":true,"mbottom":10,"imgHide":"http:\/\/www.analyticsvidhya.com\/blog\/wp-content\/plugins\/wp-special-textboxes\/images\/minus.png","imgShow":"http:\/\/www.analyticsvidhya.com\/blog\/wp-content\/plugins\/wp-special-textboxes\/images\/plus.png","strHide":"Hide","strShow":"Show"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.analyticsvidhya.com/wp-content/plugins/wp-special-textboxes/js/wstb.min.js?ver=5.4.98' defer='defer'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var sharing_js_options = {"lang":"en","counts":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.analyticsvidhya.com/wp-content/plugins/jetpack/modules/sharedaddy/sharing.js?ver=3.6.1' defer='defer'></script>
+<style>@media (min-width: 769px) {#top-bar-sticky{display:inherit;}}#body-maha{background-color:#fff;background-image:url("http://www.analyticsvidhya.com/wp-content/uploads/2015/02/wild-sea24.jpg");background-repeat:repeat;background-position:center center;background-size:;background-attachment:;}#body-background{margin:0 auto;}@media (min-width: 1200px){#body-background,#main-nav-bar.on-stuck{width:1200px;}}@media (max-width: 1199px) and (min-width: 992px) {#body-background,#main-nav-bar.on-stuck{width:997px;}}@media (max-width: 991px) and (min-width: 768px) {#body-background,#main-nav-bar.on-stuck{width:773px;}}.main-ul-nav ul li.mh-navcat-1915:hover>a,.main-ul-nav ul li.mh-navcat-1915.current-menu-item>a,.main-ul-nav ul li.mh-navcat-1915.current-post-parent>a{-webkit-box-shadow:0 -4px 0 #222 inset;-moz-box-shadow:0 -4px 0 #222 inset;box-shadow:0 -4px 0 #222 inset;}.i-category a.mh-elcat-1915{background:#222;}.main-ul-nav ul li.mh-navcat-2284:hover>a,.main-ul-nav ul li.mh-navcat-2284.current-menu-item>a,.main-ul-nav ul li.mh-navcat-2284.current-post-parent>a{-webkit-box-shadow:0 -4px 0 #222 inset;-moz-box-shadow:0 -4px 0 #222 inset;box-shadow:0 -4px 0 #222 inset;}.i-category a.mh-elcat-2284{background:#222;}</style>
+ 
+<div class="dgd_stb_box " id="dgd_scrollbox-16979"><a class="dgd_stb_box_close dgd_stb_box_x" href="javascript:void(0);"> </a><div class="popup-bg-1"></div>
+<h5 class="h5-popup">Join world’s fastest growing Analytics Community</h5>
+<h6 class="h6-popup">Receive awesome tips, guides, infographics and become expert at:</h6>
+<ul class="popup-ul">
+<li>R/SAS/Python</li>
+<li>Data Visualization</li>
+<li>Big Data</li>
+<li>Algorithms & Programming</li>
+</ul>
+<p class="p-popup">Above all, interact with data science professionals like yourself across the globe!<br/>
+We don’t settle for anything less than awesome content!</p>
+<form class="stbContactForm" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=analyticsvidhya', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true" method="post" action="http://feedburner.google.com/fb/a/mailverify" style="margin-top:-35px">
+<input type="hidden" value="analyticsvidhya" name="uri"><br/>
+<input type="hidden" value="en_US" name="loc"><br/>
+<input type="email" name="email" required="required" id="email" value="" class="popup-email" placeholder="Enter Your Email..."/><br/>
+<input type="submit" value="Subscribe" class="popup-subscribe"/> </form>
+<p class="stbMsgArea">
+</div>
+ 
+<script type='text/javascript' src='http://stats.wp.com/e-201541.js' async defer></script>
+<script type='text/javascript'>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:3.6.1',blog:'58948004',post:'18770',tz:'0',srv:'www.analyticsvidhya.com'} ]);
+	_stq.push([ 'clickTrackerInit', '58948004', '18770' ]);
+</script>
+</body>
+</html>
+ 
