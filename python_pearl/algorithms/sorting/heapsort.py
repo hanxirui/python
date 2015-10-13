@@ -5,15 +5,15 @@ def swap(array, i, j):
     array[i] = array[j]
     array[j] = tmp
 
-def heapify(array):
+def _heapify(array):
     """ Build heap """
     # Middle in array
     start = (len(array) - 2) / 2
     while start >= 0:
-        perc_down(array, start, len(array) - 1)
+        _perc_down(array, start, len(array) - 1)
         start -= 1
 
-def perc_down(array, start, end):
+def _perc_down(array, start, end):
     """ Check/modify heap structure """
     largest = 2 * start + 1
     while largest <= end:
@@ -31,13 +31,13 @@ def perc_down(array, start, end):
 def heap_sort(array):
     """ Sorting function """
     # biggest to smallest
-    heapify(array)
+    _heapify(array)
     end = len(array) - 1
     while end > 0:
         # swap biggest node with end node
         swap(array, end, 0)
         # make sure first node is biggest
-        perc_down(array, 0, end - 1)
+        _perc_down(array, 0, end - 1)
         end -= 1
 
 if __name__ == "__main__":

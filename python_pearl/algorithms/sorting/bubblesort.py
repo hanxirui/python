@@ -1,4 +1,4 @@
-#!/usr/bin/python2
+#!/usr/bin/python3
 
 def swap(array, i, j):
     tmp = array[i]
@@ -16,5 +16,5 @@ def bubblesort(array):
 if __name__ == "__main__":
     array = [17, 9, 13, 8, 7, -5, 6, 11, 3, 4, 1, 2]
     bubblesort(array)
-    print array
+    print(array)
 

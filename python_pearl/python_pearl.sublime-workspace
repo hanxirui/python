@@ -1,0 +1,488 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"sql",
+				"sqlContext"
+			],
+			[
+				"work",
+				"workers"
+			],
+			[
+				"wor",
+				"worker"
+			],
+			[
+				"t",
+				"try	Try/Except"
+			],
+			[
+				"pri",
+				"primaryKey"
+			],
+			[
+				"de",
+				"default"
+			],
+			[
+				"ut",
+				"utf-8"
+			],
+			[
+				"from",
+				"from_addr"
+			],
+			[
+				"u",
+				"utf-8"
+			],
+			[
+				"ti",
+				"timezone"
+			],
+			[
+				"server",
+				"server_addr"
+			],
+			[
+				"resul",
+				"result"
+			],
+			[
+				"get_",
+				"get_task_queue"
+			],
+			[
+				"ex",
+				"exception"
+			],
+			[
+				"print",
+				"print_score"
+			],
+			[
+				"_",
+				"__name__"
+			],
+			[
+				"fun",
+				"functools"
+			],
+			[
+				"n",
+				"ncount"
+			],
+			[
+				"re",
+				"reduce"
+			],
+			[
+				"class",
+				"classmates"
+			],
+			[
+				"clas",
+				"classmates"
+			],
+			[
+				"top",
+				"topics"
+			],
+			[
+				"to",
+				"topics"
+			],
+			[
+				"che",
+				"checkbox"
+			],
+			[
+				"Add",
+				"AddObserver"
+			],
+			[
+				"observers",
+				"observersContainer"
+			],
+			[
+				"get",
+				"getElementById"
+			],
+			[
+				"add",
+				"addNewObserver"
+			],
+			[
+				"con",
+				"controlCheckbox"
+			],
+			[
+				"ob",
+				"observerList"
+			],
+			[
+				"obs",
+				"observerList"
+			],
+			[
+				"Re",
+				"RemoveIndexAt"
+			],
+			[
+				"obser",
+				"observers"
+			],
+			[
+				"In",
+				"IndexOf"
+			],
+			[
+				"pro",
+				"prototype"
+			],
+			[
+				"obj",
+				"objSphere"
+			],
+			[
+				"public",
+				"publicSetName"
+			],
+			[
+				"private",
+				"privateFunction"
+			],
+			[
+				"publi",
+				"publicVar"
+			],
+			[
+				"priv",
+				"privateVar"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"PCi",
+				"Package Control: Install Package"
+			],
+			[
+				"pC",
+				"Package Control: Remove Package"
+			],
+			[
+				"pa",
+				"Project: Add Folder"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"foma",
+				"Tag: Auto-Format Tags on Document"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"HTML: Encode Special Characters"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"in t",
+				"Indentation: Convert to Spaces"
+			]
+		],
+		"width": 593.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp =sublime.installed_packages_path(); urllib.request.install_opener(urllib.request.build_opener(urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/hanxirui/Documents/workspace/github/python/python_pearl"
+	],
+	"file_history":
+	[
+		"/Users/hanxirui/Downloads/ip_sql.sql",
+		"/Users/hanxirui/Documents/t_proc_ip_guishu.sql",
+		"/Users/hanxirui/Documents/workspace/github/python/movie_recommendation/newmovierecom/server.py"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/Users/hanxirui/Documents/workspace/github/python",
+			"<current file>",
+			"/Users/hanxirui/Documents/workspace/workshop_bmc/RIIL_DataAnalysis/trunk"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"ID_and_ratings_tuple",
+			"map",
+			"__count_and_average_ratings",
+			"get_counts_and_averages",
+			"map",
+			"￼",
+			">>> ",
+			"search",
+			"# ",
+			">>> ",
+			"mo1",
+			">>> ",
+			">>>",
+			"group",
+			">>>",
+			"image",
+			"os",
+			"        \n",
+			"no2",
+			"se",
+			"no",
+			"fi",
+			"print \"",
+			"itervalues",
+			"nettopo",
+			"ss_",
+			"s's",
+			"jQuery和CSS3超炫旋转环状菜单特效效果演示_jQuery之家-自由分享jQuery、html5、css3的插件库_files",
+			"$",
+			"‘",
+			"\"",
+			"thread",
+			"urllib2",
+			"ipsinaget.py",
+			"urllib2",
+			"ipv3",
+			"_name_",
+			"”",
+			"“",
+			"2015-03-03 18:09:00",
+			"?",
+			"atr",
+			"show_atr",
+			"ItemBox",
+			"sum",
+			"getPromiseData",
+			"process",
+			"text",
+			"Text",
+			"text",
+			"Text",
+			"text",
+			"Text",
+			"text",
+			"getClickCountData",
+			"moduleClickAdo",
+			"productVersionDatas",
+			"getResourceTypeData",
+			"getVersionTopNData",
+			"getMetricCountByFreqData",
+			"statisticsDao",
+			"MetricCountByFreq",
+			"metricCountByFreq",
+			"getMetricCountByFreqData",
+			"mostUsage",
+			"getMetricCountByFreqData",
+			"getVersionTopNData",
+			"getDistributionTopNData",
+			"getMetricCountByFreqData",
+			"recordSet",
+			"getMetricCountByFreqData",
+			"getMetricCountByFreq",
+			"getMostMetricsData",
+			"getMetricCountByFreq",
+			"getMostMetricsOption",
+			"getMetricCountByFreqData",
+			"getResourceTypeData",
+			"getMetricCountByFreq",
+			"getResourceTypeOption",
+			"\n\n\n\n",
+			"schedulerPersister",
+			"GetAPBase",
+			"show ap-config summary",
+			"%2F",
+			"%2",
+			"%2F",
+			"show ap-config running",
+			"GetAC",
+			"GetACC",
+			"GetAC",
+			"4.6.1.335153",
+			"4.6.1.335153\n"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			" ",
+			"",
+			"print(\"",
+			"education",
+			"static",
+			"'",
+			"‘",
+			"threading",
+			"urllib.request",
+			"ipsinaget.py",
+			"ipv4",
+			"__name__",
+			"\"",
+			"'2015-03-03 18:09:00'",
+			"2015-03-03 18:09:00",
+			"/",
+			"0.0.0"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 209.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "python_pearl.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 203.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
